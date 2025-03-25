@@ -1,0 +1,167 @@
+[gd_scene load_steps=4 format=3 uid="uid://dsgm4fplk58dm"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kmev3"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_yh33m"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xgx5e"]
+
+[node name="Levels" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(3.85046e-07, 0.856162, 0.856695, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_kmev3")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 106.0
+offset_top = -92.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 206.0
+offset_top = -185.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 316.0
+offset_top = -278.0
+offset_bottom = -186.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 422.0
+offset_top = -368.0
+offset_bottom = -276.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 530.0
+offset_top = -460.0
+offset_bottom = -368.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+self_modulate = Color(0.407453, 0.000149253, 0.422558, 1)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 641.0
+offset_top = -553.0
+offset_bottom = -461.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("CanvasTexture_yh33m")
+metadata/_edit_lock_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.0
+offset_top = 502.0
+offset_right = 182.0
+offset_bottom = 533.0
+text = "button"
+metadata/_edit_lock_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 318.0
+offset_right = 396.0
+offset_bottom = 349.0
+text = "button"
+metadata/_edit_lock_ = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 134.0
+offset_right = 613.0
+offset_bottom = 165.0
+text = "button"
+metadata/_edit_lock_ = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 39.0
+offset_right = 817.0
+offset_bottom = 70.0
+text = "button"
+metadata/_edit_lock_ = true
+
+[node name="Button5" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1050.0
+offset_top = 36.0
+offset_right = 1111.0
+offset_bottom = 67.0
+text = "button"
+metadata/_edit_lock_ = true
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 0, 1)
+layout_mode = 0
+offset_right = 135.0
+offset_bottom = 115.0
+texture = SubResource("CanvasTexture_xgx5e")
