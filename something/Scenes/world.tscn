@@ -1,3 +1,123 @@
-[gd_scene format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=7 format=3 uid="uid://dlhpeoka1b654"]
 
-[node name="World" type="Node2D"]
+[sub_resource type="CanvasTexture" id="CanvasTexture_yp4wr"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_a02cp"]
+specular_color = Color(0.275787, 0.48891, 0.254303, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_go701"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_5a7ea"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8j60k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
+
+[node name="World" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="TextureRect" parent="."]
+self_modulate = Color(0.65098, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_yp4wr")
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TextureRect" parent="."]
+modulate = Color(0.174241, 0.685644, 0.198529, 1)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 466.0
+offset_right = 1153.0
+offset_bottom = 651.0
+texture = SubResource("CanvasTexture_a02cp")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = 1.0
+offset_top = 177.0
+offset_right = 280.0
+offset_bottom = 231.0
+texture = SubResource("CanvasTexture_go701")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
+layout_mode = 0
+offset_left = 873.0
+offset_top = 177.0
+offset_right = 1152.0
+offset_bottom = 231.0
+texture = SubResource("CanvasTexture_go701")
+metadata/_edit_lock_ = true
+
+[node name="Health" type="TextureRect" parent="."]
+self_modulate = Color(0.0579798, 0.524882, 0, 1)
+layout_mode = 0
+offset_left = 499.0
+offset_top = 277.0
+offset_right = 671.0
+offset_bottom = 310.0
+texture = SubResource("CanvasTexture_5a7ea")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(587, 394)
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+self_modulate = Color(0.677777, 0.101279, 0.357411, 1)
+position = Vector2(-1.00001, 0.499992)
+scale = Vector2(170, 143)
+texture = SubResource("CanvasTexture_8j60k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+visible = false
+position = Vector2(588, 417)
+shape = SubResource("RectangleShape2D_5a7ea")
+
+[node name="Left" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 75.0
+offset_top = -137.0
+offset_right = 236.0
+offset_bottom = -44.0
+grow_vertical = 0
+text = "<"
+
+[node name="Right" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -193.0
+offset_top = -132.0
+offset_right = -45.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+text = ">"
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(441, 6, 441, 464)
+default_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="."]
+points = PackedVector2Array(735, 2, 736, 229, 736, 463)
+default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
