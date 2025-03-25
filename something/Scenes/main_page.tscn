@@ -109,8 +109,10 @@ text = "Shop"
 
 [node name="Ad" type="Button" parent="Panel"]
 layout_mode = 0
-offset_left = 384.0
-offset_top = -1.0
-offset_right = 402.0
-offset_bottom = 30.0
+offset_left = 835.0
+offset_top = -2.0
+offset_right = 868.0
+offset_bottom = 29.0
 text = "+"
+
+[connection signal="pressed" from="Panel/buttons/Events" to="." method="_on_events_pressed"]
