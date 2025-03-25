@@ -115,4 +115,5 @@ offset_right = 868.0
 offset_bottom = 29.0
 text = "+"
 
+[connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Panel/buttons/Events" to="." method="_on_events_pressed"]
