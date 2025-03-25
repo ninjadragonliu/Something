@@ -121,3 +121,4 @@ metadata/_edit_lock_ = true
 [node name="Line2D2" type="Line2D" parent="."]
 points = PackedVector2Array(735, 2, 736, 229, 736, 463)
 default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
+metadata/_edit_lock_ = true
