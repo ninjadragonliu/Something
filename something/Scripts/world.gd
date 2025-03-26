@@ -5,6 +5,9 @@ extends Control
 var enemy_in_range_left
 var enemy_in_range_right
 
+func _process(delta: float) -> void:
+	$Health/Label.text = str(Global.health) + "/100"
+
 func _on_left_pressed() -> void:
 	# if enemy comes into line
 		# attack 1 hit ko

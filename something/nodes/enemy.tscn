@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://1sglcl0xf1jt"]
 
-[ext_resource type="Script" uid="uid://brtxbdd1qf2ye" path="res://Scripts/enemy_left.gd" id="1_mtd0q"]
+[ext_resource type="Script" uid="uid://8jvahrca4qxw" path="res://Scripts/enemy.gd" id="1_vx18p"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_fo5ed"]
 
@@ -8,7 +8,7 @@
 size = Vector2(132, 89)
 
 [node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_mtd0q")
+script = ExtResource("1_vx18p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.427451, 0.313726, 1, 1)
