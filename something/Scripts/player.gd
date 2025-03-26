@@ -7,4 +7,6 @@ func attack(body : Node2D):
 	body.take_damage(1)
 
 func take_damage(damage : int):
-	pass
+	Global.health -= damage
+	if Global.health == 0:
+		queue_free()

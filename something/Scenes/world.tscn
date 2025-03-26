@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
-[ext_resource type="PackedScene" uid="uid://1sglcl0xf1jt" path="res://nodes/enemy.tscn" id="6_5ukr8"]
+[ext_resource type="Script" uid="uid://b6x87sv7lgrec" path="res://Scripts/enemies.gd" id="3_5a7ea"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yp4wr"]
 
@@ -137,17 +137,8 @@ default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 position = Vector2(736, 232.5)
 shape = SubResource("RectangleShape2D_8j60k")
 
-[node name="Enemy" parent="." instance=ExtResource("6_5ukr8")]
-position = Vector2(170, 415)
-
-[node name="Enemy2" parent="." instance=ExtResource("6_5ukr8")]
-position = Vector2(855, 414)
-
-[node name="Enemy3" parent="." instance=ExtResource("6_5ukr8")]
-position = Vector2(-163, 415)
-
-[node name="Enemy4" parent="." instance=ExtResource("6_5ukr8")]
-position = Vector2(1153, 416)
+[node name="Enemies" type="Node" parent="." groups=["enemy manager"]]
+script = ExtResource("3_5a7ea")
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
