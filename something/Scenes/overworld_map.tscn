@@ -26,6 +26,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_4nuo2")
+metadata/_edit_lock_ = true
 
 [node name="City" type="TextureRect" parent="."]
 self_modulate = Color(0.215686, 0.282353, 0.313726, 1)
@@ -39,6 +40,7 @@ offset_right = 233.0
 offset_bottom = -74.0
 grow_vertical = 0
 texture = SubResource("CanvasTexture_4raw4")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="City"]
 layout_mode = 1
@@ -63,6 +65,7 @@ offset_top = 230.0
 offset_right = 871.0
 offset_bottom = 349.0
 texture = SubResource("CanvasTexture_def1s")
+metadata/_edit_lock_ = true
 
 [node name="Label" type="Label" parent="Water body"]
 layout_mode = 1
@@ -81,10 +84,10 @@ text = "Water  Body"
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 537.0
-offset_top = 463.0
-offset_right = 599.0
-offset_bottom = 494.0
+offset_left = 557.0
+offset_top = 473.0
+offset_right = 619.0
+offset_bottom = 504.0
 text = "Button"
 
 [node name="Button11" type="Button" parent="."]
@@ -97,18 +100,18 @@ text = "Button"
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 776.0
-offset_top = 461.0
-offset_right = 838.0
-offset_bottom = 492.0
+offset_left = 786.0
+offset_top = 476.0
+offset_right = 848.0
+offset_bottom = 507.0
 text = "Button"
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 958.0
-offset_top = 433.0
-offset_right = 1020.0
-offset_bottom = 464.0
+offset_left = 976.0
+offset_top = 480.0
+offset_right = 1038.0
+offset_bottom = 511.0
 text = "Button"
 
 [node name="Button4" type="Button" parent="."]
@@ -153,18 +156,18 @@ text = "Button"
 
 [node name="Button9" type="Button" parent="."]
 layout_mode = 0
-offset_left = 119.0
-offset_top = 45.0
-offset_right = 181.0
-offset_bottom = 76.0
+offset_left = 126.0
+offset_top = 64.0
+offset_right = 188.0
+offset_bottom = 95.0
 text = "Button"
 
 [node name="Button10" type="Button" parent="."]
 layout_mode = 0
-offset_left = 126.0
-offset_top = 199.0
-offset_right = 188.0
-offset_bottom = 230.0
+offset_left = 132.0
+offset_top = 190.0
+offset_right = 194.0
+offset_bottom = 221.0
 text = "Button"
 
 [node name="Back" type="Button" parent="."]
@@ -172,10 +175,11 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 31.0
+offset_left = -61.0
+offset_bottom = 63.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "X"
+metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

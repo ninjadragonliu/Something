@@ -1,4 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=9 format=3 uid="uid://dlhpeoka1b654"]
+
+[ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
+[ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
+[ext_resource type="PackedScene" uid="uid://c0sqejtl1m838" path="res://nodes/enemy.tscn" id="3_8j60k"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_yp4wr"]
 
@@ -9,9 +13,8 @@ specular_color = Color(0.275787, 0.48891, 0.254303, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_5a7ea"]
 
-[sub_resource type="CanvasTexture" id="CanvasTexture_8j60k"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5a7ea"]
+size = Vector2(9, 460)
 
 [node name="World" type="Control"]
 layout_mode = 3
@@ -20,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a02cp")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
@@ -43,7 +47,7 @@ offset_bottom = 651.0
 texture = SubResource("CanvasTexture_a02cp")
 metadata/_edit_lock_ = true
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="PlatformLeft" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
 offset_left = 1.0
@@ -53,7 +57,7 @@ offset_bottom = 231.0
 texture = SubResource("CanvasTexture_go701")
 metadata/_edit_lock_ = true
 
-[node name="TextureRect2" type="TextureRect" parent="."]
+[node name="PlatformRight" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
 offset_left = 873.0
@@ -72,19 +76,16 @@ offset_right = 671.0
 offset_bottom = 310.0
 texture = SubResource("CanvasTexture_5a7ea")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Label" type="Label" parent="Health"]
+layout_mode = 0
+offset_right = 171.0
+offset_bottom = 34.0
+text = "100 / 100"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Player" parent="." groups=["player"] instance=ExtResource("2_5a7ea")]
 position = Vector2(587, 394)
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-self_modulate = Color(0.677777, 0.101279, 0.357411, 1)
-position = Vector2(-1.00001, 0.499992)
-scale = Vector2(170, 143)
-texture = SubResource("CanvasTexture_8j60k")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-visible = false
-position = Vector2(588, 417)
-shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="Left" type="Button" parent="."]
 layout_mode = 1
@@ -113,12 +114,22 @@ grow_horizontal = 0
 grow_vertical = 0
 text = ">"
 
-[node name="Line2D" type="Line2D" parent="."]
-points = PackedVector2Array(441, 6, 441, 464)
+[node name="LineLeft" type="Area2D" parent="."]
+
+[node name="Line2D" type="Line2D" parent="LineLeft"]
+points = PackedVector2Array(440, 5, 440, 247, 440, 462)
 default_color = Color(0.0768358, 0.0768358, 0.0768358, 1)
-metadata/_edit_lock_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LineLeft"]
+position = Vector2(439.5, 232)
+shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="Line2D2" type="Line2D" parent="."]
 points = PackedVector2Array(735, 2, 736, 229, 736, 463)
 default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
-metadata/_edit_lock_ = true
+
+[node name="Enemy" parent="." groups=["enemies"] instance=ExtResource("3_8j60k")]
+position = Vector2(154, 416)
+
+[connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
+[connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsgm4fplk58dm"]
+[gd_scene load_steps=5 format=3 uid="uid://dsgm4fplk58dm"]
+
+[ext_resource type="Script" uid="uid://crfhyynmj2bju" path="res://Scripts/levels.gd" id="1_yh33m"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kmev3"]
 
@@ -13,6 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yh33m")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
 self_modulate = Color(3.85046e-07, 0.856162, 0.856695, 1)
@@ -121,7 +125,6 @@ offset_top = 502.0
 offset_right = 182.0
 offset_bottom = 533.0
 text = "button"
-metadata/_edit_lock_ = true
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
@@ -143,19 +146,19 @@ metadata/_edit_lock_ = true
 
 [node name="Button4" type="Button" parent="."]
 layout_mode = 0
-offset_left = 756.0
-offset_top = 39.0
-offset_right = 817.0
-offset_bottom = 70.0
+offset_left = 711.0
+offset_top = 38.0
+offset_right = 772.0
+offset_bottom = 69.0
 text = "button"
 metadata/_edit_lock_ = true
 
 [node name="Button5" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1050.0
-offset_top = 36.0
-offset_right = 1111.0
-offset_bottom = 67.0
+offset_left = 933.0
+offset_top = 37.0
+offset_right = 994.0
+offset_bottom = 68.0
 text = "button"
 metadata/_edit_lock_ = true
 
@@ -165,3 +168,16 @@ layout_mode = 0
 offset_right = 135.0
 offset_bottom = 115.0
 texture = SubResource("CanvasTexture_xgx5e")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -63.0
+offset_bottom = 65.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
