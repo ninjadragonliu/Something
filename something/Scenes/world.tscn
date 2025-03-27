@@ -137,10 +137,22 @@ default_color = Color(0.0784314, 0.0784314, 0.0784314, 1)
 position = Vector2(736, 232.5)
 shape = SubResource("RectangleShape2D_8j60k")
 
-[node name="Enemies" type="Node" parent="." groups=["enemy manager"]]
-
 [node name="Enemies2" type="Node2D" parent="."]
 script = ExtResource("3_5a7ea")
+
+[node name="EnemiesRemaining" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -124.0
+offset_top = 4.0
+offset_right = 190.0
+offset_bottom = 46.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Enemies Remaing : 10"
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

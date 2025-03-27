@@ -5,8 +5,10 @@ extends Control
 
 var enemy_in_range_left
 var enemy_in_range_right
+var enemies_remaning
 
 func _ready() -> void:
+	enemies_remaning = enemies.enemies_amount
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
 	timer.autostart = true
@@ -21,6 +23,7 @@ func _process(delta: float) -> void:
 	#for i in range(5):
 		#enemies.spawn_enemy()
 	#enemies.spawn_enemy()
+	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaning)
 
 func _on_left_pressed() -> void:
 	# if enemy comes into line
@@ -28,6 +31,7 @@ func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		#player.attack_left()
 		player.attack(enemy_in_range_left)
+		enemies_remaning -= 1
 
 
 func _on_right_pressed() -> void:
@@ -36,6 +40,7 @@ func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		#player.attack_right()
 		player.attack(enemy_in_range_right)
+		enemies_remaning -= 1
 
 
 func _on_line_left_body_entered(body: Node2D) -> void:

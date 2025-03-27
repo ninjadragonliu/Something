@@ -2,7 +2,6 @@ extends Node
 
 var enemies_num = 0
 
-var enemies_spawned_amount = 0
 var enemies_amount = 10
 var enemies_speed = 1
 var boss_speed = 1.5
@@ -31,4 +30,3 @@ func spawn_enemy():
 	enemy.speed = enemies_speed
 	add_child(enemy)
 	enemies_num += 1
-	print(enemies_num)
