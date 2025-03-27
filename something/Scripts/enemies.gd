@@ -27,4 +27,3 @@ func spawn_enemy():
 	enemy.speed = enemies_speed
 
 	add_child(enemy)
-	enemies.append(enemy)

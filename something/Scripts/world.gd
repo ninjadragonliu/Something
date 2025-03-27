@@ -7,10 +7,14 @@ extends Control
 var enemy_in_range_left
 var enemy_in_range_right
 
+func _ready() -> void:
+	enemies.spawn_enemy()
+
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/100"
-	for i in range(5):
-		enemies.spawn_enemy()
+	#for i in range(5):
+		#enemies.spawn_enemy()
+	#enemies.spawn_enemy()
 
 func _on_left_pressed() -> void:
 	# if enemy comes into line
