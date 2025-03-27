@@ -14,7 +14,6 @@ var positions  = [
 	Vector2(1150, 400)
 ]
 
-
 func _ready() -> void:
 	enemies = get_tree().get_nodes_in_group("enemy")
 
@@ -25,5 +24,4 @@ func spawn_enemy():
 
 	enemy.position = spawn_position
 	enemy.speed = enemies_speed
-
 	add_child(enemy)

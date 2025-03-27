@@ -1,14 +1,21 @@
 extends Control
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
-
 @onready var enemies = $Enemies2
 
 var enemy_in_range_left
 var enemy_in_range_right
 
 func _ready() -> void:
-	enemies.spawn_enemy()
+	var timer = Timer.new()
+	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
+	timer.autostart = true
+	timer.one_shot = false
+	
+	for i in enemies.enemies_amount:
+		timer.timeout.connect(enemies.spawn_enemy)
+	
+	add_child(timer)
 
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/100"
