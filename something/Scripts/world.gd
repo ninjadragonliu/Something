@@ -8,14 +8,20 @@ var enemy_in_range_right
 
 func _ready() -> void:
 	var timer = Timer.new()
-	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
+	timer.name = "SpawnTimer"
+	timer.wait_time = 2.0
 	timer.autostart = true
 	timer.one_shot = false
-	
-	for i in enemies.enemies_amount:
-		timer.timeout.connect(enemies.spawn_enemy)
+	timer.timeout.connect(_on_spawn_timer_timeout)
 	
 	add_child(timer)
+
+func _on_spawn_timer_timeout():
+	if enemies.enemies_spawned_amount < enemies.enemies_amount:
+		enemies.spawn_enemy()
+		enemies.enemies_spawned_amount += 1
+	else:
+		get_node("SpawnTimer").stop()
 
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/100"
