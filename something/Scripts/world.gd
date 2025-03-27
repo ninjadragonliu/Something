@@ -11,12 +11,11 @@ func _ready() -> void:
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
 	timer.autostart = true
 	timer.one_shot = false
-	
-	for i in enemies.enemies_amount:
-		timer.timeout.connect(enemies.spawn_enemy)
-	
 	add_child(timer)
 
+	timer.timeout.connect(enemies.spawn_enemy)
+	
+	
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/100"
 	#for i in range(5):

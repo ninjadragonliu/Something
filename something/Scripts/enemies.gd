@@ -1,6 +1,6 @@
 extends Node
 
-var enemies : Array
+var enemies_num = 0
 
 var enemies_amount = 10
 var enemies_speed = 1
@@ -15,9 +15,13 @@ var positions  = [
 ]
 
 func _ready() -> void:
-	enemies = get_tree().get_nodes_in_group("enemy")
+	#enemies = get_tree().get_nodes_in_group("enemy")
+	pass
 
 func spawn_enemy():
+	if enemies_num >= enemies_amount:
+		return
+	
 	var enemy_scene = preload("res://nodes/enemy.tscn")
 	var enemy = enemy_scene.instantiate()
 	var spawn_position = positions[randi() % positions.size()]
@@ -25,3 +29,5 @@ func spawn_enemy():
 	enemy.position = spawn_position
 	enemy.speed = enemies_speed
 	add_child(enemy)
+	enemies_num += 1
+	print(enemies_num)
