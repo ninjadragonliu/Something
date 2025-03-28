@@ -2,7 +2,7 @@ extends Node
 
 var enemies_num = 0
 
-var enemies_amount = 10
+@export var enemies_amount = 10
 var enemies_speed = 1
 var boss_speed = 1.5
 var spawn_duration = 0.1

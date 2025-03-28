@@ -3,9 +3,12 @@ extends Control
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var enemies = $Enemies2
 
+@export var clear_screen : PackedScene
+
 var enemy_in_range_left
 var enemy_in_range_right
 var enemies_remaining
+var level_cleared = false
 
 func _ready() -> void:
 	enemies_remaining = enemies.enemies_amount
@@ -24,14 +27,23 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/100"
-	#for i in range(5):
-		#enemies.spawn_enemy()
-	#enemies.spawn_enemy()
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+	
+	if enemies_remaining == 0 and not level_cleared:
+		clear_level()  # Call clear level only once
+		level_cleared = true  # Set flag to prevent re-triggering
+		
 
 func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
 
+func clear_level():
+	if clear_screen:
+		var popup = clear_screen.instantiate()
+		get_tree().root.add_child(popup)
+		
+		popup.call_deferred("popup_centered") 
+	
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		player.attack(enemy_in_range_left)
