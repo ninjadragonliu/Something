@@ -5,10 +5,14 @@ extends Control
 
 var enemy_in_range_left
 var enemy_in_range_right
-var enemies_remaning
+var enemies_remaining
 
 func _ready() -> void:
-	enemies_remaning = enemies.enemies_amount
+	enemies_remaining = enemies.enemies_amount
+	
+	# Connect player's signal to decrease enemy count
+	player.take_damaged.connect(_on_player_damaged)
+	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
 	timer.autostart = true
@@ -23,7 +27,10 @@ func _process(delta: float) -> void:
 	#for i in range(5):
 		#enemies.spawn_enemy()
 	#enemies.spawn_enemy()
-	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaning)
+	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+
+func _on_player_damaged():
+	enemies_remaining -= 1  # Decrease enemy count when player is hit
 
 func _on_left_pressed() -> void:
 	# if enemy comes into line
@@ -31,7 +38,7 @@ func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		#player.attack_left()
 		player.attack(enemy_in_range_left)
-		enemies_remaning -= 1
+		enemies_remaining -= 1
 
 
 func _on_right_pressed() -> void:
@@ -40,7 +47,7 @@ func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		#player.attack_right()
 		player.attack(enemy_in_range_right)
-		enemies_remaning -= 1
+		enemies_remaining -= 1
 
 
 func _on_line_left_body_entered(body: Node2D) -> void:
