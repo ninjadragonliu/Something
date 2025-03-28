@@ -33,19 +33,13 @@ func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
 
 func _on_left_pressed() -> void:
-	# if enemy comes into line
-		# attack 1 hit ko
 	if enemy_in_range_left:
-		#player.attack_left()
 		player.attack(enemy_in_range_left)
 		enemies_remaining -= 1
 
 
 func _on_right_pressed() -> void:
-	# if enemy comes into line
-		# attack 1 hit ko
 	if enemy_in_range_right:
-		#player.attack_right()
 		player.attack(enemy_in_range_right)
 		enemies_remaining -= 1
 
