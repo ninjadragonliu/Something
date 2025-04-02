@@ -32,31 +32,43 @@ func _process(delta: float) -> void:
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
 	$Health.value = Global.health
 	
-	if enemies_remaining == 0 and not level_cleared:
-		clear_level()  # Call clear level only once
-		level_cleared = true  # Set flag to prevent re-triggering
-		
+	#if enemies_remaining == 0 and not level_cleared:
+		#clear_level()  # Call clear level only once
+		#level_cleared = true  # Set flag to prevent re-triggering
+	
 
 func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
+	if enemies_remaining == 0:
+		clear_level()
 
 func clear_level():
 	if clear_screen:
 		var popup = clear_screen.instantiate()
-		get_tree().root.add_child(popup)
+		get_tree().current_scene.add_child(popup)
 		
-		popup.call_deferred("popup_centered") 
-	
+		popup.show()
+		
+		# Pause the game
+		get_tree().paused = true
+
+		# Allow the game over screen to function while paused
+		popup.process_mode = Node.PROCESS_MODE_ALWAYS
+
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		player.attack(enemy_in_range_left)
 		enemies_remaining -= 1
+		if enemies_remaining == 0:
+			clear_level()
 
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		player.attack(enemy_in_range_right)
 		enemies_remaining -= 1
+		if enemies_remaining == 0:
+			clear_level()
 
 
 func _on_line_left_body_entered(body: Node2D) -> void:
