@@ -10,9 +10,10 @@ var enemy_in_range_right
 var enemies_remaining
 var level_cleared = false
 
+
 func _ready() -> void:
 	enemies_remaining = enemies.enemies_amount
-	
+	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
 	
@@ -26,8 +27,10 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
-	$Health/Label.text = str(Global.health) + "/100"
+	
+	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+	$Health.value = Global.health
 	
 	if enemies_remaining == 0 and not level_cleared:
 		clear_level()  # Call clear level only once
