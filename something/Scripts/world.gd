@@ -39,10 +39,11 @@ func _on_player_damaged():
 		clear_level()
 
 func clear_level():
+	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
 	if clear_screen:
 		var popup = clear_screen.instantiate()
 		get_tree().current_scene.add_child(popup)
-		
+		Global.unlock_next_level()  # Mark this level as cleared
 		popup.show()
 		
 		# Pause the game
