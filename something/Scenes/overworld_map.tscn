@@ -82,93 +82,93 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Water  Body"
 
-[node name="Button" type="Button" parent="."]
+[node name="Button 10" type="Button" parent="."]
 layout_mode = 0
 offset_left = 557.0
 offset_top = 473.0
 offset_right = 619.0
 offset_bottom = 504.0
-text = "Button"
+text = "Button 10"
 
-[node name="Button11" type="Button" parent="."]
+[node name="Button 11" type="Button" parent="."]
 layout_mode = 0
 offset_left = 347.0
 offset_top = 466.0
 offset_right = 409.0
 offset_bottom = 497.0
-text = "Button"
+text = "Button 11"
 
-[node name="Button2" type="Button" parent="."]
+[node name="Button 9" type="Button" parent="."]
 layout_mode = 0
 offset_left = 786.0
 offset_top = 476.0
 offset_right = 848.0
 offset_bottom = 507.0
-text = "Button"
+text = "Button 9"
 
-[node name="Button3" type="Button" parent="."]
+[node name="Button 8" type="Button" parent="."]
 layout_mode = 0
 offset_left = 976.0
 offset_top = 480.0
 offset_right = 1038.0
 offset_bottom = 511.0
-text = "Button"
+text = "Button 8"
 
-[node name="Button4" type="Button" parent="."]
+[node name="Button 7" type="Button" parent="."]
 layout_mode = 0
 offset_left = 852.0
 offset_top = 278.0
 offset_right = 914.0
 offset_bottom = 309.0
-text = "Button"
+text = "Button 7"
 
-[node name="Button5" type="Button" parent="."]
+[node name="Button 6" type="Button" parent="."]
 layout_mode = 0
 offset_left = 991.0
 offset_top = 255.0
 offset_right = 1053.0
 offset_bottom = 286.0
-text = "Button"
+text = "Button 6"
 
-[node name="Button6" type="Button" parent="."]
+[node name="Button 4" type="Button" parent="."]
 layout_mode = 0
 offset_left = 523.0
 offset_top = 179.0
 offset_right = 585.0
 offset_bottom = 210.0
-text = "Button"
+text = "Button 4"
 
-[node name="Button7" type="Button" parent="."]
+[node name="Button 5" type="Button" parent="."]
 layout_mode = 0
 offset_left = 975.0
 offset_top = 66.0
 offset_right = 1037.0
 offset_bottom = 97.0
-text = "Button"
+text = "Button 5"
 
-[node name="Button8" type="Button" parent="."]
+[node name="Button 3" type="Button" parent="."]
 layout_mode = 0
 offset_left = 621.0
 offset_top = 53.0
 offset_right = 683.0
 offset_bottom = 84.0
-text = "Button"
+text = "Button 3"
 
-[node name="Button9" type="Button" parent="."]
+[node name="Button 2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 126.0
 offset_top = 64.0
 offset_right = 188.0
 offset_bottom = 95.0
-text = "Button"
+text = "Button 2"
 
-[node name="Button10" type="Button" parent="."]
+[node name="Button 1" type="Button" parent="."]
 layout_mode = 0
 offset_left = 132.0
 offset_top = 190.0
 offset_right = 194.0
 offset_bottom = 221.0
-text = "Button"
+text = "Button 1"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
@@ -182,4 +182,15 @@ theme_override_font_sizes/font_size = 40
 text = "X"
 metadata/_edit_lock_ = true
 
+[connection signal="pressed" from="Button 10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="Button 11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="Button 9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="Button 8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="Button 7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Button 6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Button 4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Button 5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Button 3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button 1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

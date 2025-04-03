@@ -1,7 +1,7 @@
 extends Control
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
-@onready var enemies = $Enemies2
+@onready var enemies = $Enemies
 
 @export var clear_screen : PackedScene
 
@@ -31,10 +31,6 @@ func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
 	$Health.value = Global.health
-	
-	#if enemies_remaining == 0 and not level_cleared:
-		#clear_level()  # Call clear level only once
-		#level_cleared = true  # Set flag to prevent re-triggering
 	
 
 func _on_player_damaged():
