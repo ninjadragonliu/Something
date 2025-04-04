@@ -43,6 +43,8 @@ func clear_level():
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
 	if clear_screen:
 		var popup = clear_screen.instantiate()
+		var clear_label = popup.get_node("LevelCompleted")
+		clear_label.text = "Level " + str(Global.level) + " Completed"
 		get_tree().current_scene.add_child(popup)
 		Global.unlock_next_level()  # Mark this level as cleared
 		popup.show()
@@ -57,6 +59,8 @@ func clear_tutorial_level():
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
 	if clear_screen:
 		var popup = clear_screen.instantiate()
+		var clear_label = popup.get_node("LevelCompleted")
+		clear_label.text = "Level " + str(Global.tutorial_counter) + " Completed"
 		get_tree().current_scene.add_child(popup)
 		Global.unlock_next_tutorial_level()
 		popup.show()

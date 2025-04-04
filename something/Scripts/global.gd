@@ -4,6 +4,7 @@ var max_health = 1
 var health = max_health
 var player_id
 var player_name = "John Doe"
+var coins = 0
 
 var level = 0
 var mapNumber = 1
@@ -22,6 +23,15 @@ var amplitude_Amount = 7 * min(mapNumber, 100)
 var mapConstant_Speed = 1.2 * mapNumber
 var growthFactor_Speed = 0.03
 var amplitude_Speed = 0.1 * mapNumber
+
+func _ready() -> void:
+	player_id = generate_player_id()
+
+func generate_player_id():
+	var temp = ""
+	for i in range(10):
+		temp += str(randi_range(0, 9))
+	return temp
 
 func reset_health():
 	Global.health = Global.max_health

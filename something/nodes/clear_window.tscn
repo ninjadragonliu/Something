@@ -205,3 +205,4 @@ layout_mode = 2
 text = "x 3"
 
 [connection signal="pressed" from="Ok" to="." method="_on_ok_pressed"]
+[connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]
