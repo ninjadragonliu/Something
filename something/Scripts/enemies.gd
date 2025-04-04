@@ -18,10 +18,10 @@ var positions  = [
 func _ready() -> void:
 	if Global.tutorial_cleared:
 		enemies_amount = sin(Global.level*PI/2 + 3*PI/2)*Global.amplitude_Amount+Global.mapConstant_Amount+Global.level*Global.growthFactor_Amount
-		enemies_speed = max(30, cos(Global.level*PI/2)*Global.amplitude_Speed+Global.mapConstant_Speed+Global.level*Global.growthFactor_Speed)
+		enemies_speed = min(30, cos(Global.level*PI/2)*Global.amplitude_Speed+Global.mapConstant_Speed+Global.level*Global.growthFactor_Speed)
 	else:
 		enemies_amount = sin(Global.tutorial_counter*PI/2 + 3*PI/2)*Global.amplitude_Amount+Global.mapConstant_Amount+Global.tutorial_counter*Global.growthFactor_Amount
-		enemies_speed = max(30, cos(Global.tutorial_counter*PI/2)*Global.amplitude_Speed+Global.mapConstant_Speed+Global.tutorial_counter*Global.growthFactor_Speed)
+		enemies_speed = min(30, cos(Global.tutorial_counter*PI/2)*Global.amplitude_Speed+Global.mapConstant_Speed+Global.tutorial_counter*Global.growthFactor_Speed)
 
 func spawn_enemy():
 	if enemies_num >= enemies_amount:
