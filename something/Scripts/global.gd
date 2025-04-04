@@ -11,6 +11,7 @@ var growthFactor = 0.5
 var amplitude = 5 * min(mapNumber,100)
 var cleared_levels = []
 var levels_in_map = 11
+var tutorial_cleared = false
 
 func reset_health():
 	Global.health = Global.max_health

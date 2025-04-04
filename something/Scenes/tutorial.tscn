@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dsgm4fplk58dm"]
 
-[ext_resource type="Script" uid="uid://crfhyynmj2bju" path="res://Scripts/levels.gd" id="1_yh33m"]
+[ext_resource type="Script" uid="uid://crfhyynmj2bju" path="res://Scripts/tutorial.gd" id="1_ka2pi"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_kmev3"]
 
@@ -8,14 +8,14 @@
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xgx5e"]
 
-[node name="Levels" type="Control"]
+[node name="Tutorial" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_yh33m")
+script = ExtResource("1_ka2pi")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
@@ -170,6 +170,7 @@ offset_bottom = 115.0
 texture = SubResource("CanvasTexture_xgx5e")
 
 [node name="Back" type="Button" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

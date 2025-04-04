@@ -120,6 +120,7 @@ offset_right = 236.0
 offset_bottom = -44.0
 grow_vertical = 0
 text = "<"
+metadata/_edit_lock_ = true
 
 [node name="Right" type="Button" parent="."]
 layout_mode = 1
@@ -135,9 +136,11 @@ offset_bottom = -32.0
 grow_horizontal = 0
 grow_vertical = 0
 text = ">"
+metadata/_edit_lock_ = true
 
 [node name="LineLeft" type="Area2D" parent="."]
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Line2D" type="Line2D" parent="LineLeft"]
 points = PackedVector2Array(440, 5, 440, 247, 440, 462)
@@ -149,6 +152,7 @@ shape = SubResource("RectangleShape2D_5a7ea")
 
 [node name="LineRight" type="Area2D" parent="."]
 metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
 
 [node name="Line2D2" type="Line2D" parent="LineRight"]
 points = PackedVector2Array(736, 2, 736, 229, 736, 463)
