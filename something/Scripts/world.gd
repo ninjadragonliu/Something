@@ -26,6 +26,7 @@ func _ready() -> void:
 	timer.timeout.connect(enemies.spawn_enemy)
 	
 	
+	
 func _process(delta: float) -> void:
 	
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
@@ -52,11 +53,27 @@ func clear_level():
 		# Allow the game over screen to function while paused
 		popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
+func clear_tutorial_level():
+	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+	if clear_screen:
+		var popup = clear_screen.instantiate()
+		get_tree().current_scene.add_child(popup)
+		Global.unlock_next_tutorial_level()
+		popup.show()
+		
+		# Pause the game
+		get_tree().paused = true
+
+		# Allow the game over screen to function while paused
+		popup.process_mode = Node.PROCESS_MODE_ALWAYS
+
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		player.attack(enemy_in_range_left)
 		enemies_remaining -= 1
-		if enemies_remaining == 0:
+		if not Global.tutorial_cleared:
+			clear_tutorial_level()
+		elif enemies_remaining == 0:
 			clear_level()
 
 
@@ -64,7 +81,9 @@ func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		player.attack(enemy_in_range_right)
 		enemies_remaining -= 1
-		if enemies_remaining == 0:
+		if not Global.tutorial_cleared:
+			clear_tutorial_level()
+		elif enemies_remaining == 0:
 			clear_level()
 
 

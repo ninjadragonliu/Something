@@ -16,8 +16,10 @@ var positions  = [
 ]
 
 func _ready() -> void:
-	enemies_amount = Global.level * Global.growthFactor + Global.mapConstant + sin(Global.level) * Global.amplitude
-	#enemies = get_tree().get_nodes_in_group("enemy")
+	if Global.tutorial_cleared:
+		enemies_amount = Global.level * Global.growthFactor + Global.mapConstant + sin(Global.level) * Global.amplitude
+	else:
+		enemies_amount = Global.tutorial_counter * Global.growthFactor + Global.mapConstant + sin(Global.tutorial_counter) * Global.amplitude
 
 func spawn_enemy():
 	if enemies_num >= enemies_amount:
