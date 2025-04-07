@@ -1,5 +1,8 @@
 extends Popup
 
+func _ready() -> void:
+	Global.coins += Global.mapNumber * 100 + Global.level * 10
+	$Currency.text = "Coins: " + str(Global.coins)
 
 func _on_ok_pressed() -> void:
 	if Global.tutorial_cleared:
