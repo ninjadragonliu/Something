@@ -30,12 +30,12 @@ metadata/_edit_lock_ = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = 93.0
-offset_right = 211.0
-offset_bottom = -190.0
+offset_top = 134.0
+offset_right = 212.0
+offset_bottom = -149.0
 grow_vertical = 2
 alignment = 1
+metadata/_edit_group_ = true
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2

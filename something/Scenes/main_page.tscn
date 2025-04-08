@@ -1,8 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkk4rsqjvw7k6"]
 
 [ext_resource type="Script" uid="uid://ba53vu8f6w35s" path="res://Scripts/main_page.gd" id="1_n6snj"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_dnbbj"]
+[ext_resource type="Texture2D" uid="uid://ddbfem3qq6kh8" path="res://Assets/blue_checkmark.png" id="2_uc2y8"]
 
 [node name="Main Page" type="Control"]
 layout_mode = 3
@@ -21,11 +20,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Profile Pic" type="TextureRect" parent="Panel"]
+[node name="Profile Pic" type="TextureButton" parent="Panel"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 118.0
-texture = SubResource("CanvasTexture_dnbbj")
+texture_normal = ExtResource("2_uc2y8")
+stretch_mode = 0
 
 [node name="Play" type="Button" parent="Panel"]
 layout_mode = 1
@@ -59,6 +59,7 @@ offset_left = 159.0
 offset_top = 17.0
 offset_right = 267.0
 offset_bottom = 94.0
+metadata/_edit_group_ = true
 
 [node name="PlayerName" type="Label" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -127,5 +128,9 @@ offset_right = 821.0
 offset_bottom = 33.0
 text = "+"
 
+[connection signal="pressed" from="Panel/Profile Pic" to="." method="_on_profile_pic_pressed"]
 [connection signal="pressed" from="Panel/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/Character" to="." method="_on_character_pressed"]
 [connection signal="pressed" from="Panel/buttons/Events" to="." method="_on_events_pressed"]
+[connection signal="pressed" from="Panel/buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Panel/buttons/Shop" to="." method="_on_shop_pressed"]
