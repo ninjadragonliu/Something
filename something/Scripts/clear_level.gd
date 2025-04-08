@@ -1,8 +1,28 @@
 extends Popup
 
+var temp = Global.max_health/3
+var temp2 = temp*2
 func _ready() -> void:
 	Global.coins += Global.mapNumber * 100 + Global.level * 10
-	$Currency.text = "Coins: " + str(Global.coins)
+	$Coins.text = "Coins: " + str(Global.coins)
+	match Global.health:
+		temp:
+			$"Stars/Star 1".frame = 1
+			$"Stars/Star 2".frame = 0
+			$"Stars/Star 3".frame = 0
+		temp2:
+			$"Stars/Star 1".frame = 1
+			$"Stars/Star 2".frame = 1
+			$"Stars/Star 3".frame = 0
+		Global.max_health:
+			$"Stars/Star 1".frame = 1
+			$"Stars/Star 2".frame = 1
+			$"Stars/Star 3".frame = 1
+		_:
+			$"Stars/Star 1".frame = 0
+			$"Stars/Star 2".frame = 0
+			$"Stars/Star 3".frame = 0
+
 
 func _on_ok_pressed() -> void:
 	if Global.tutorial_cleared:

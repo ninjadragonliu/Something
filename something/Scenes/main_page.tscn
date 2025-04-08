@@ -78,7 +78,7 @@ theme_override_font_sizes/font_size = 22
 text = "Wave"
 metadata/_edit_lock_ = true
 
-[node name="Currency" type="Label" parent="Panel"]
+[node name="Coins" type="Label" parent="Panel"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -88,7 +88,7 @@ offset_right = -92.0
 offset_bottom = 24.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 22
-text = "Currency : 3,000 coins"
+text = "Coins : 3,000"
 
 [node name="buttons" type="VBoxContainer" parent="Panel"]
 layout_mode = 1

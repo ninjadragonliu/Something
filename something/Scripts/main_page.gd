@@ -3,7 +3,7 @@ extends Control
 func _ready() -> void:
 	$Panel/VBoxContainer/PlayerName.text = "Player Name: " + Global.player_name
 	$Panel/VBoxContainer/ID.text = "ID: " + Global.player_id
-	$Panel/Currency.text = "Coins: " + str(Global.coins)
+	$Panel/Coins.text = "Coins: " + str(Global.coins)
 
 func _on_events_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/events.tscn")

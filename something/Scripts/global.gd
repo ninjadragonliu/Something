@@ -1,6 +1,6 @@
 extends Node
 
-var max_health = 1
+var max_health = 9
 var health = max_health
 var player_id
 var player_name = "John Doe"
@@ -11,7 +11,7 @@ var mapNumber = 1
 var cleared_levels = []
 var levels_in_map = 11
 
-var tutorial_cleared = false
+var tutorial_cleared = true
 var tutorial_levels = 5
 var cleared_tutorial_levels = []
 var tutorial_counter = 1
