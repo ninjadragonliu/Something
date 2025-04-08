@@ -15,9 +15,11 @@ func _on_back_pressed() -> void:
 	await get_tree().process_frame
 	hide()
 
-
 func _on_popup_confirmed() -> void:
-	Global.player_name = $Name/LineEdit.text
+	if $Name/LineEdit.text == Global.player_name:
+		print("Your name is already this.")
+	else:
+		Global.player_name = $Name/LineEdit.text
 
 func _on_texture_button_pressed() -> void:
 	$Name.show()
