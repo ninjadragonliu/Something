@@ -9,6 +9,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$VBoxContainer/PlayerName.text = "Player Name: " + Global.player_name
+	$Introduction.text = Global.intro_text
 
 func _on_back_pressed() -> void:
 	get_tree().paused = false
@@ -24,3 +25,10 @@ func _on_popup_confirmed() -> void:
 func _on_texture_button_pressed() -> void:
 	$Name.show()
 	$Name/LineEdit.placeholder_text = "Enter new player name"
+
+func _on_accept_dialog_confirmed() -> void:
+	Global.intro_text = $Intro/TextEdit.text
+
+func _on_button_pressed() -> void:
+	$Intro.show()
+	$Intro/TextEdit.text = $Introduction.text

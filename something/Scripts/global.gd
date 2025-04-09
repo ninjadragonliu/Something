@@ -5,6 +5,7 @@ var health = max_health
 var player_id
 var player_name = "John Doe"
 var vip_status = false
+var intro_text = "Introduce yourself"
 var coins = 0
 
 var level = 0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqhxbb5e6y7gu"]
+[gd_scene load_steps=9 format=3 uid="uid://dqhxbb5e6y7gu"]
 
 [ext_resource type="Script" uid="uid://d4fpr4o3na6na" path="res://Scripts/profile.gd" id="1_2k2d6"]
 [ext_resource type="Texture2D" uid="uid://cng0u2t2rawoi" path="res://Assets/green_cross.png" id="1_ot2ja"]
@@ -10,6 +10,9 @@
 bg_color = Color(0.174453, 0.445515, 0.445613, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5moa6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dalnn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [node name="Profile" type="Popup"]
@@ -135,6 +138,15 @@ grow_vertical = 0
 theme_override_font_sizes/normal_font_size = 30
 text = "Introduce yourself"
 
+[node name="Button" type="Button" parent="Introduction"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_dalnn")
+
 [node name="Name" type="AcceptDialog" parent="."]
 title = ""
 initial_position = 1
@@ -148,6 +160,20 @@ offset_top = 8.0
 offset_right = 392.0
 offset_bottom = 51.0
 
+[node name="Intro" type="AcceptDialog" parent="."]
+title = ""
+initial_position = 1
+size = Vector2i(600, 200)
+ok_button_text = "Confirm"
+
+[node name="TextEdit" type="TextEdit" parent="Intro"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 592.0
+offset_bottom = 151.0
+
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="VBoxContainer/PlayerName/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Introduction/Button" to="." method="_on_button_pressed"]
 [connection signal="confirmed" from="Name" to="." method="_on_popup_confirmed"]
+[connection signal="confirmed" from="Intro" to="." method="_on_accept_dialog_confirmed"]
