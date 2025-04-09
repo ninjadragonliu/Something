@@ -1,13 +1,14 @@
 [gd_scene load_steps=9 format=3 uid="uid://dqhxbb5e6y7gu"]
 
 [ext_resource type="Script" uid="uid://d4fpr4o3na6na" path="res://Scripts/profile.gd" id="1_2k2d6"]
-[ext_resource type="Texture2D" uid="uid://cng0u2t2rawoi" path="res://Assets/green_cross.png" id="1_ot2ja"]
-[ext_resource type="Texture2D" uid="uid://bxcdfndrml0yq" path="res://Assets/green_sliderRight.png" id="2_2k2d6"]
-[ext_resource type="Texture2D" uid="uid://c8e1ilffyasj" path="res://Assets/blue_sliderLeft.png" id="3_5moa6"]
-[ext_resource type="Texture2D" uid="uid://c8gl6mrp57aha" path="res://Assets/green_boxCheckmark.png" id="3_knc83"]
+[ext_resource type="Texture2D" path="res://Assets/green_sliderRight.png" id="2_2k2d6"]
+[ext_resource type="Texture2D" path="res://Assets/blue_sliderLeft.png" id="3_5moa6"]
+[ext_resource type="Texture2D" path="res://Assets/green_boxCheckmark.png" id="3_knc83"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knc83"]
 bg_color = Color(0.174453, 0.445515, 0.445613, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_knc83"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5moa6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -35,7 +36,7 @@ offset_left = 33.0
 offset_top = 39.0
 offset_right = 156.0
 offset_bottom = 156.0
-texture_normal = ExtResource("1_ot2ja")
+texture_normal = SubResource("CanvasTexture_knc83")
 stretch_mode = 0
 
 [node name="Back" type="Button" parent="."]

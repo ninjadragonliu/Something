@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://dkk4rsqjvw7k6"]
 
 [ext_resource type="Script" uid="uid://ba53vu8f6w35s" path="res://Scripts/main_page.gd" id="1_n6snj"]
-[ext_resource type="Texture2D" uid="uid://ddbfem3qq6kh8" path="res://Assets/blue_checkmark.png" id="2_uc2y8"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_n6snj"]
 
 [node name="Main Page" type="Control"]
 layout_mode = 3
@@ -24,7 +25,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 118.0
-texture_normal = ExtResource("2_uc2y8")
+texture_normal = SubResource("CanvasTexture_n6snj")
 stretch_mode = 0
 
 [node name="Play" type="Button" parent="Panel"]
