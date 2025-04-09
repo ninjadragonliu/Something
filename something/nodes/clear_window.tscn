@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://umxr8kup42na"]
 
 [ext_resource type="Script" uid="uid://cgs1w7tkoecon" path="res://Scripts/clear_level.gd" id="1_plr2a"]
-[ext_resource type="Texture2D" uid="uid://bjtgkn4fyq2lg" path="res://Assets/test.png" id="2_cqvqk"]
+[ext_resource type="Texture2D" uid="uid://cirxdeeicglky" path="res://Assets/stars.png" id="2_w8748"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c66do"]
 bg_color = Color(0.430905, 0.374954, 0.64342, 1)
@@ -113,28 +113,28 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_fo5ed")
 metadata/_edit_lock_ = true
 
 [node name="Star 1" type="Sprite2D" parent="Stars"]
-position = Vector2(18, 17)
-scale = Vector2(1.71429, 1.7)
-texture = ExtResource("2_cqvqk")
+position = Vector2(21.9822, 17.175)
+scale = Vector2(0.434395, 0.392188)
+texture = ExtResource("2_w8748")
 hframes = 2
 region_enabled = true
-region_rect = Rect2(0, 0, 41, 21)
+region_rect = Rect2(0, 0, 184, 96)
 
 [node name="Star 2" type="Sprite2D" parent="Stars"]
-position = Vector2(63, 17)
-scale = Vector2(1.7619, 1.65)
-texture = ExtResource("2_cqvqk")
+position = Vector2(64, 17)
+scale = Vector2(0.434395, 0.392188)
+texture = ExtResource("2_w8748")
 hframes = 2
 region_enabled = true
-region_rect = Rect2(0, 0, 41, 20)
+region_rect = Rect2(0, 0, 184, 96)
 
 [node name="Star 3" type="Sprite2D" parent="Stars"]
-position = Vector2(109.75, 16.5)
-scale = Vector2(1.88095, 1.75)
-texture = ExtResource("2_cqvqk")
+position = Vector2(107, 17)
+scale = Vector2(0.434395, 0.392188)
+texture = ExtResource("2_w8748")
 hframes = 2
 region_enabled = true
-region_rect = Rect2(0, 0, 41, 20)
+region_rect = Rect2(0, 0, 184, 96)
 
 [node name="GridContainer" type="GridContainer" parent="."]
 anchors_preset = 8
