@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
 [ext_resource type="Script" uid="uid://b6x87sv7lgrec" path="res://Scripts/enemies.gd" id="3_5a7ea"]
+[ext_resource type="Texture2D" uid="uid://d2xrg4l5upc3k" path="res://Assets/red-cloud-view-with-pixel-art-style_475147-251.jpg" id="3_fo5ed"]
 [ext_resource type="PackedScene" uid="uid://umxr8kup42na" path="res://nodes/clear_window.tscn" id="4_8j60k"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_yp4wr"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_a02cp"]
 specular_color = Color(0.275787, 0.48891, 0.254303, 1)
@@ -36,15 +35,16 @@ clear_screen = ExtResource("4_8j60k")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]
-self_modulate = Color(0.65098, 1, 1, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_top = -124.0
+offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = SubResource("CanvasTexture_yp4wr")
-metadata/_edit_lock_ = true
+texture = ExtResource("3_fo5ed")
+expand_mode = 1
 
 [node name="Ground" type="TextureRect" parent="."]
 modulate = Color(0.174241, 0.685644, 0.198529, 1)
