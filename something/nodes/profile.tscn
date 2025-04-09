@@ -1,9 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqhxbb5e6y7gu"]
+[gd_scene load_steps=7 format=3 uid="uid://dqhxbb5e6y7gu"]
 
 [ext_resource type="Script" uid="uid://d4fpr4o3na6na" path="res://Scripts/profile.gd" id="1_2k2d6"]
-[ext_resource type="Texture2D" path="res://Assets/green_sliderRight.png" id="2_2k2d6"]
-[ext_resource type="Texture2D" path="res://Assets/blue_sliderLeft.png" id="3_5moa6"]
-[ext_resource type="Texture2D" path="res://Assets/green_boxCheckmark.png" id="3_knc83"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knc83"]
 bg_color = Color(0.174453, 0.445515, 0.445613, 1)
@@ -12,6 +9,8 @@ bg_color = Color(0.174453, 0.445515, 0.445613, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5moa6"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xuaho"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dalnn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -69,7 +68,6 @@ offset_left = 397.0
 offset_top = 7.0
 offset_right = 437.0
 offset_bottom = 47.0
-texture_normal = ExtResource("3_5moa6")
 
 [node name="ID" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -80,7 +78,6 @@ metadata/_edit_lock_ = true
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 visible = false
 layout_mode = 2
-texture = ExtResource("3_knc83")
 stretch_mode = 2
 
 [node name="Label" type="Label" parent="VBoxContainer/TextureRect"]
@@ -92,6 +89,7 @@ offset_bottom = 30.0
 text = "VIP"
 
 [node name="Change Background" type="TextureButton" parent="."]
+self_modulate = Color(0.141176, 1, 0.184314, 1)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -100,7 +98,7 @@ offset_top = 55.0
 offset_right = -1.0
 offset_bottom = 95.0
 grow_horizontal = 0
-texture_normal = ExtResource("2_2k2d6")
+texture_normal = SubResource("CanvasTexture_xuaho")
 
 [node name="Character" type="Panel" parent="."]
 offset_left = 685.0

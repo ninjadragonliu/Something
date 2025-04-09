@@ -2,7 +2,7 @@ extends Control
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var enemies = $Enemies
-
+@onready var animatation = player.get_node("AnimationPlayer")
 @export var clear_screen : PackedScene
 
 var enemy_in_range_left
@@ -72,10 +72,10 @@ func clear_tutorial_level():
 		popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_left_pressed() -> void:
-	$World/Player/AnimationPlayer.play("Attack_Normal_Left")
 	if enemy_in_range_left:
 		player.attack(enemy_in_range_left)
 		enemies_remaining -= 1
+		animatation.play("Attack_Normal_Left")
 		if not Global.tutorial_cleared:
 			clear_tutorial_level()
 		elif enemies_remaining == 0:
@@ -83,10 +83,10 @@ func _on_left_pressed() -> void:
 
 
 func _on_right_pressed() -> void:
-	$World/Player/AnimationPlayer.play("Attack_Normal_Right")
 	if enemy_in_range_right:
 		player.attack(enemy_in_range_right)
 		enemies_remaining -= 1
+		animatation.play("Attack_Normal_Right")
 		if not Global.tutorial_cleared:
 			clear_tutorial_level()
 		elif enemies_remaining == 0:
