@@ -72,6 +72,7 @@ func clear_tutorial_level():
 		popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_left_pressed() -> void:
+	$World/Player/AnimationPlayer.play("Attack_Normal_Left")
 	if enemy_in_range_left:
 		player.attack(enemy_in_range_left)
 		enemies_remaining -= 1
@@ -82,6 +83,7 @@ func _on_left_pressed() -> void:
 
 
 func _on_right_pressed() -> void:
+	$World/Player/AnimationPlayer.play("Attack_Normal_Right")
 	if enemy_in_range_right:
 		player.attack(enemy_in_range_right)
 		enemies_remaining -= 1
