@@ -1,5 +1,7 @@
 extends Popup
 
+func _ready() -> void:
+	$Coins.text = "Coins: " + str(Global.coins)
 
 func _on_back_to_map_pressed() -> void:
 	if Global.tutorial_cleared:
