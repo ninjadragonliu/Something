@@ -63,6 +63,8 @@ text = "Player Name: "
 metadata/_edit_lock_ = true
 
 [node name="TextureButton" type="TextureButton" parent="VBoxContainer/PlayerName"]
+modulate = Color(0.518328, 0.461525, 0.379353, 1)
+self_modulate = Color(0.207723, 0.431137, 0.50481, 1)
 layout_mode = 0
 offset_left = 397.0
 offset_top = 7.0

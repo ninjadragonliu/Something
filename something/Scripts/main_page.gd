@@ -20,10 +20,10 @@ func _on_play_pressed() -> void:
 		get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
 
 func _on_settings_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/settings.tscn")
 
 func _on_shop_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 
 func _on_character_pressed() -> void:
 	pass # Replace with function body.
