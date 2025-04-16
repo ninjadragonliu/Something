@@ -1,4 +1,4 @@
-extends Popup
+extends Window
 
 func _ready() -> void:
 	

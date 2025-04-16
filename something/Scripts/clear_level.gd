@@ -1,4 +1,4 @@
-extends Popup
+extends Window
 
 var temp = Global.max_health/3
 var temp2 = temp*2

@@ -15,10 +15,12 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dalnn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[node name="Profile" type="Popup"]
+[node name="Profile" type="Window"]
 initial_position = 1
 size = Vector2i(1100, 600)
-visible = true
+transient = true
+exclusive = true
+borderless = true
 script = ExtResource("1_2k2d6")
 
 [node name="Panel" type="Panel" parent="."]

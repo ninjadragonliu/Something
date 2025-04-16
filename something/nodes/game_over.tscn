@@ -5,11 +5,13 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c66do"]
 bg_color = Color(0.266603, 0.253731, 0.276689, 1)
 
-[node name="Game Over" type="Popup"]
+[node name="Game Over" type="Window"]
 auto_translate_mode = 1
 initial_position = 1
 size = Vector2i(700, 400)
-visible = true
+transient = true
+exclusive = true
+borderless = true
 script = ExtResource("1_dadei")
 
 [node name="Panel" type="Panel" parent="."]
