@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://2u3tk0iqe4jh" path="res://Assets/Animation/character_animation_attack.png" id="2_bms3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
-size = Vector2(170, 143)
+size = Vector2(111, 165)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u63mc"]
-size = Vector2(170, 142)
+size = Vector2(111, 165)
 
 [sub_resource type="Animation" id="Animation_me0cc"]
 resource_name = "Attack_Normal_Left"
@@ -112,13 +112,13 @@ region_enabled = true
 region_rect = Rect2(0, 0, 600, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 0.5)
+position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_go701")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1, 0)
+position = Vector2(-0.5, 4.5)
 shape = SubResource("RectangleShape2D_u63mc")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
