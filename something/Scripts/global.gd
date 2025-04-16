@@ -7,6 +7,7 @@ var player_name = "John Doe"
 var vip_status = false
 var intro_text = "Introduce yourself"
 var coins = 0
+var diamonds = 0
 
 var level = 0
 var mapNumber = 1

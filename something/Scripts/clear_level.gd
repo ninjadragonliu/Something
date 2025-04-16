@@ -4,7 +4,8 @@ var temp = Global.max_health/3
 var temp2 = temp*2
 func _ready() -> void:
 	Global.coins += Global.mapNumber * 100 + Global.level * 10
-	$Coins.text = "Coins: " + str(Global.coins)
+	$VBoxContainer/Coins.text = "Coins: " + str(Global.coins)
+	$VBoxContainer/Diamonds.text = "Diamonds: " + str(Global.diamonds)
 	if Global.health == Global.max_health:
 		$"Stars/Star 1".frame = 0
 		$"Stars/Star 2".frame = 0
