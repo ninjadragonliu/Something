@@ -3,13 +3,14 @@ extends Control
 var profile : PackedScene = load("res://nodes/profile.tscn")
 
 func _ready() -> void:
+	Global.load_data()
 	$VBoxContainer/ID.text = "ID: " + Global.player_id
 	
 func _process(delta: float) -> void:
 	$VBoxContainer/PlayerName.text = "Player Name: " + Global.player_name
 	$VBoxContainer2/Coins.text = "Coins: " + str(Global.coins)
 	$VBoxContainer2/Diamonds.text = "Diamonds: " + str(Global.diamonds)
- 
+
 func _on_events_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/events.tscn")
 
