@@ -1,5 +1,6 @@
 extends Node
 
+#region New Code Region
 var max_health = 9
 var health = max_health
 var player_id
@@ -8,25 +9,37 @@ var vip_status = false
 var intro_text = "Introduce yourself"
 var coins = 0
 var diamonds = 0
+#endregion
 
+#region New Code Region
 var level = 0
 var mapNumber = 1
 var cleared_levels: Array[int] = []
 var levels_in_map = 11
+#endregion
 
+#region New Code Region
 var tutorial_cleared = true
 var tutorial_levels = 5
 var cleared_tutorial_levels: Array[int] = []
 var tutorial_counter = 1
+#endregion
 
+#region New Code Region
 var mapConstant_Amount = 20 * mapNumber
 var growthFactor_Amount = 2
 var amplitude_Amount = 7 * min(mapNumber, 100)
+#endregion
 
+#region New Code Region
 var mapConstant_Speed = 1.2 * mapNumber
 var growthFactor_Speed = 0.03
 var amplitude_Speed = 0.1 * mapNumber
 var was_data_loaded = false
+#endregion
+
+var costumes = []
+var skills = []
 
 func _ready() -> void:
 	player_id = generate_player_id()
