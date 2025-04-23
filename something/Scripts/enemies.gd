@@ -9,9 +9,9 @@ var boss_speed = 1.5
 var spawn_duration = 0.1
 
 var positions  = [
-	Vector2(1, 150),
+	Vector2(1, 100),
 	Vector2(1, 400),
-	Vector2(1150, 150),
+	Vector2(1150, 100),
 	Vector2(1150, 400)
 ]
 

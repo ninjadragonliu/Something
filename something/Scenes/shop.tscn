@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b58sux74o2wjs"]
 
 [ext_resource type="Script" uid="uid://dhl2sjde6bkl6" path="res://Scripts/shop.gd" id="1_a0mxf"]
-[ext_resource type="PackedScene" path="res://Scenes/store_item.tscn" id="2_2shtd"]
+[ext_resource type="PackedScene" uid="uid://b2utovt4d6tv8" path="res://Scenes/store_item.tscn" id="2_2shtd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6mhmv"]
 
