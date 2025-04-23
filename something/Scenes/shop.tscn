@@ -1,8 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://b58sux74o2wjs"]
+[gd_scene load_steps=6 format=3 uid="uid://b58sux74o2wjs"]
 
 [ext_resource type="Script" uid="uid://dhl2sjde6bkl6" path="res://Scripts/shop.gd" id="1_a0mxf"]
+[ext_resource type="PackedScene" uid="uid://b2utovt4d6tv8" path="res://Scenes/store_item.tscn" id="2_2shtd"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_6mhmv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2shtd"]
+bg_color = Color(0.577697, 0.708223, 0.930097, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
+bg_color = Color(0.576471, 0.709804, 0.929412, 1)
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -36,12 +43,16 @@ theme_override_constants/separation = -1
 
 [node name="Costume" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.734863, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2shtd")
 text = "Costume"
 
 [node name="Skills" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
 text = "Skills"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
@@ -63,6 +74,37 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="GridContainer" type="GridContainer" parent="Costume"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 52.0
+offset_right = 910.0
+offset_bottom = 386.0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 40
+columns = 5
+
+[node name="Costume 1" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Costume/GridContainer/Costume 1" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Costume 2" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 3" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 4" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 5" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 6" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
 [node name="Skills" type="Panel" parent="."]
 visible = false
 layout_mode = 1
@@ -77,6 +119,51 @@ offset_right = 576.0
 offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Skills"]
+offset_left = 1.0
+offset_top = 52.0
+offset_right = 910.0
+offset_bottom = 386.0
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 40
+columns = 5
+
+[node name="Skill 1" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 1" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Skill 2" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 2" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Skill 3" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 3" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Skill 4" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 4" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Skill 5" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 5" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+
+[node name="Skill 6" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="TextureRect" parent="Skills/GridContainer/Skill 6" index="0"]
+self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
@@ -103,3 +190,11 @@ text = "X"
 [connection signal="pressed" from="VBoxContainer/Costume" to="." method="_on_costume_pressed"]
 [connection signal="pressed" from="VBoxContainer/Skills" to="." method="_on_skills_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+
+[editable path="Costume/GridContainer/Costume 1"]
+[editable path="Skills/GridContainer/Skill 1"]
+[editable path="Skills/GridContainer/Skill 2"]
+[editable path="Skills/GridContainer/Skill 3"]
+[editable path="Skills/GridContainer/Skill 4"]
+[editable path="Skills/GridContainer/Skill 5"]
+[editable path="Skills/GridContainer/Skill 6"]

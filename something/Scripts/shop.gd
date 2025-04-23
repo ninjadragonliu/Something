@@ -7,7 +7,7 @@ func _on_back_pressed() -> void:
 
 func _on_costume_pressed() -> void:
 	$Costume.show()
-	$Skills.show()
+	$Skills.hide()
 
 
 func _on_skills_pressed() -> void:
