@@ -98,7 +98,7 @@ metadata/_edit_group_ = true
 [node name="Coins" type="Label" parent="VBoxContainer2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 22
-text = "Coins : 3,000"
+text = "Coins : "
 
 [node name="Diamonds" type="Label" parent="VBoxContainer2"]
 layout_mode = 2

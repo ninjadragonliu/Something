@@ -1,11 +1,100 @@
-[gd_scene load_steps=4 format=3 uid="uid://1sglcl0xf1jt"]
+[gd_scene load_steps=8 format=3 uid="uid://1sglcl0xf1jt"]
 
 [ext_resource type="Script" uid="uid://8jvahrca4qxw" path="res://Scripts/enemy.gd" id="1_vx18p"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_fo5ed"]
+[ext_resource type="Texture2D" uid="uid://ld8h4jmif5ad" path="res://Assets/Animation/character_animation_running_enemy.png" id="2_g5f4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
 size = Vector2(132, 89)
+
+[sub_resource type="Animation" id="Animation_j04cv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 480, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_5wlsd"]
+resource_name = "running_ToRight"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 480, 210), Rect2(120, 0, 480, 210), Rect2(240, 0, 480, 210), Rect2(0, 0, 480, 210), Rect2(120, 0, 480, 210), Rect2(240, 0, 480, 210), Rect2(0, 0, 480, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.6),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_g5f4b"]
+resource_name = "running_ToLeft"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 480, 210), Rect2(120, 0, 480, 210), Rect2(240, 0, 480, 210), Rect2(0, 0, 480, 210), Rect2(120, 0, 480, 210), Rect2(240, 0, 480, 210), Rect2(0, 0, 480, 210)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cgypo"]
+_data = {
+&"RESET": SubResource("Animation_j04cv"),
+&"running_ToLeft": SubResource("Animation_g5f4b"),
+&"running_ToRight": SubResource("Animation_5wlsd")
+}
 
 [node name="Enemy" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_vx18p")
@@ -14,9 +103,17 @@ metadata/_edit_group_ = true
 [node name="Sprite2D" type="Sprite2D" parent="."]
 self_modulate = Color(0.427451, 0.313726, 1, 1)
 position = Vector2(-3.8147e-06, 0.500012)
-scale = Vector2(132, 89)
-texture = SubResource("CanvasTexture_fo5ed")
+texture = ExtResource("2_g5f4b")
+flip_h = true
+hframes = 4
+region_enabled = true
+region_rect = Rect2(0, 0, 480, 210)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_5ukr8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cgypo")
+}
