@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://1sglcl0xf1jt"]
 
 [ext_resource type="Script" uid="uid://8jvahrca4qxw" path="res://Scripts/enemy.gd" id="1_vx18p"]
-[ext_resource type="Texture2D" uid="uid://ld8h4jmif5ad" path="res://Assets/Animation/character_animation_running_enemy.png" id="2_g5f4b"]
+[ext_resource type="Texture2D" uid="uid://dar1igmabajw" path="res://Assets/Animation/StickmanPack/Run/thickRunSheet.png" id="2_g5f4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
 size = Vector2(132, 89)
@@ -109,7 +109,7 @@ self_modulate = Color(0.427451, 0.313726, 1, 1)
 position = Vector2(-3.8147e-06, 0.500012)
 texture = ExtResource("2_g5f4b")
 flip_h = true
-hframes = 7
+hframes = 9
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 210)
 
