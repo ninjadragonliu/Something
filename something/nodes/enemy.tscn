@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://1sglcl0xf1jt"]
 
 [ext_resource type="Script" uid="uid://8jvahrca4qxw" path="res://Scripts/enemy.gd" id="1_vx18p"]
-[ext_resource type="Texture2D" uid="uid://dar1igmabajw" path="res://Assets/Animation/StickmanPack/Run/thickRunSheet.png" id="2_g5f4b"]
+[ext_resource type="Texture2D" uid="uid://ld8h4jmif5ad" path="res://Assets/Animation/character_animation_running_enemy.png" id="2_g5f4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ukr8"]
 size = Vector2(132, 89)
@@ -35,9 +35,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_g5f4b"]
 resource_name = "running_ToLeft"
-length = 0.06
+length = 0.07
 loop_mode = 1
-step = 0.12
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -57,17 +57,17 @@ tracks/1/path = NodePath("Sprite2D:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Rect2(0, 0, 840, 210), Rect2(120, 0, 840, 210), Rect2(240, 0, 840, 210), Rect2(360, 0, 840, 210), Rect2(480, 0, 840, 210), Rect2(600, 0, 840, 210)]
+"values": [Rect2(0, 0, 960, 210), Rect2(120, 0, 960, 210), Rect2(240, 0, 960, 210), Rect2(360, 0, 960, 210), Rect2(480, 0, 960, 210), Rect2(600, 0, 960, 210), Rect2(720, 0, 960, 210), Rect2(840, 0, 960, 210)]
 }
 
 [sub_resource type="Animation" id="Animation_5wlsd"]
 resource_name = "running_ToRight"
-length = 0.06
+length = 0.07
 loop_mode = 1
-step = 0.12
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -87,10 +87,10 @@ tracks/1/path = NodePath("Sprite2D:region_rect")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Rect2(0, 0, 840, 210), Rect2(120, 0, 840, 210), Rect2(240, 0, 840, 210), Rect2(360, 0, 840, 210), Rect2(480, 0, 840, 210), Rect2(600, 0, 840, 210)]
+"values": [Rect2(0, 0, 960, 210), Rect2(120, 0, 960, 210), Rect2(240, 0, 960, 210), Rect2(360, 0, 960, 210), Rect2(480, 0, 960, 210), Rect2(600, 0, 960, 210), Rect2(720, 0, 960, 210), Rect2(840, 0, 960, 210)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgypo"]
@@ -109,7 +109,7 @@ self_modulate = Color(0.427451, 0.313726, 1, 1)
 position = Vector2(-3.8147e-06, 0.500012)
 texture = ExtResource("2_g5f4b")
 flip_h = true
-hframes = 9
+hframes = 8
 region_enabled = true
 region_rect = Rect2(0, 0, 480, 210)
 
