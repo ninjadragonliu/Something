@@ -9,6 +9,7 @@ var enemy_in_range_left = []
 var enemy_in_range_right = []
 var enemies_remaining
 var level_cleared = false
+var player_damaged = false
 
 
 func _ready() -> void:
@@ -30,17 +31,18 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
-	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+	$EnemiesRemaining/Label.text = str(enemies_remaining)
 	$Health.value = Global.health
 	
 
 func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
+	player_damaged = true
 	if enemies_remaining == 0:
 		clear_level()
 
 func clear_level():
-	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
+	$EnemiesRemaining/Label.text = str(enemies_remaining)
 	if clear_screen:
 		var popup = clear_screen.instantiate()
 		var clear_label = popup.get_node("LevelCompleted")
@@ -76,6 +78,9 @@ func clear_tutorial_level():
 
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
+		if player_damaged:
+			enemy_in_range_left.remove_at(0)
+			player_damaged = false
 		for enemy in enemy_in_range_left:
 			player.attack(enemy)
 			enemy_in_range_left.remove_at(0)
@@ -89,6 +94,9 @@ func _on_left_pressed() -> void:
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
+		if player_damaged:
+			enemy_in_range_right.remove_at(0)
+			player_damaged = false
 		for enemy in enemy_in_range_right:
 			player.attack(enemy)
 			enemy_in_range_right.remove_at(0)
