@@ -5,8 +5,8 @@ extends Control
 @onready var animatation = player.get_node("AnimationPlayer")
 @export var clear_screen : PackedScene
 
-var enemy_in_range_left = []
-var enemy_in_range_right = []
+var enemy_in_range_left
+var enemy_in_range_right
 var enemies_remaining
 var level_cleared = false
 
@@ -76,34 +76,30 @@ func clear_tutorial_level():
 
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
-		for enemy in enemy_in_range_left:
-			player.attack(enemy)
-			enemy_in_range_left.remove_at(0)
-			enemies_remaining -= 1
-			animatation.play("Attack_Normal_Left")
-			if not Global.tutorial_cleared:
-				clear_tutorial_level()
-			elif enemies_remaining == 0:
-				clear_level()
+		player.attack(enemy_in_range_left)
+		enemies_remaining -= 1
+		animatation.play("Attack_Normal_Left")
+		if not Global.tutorial_cleared:
+			clear_tutorial_level()
+		elif enemies_remaining == 0:
+			clear_level()
 
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
-		for enemy in enemy_in_range_right:
-			player.attack(enemy)
-			enemy_in_range_right.remove_at(0)
-			enemies_remaining -= 1
-			animatation.play("Attack_Normal_Right")
-			if not Global.tutorial_cleared:
-				clear_tutorial_level()
-			elif enemies_remaining == 0:
-				clear_level()
+		player.attack(enemy_in_range_right)
+		enemies_remaining -= 1
+		animatation.play("Attack_Normal_Right")
+		if not Global.tutorial_cleared:
+			clear_tutorial_level()
+		elif enemies_remaining == 0:
+			clear_level()
 
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		enemy_in_range_left.append(body)
+		enemy_in_range_left = body
 
 func _on_line_right_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy"):
-		enemy_in_range_right.append(body)
+		enemy_in_range_right = body
