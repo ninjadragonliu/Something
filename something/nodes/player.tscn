@@ -125,6 +125,6 @@ shape = SubResource("RectangleShape2D_u63mc")
 libraries = {
 &"": SubResource("AnimationLibrary_hqdnm")
 }
-speed_scale = 0.4
+speed_scale = 0.8
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

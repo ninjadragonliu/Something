@@ -22,6 +22,7 @@ func _ready() -> void:
 	else:
 		enemies_amount = sin(Global.tutorial_counter*PI/2 + 3*PI/2)*Global.amplitude_Amount+Global.mapConstant_Amount+Global.tutorial_counter*Global.growthFactor_Amount
 		enemies_speed = min(30, cos(Global.tutorial_counter*PI/2)*Global.amplitude_Speed+Global.mapConstant_Speed+Global.tutorial_counter*Global.growthFactor_Speed)
+		
 
 func spawn_enemy():
 	if enemies_num >= enemies_amount:
@@ -30,8 +31,10 @@ func spawn_enemy():
 	var enemy_scene = preload("res://nodes/enemy.tscn")
 	var enemy = enemy_scene.instantiate()
 	var spawn_position = positions[randi() % positions.size()]
+	var animation = enemy.get_node("AnimationPlayer")
 
 	enemy.position = spawn_position
-	enemy.speed = enemies_speed
+	enemy.speed = enemies_speed+randf_range(-0.15*enemies_speed, max(0.5,0.2*enemies_speed))
+	animation.speed_scale = 0.08 + enemies_speed*0.01
 	add_child(enemy)
 	enemies_num += 1
