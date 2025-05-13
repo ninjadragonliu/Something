@@ -1,5 +1,12 @@
 extends Node
 
+var positions  = [
+	Vector2(1, 100),
+	Vector2(1, 400),
+	Vector2(1150, 100),
+	Vector2(1150, 400)
+]
+
 #region New Code Region
 var max_health = 9
 var health = max_health

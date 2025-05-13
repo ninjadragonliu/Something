@@ -162,7 +162,6 @@ shape = SubResource("RectangleShape2D_8j60k")
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_5a7ea")
-enemies_amount = 2
 
 [node name="EnemiesRemaining" type="Label" parent="."]
 layout_mode = 1
