@@ -79,6 +79,12 @@ func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		for enemy in enemy_in_range_left:
 			if enemy.is_in_group("boss"):
+				var boss = get_tree().get_first_node_in_group("boss")
+				if boss.health == 1:
+					player.attack(enemy)
+					enemy_in_range_left.erase(enemy)
+					enemies_remaining -= 1
+					continue
 				player.attack(enemy)
 				enemy_in_range_left.erase(enemy)
 				continue
@@ -96,6 +102,12 @@ func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
 			if enemy.is_in_group("boss"):
+				var boss = get_tree().get_first_node_in_group("boss")
+				if boss.health == 1:
+					player.attack(enemy)
+					enemy_in_range_right.erase(enemy)
+					enemies_remaining -= 1
+					continue
 				player.attack(enemy)
 				enemy_in_range_right.erase(enemy)
 				continue
