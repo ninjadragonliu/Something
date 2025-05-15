@@ -7,9 +7,9 @@ extends Control
 
 var enemy_in_range_left = []
 var enemy_in_range_right = []
-var enemies_remaining
 var level_cleared = false
 var player_damaged = false
+var enemies_remaining
 signal left
 signal right
 

@@ -9,8 +9,6 @@ var enemies_num = 0
 var enemies_speed = 1
 var boss_speed = 1.5
 
-
-// var world = 
 var enemy = preload("res://nodes/enemy.tscn").instantiate()
 var boss = preload("res://nodes/boss.tscn").instantiate()
 
@@ -43,6 +41,7 @@ func spawn_enemy():
 	add_child(enemy)
 	enemies_num += 1
 	
+	var world = get_parent()
 	if world.enemies_remaining == boss.spawn_line:
 		spawn_boss()
 
