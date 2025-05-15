@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animatation = $AnimationPlayer
 var max_health = 5
 var health = max_health
+var attack = 3
 var speed = 1
 var spawn_line = 30
 
