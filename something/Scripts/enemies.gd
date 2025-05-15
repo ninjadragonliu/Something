@@ -9,7 +9,6 @@ var enemies_num = 0
 var enemies_speed = 1
 var boss_speed = 1.5
 
-var enemy = preload("res://nodes/enemy.tscn").instantiate()
 var boss = preload("res://nodes/boss.tscn").instantiate()
 
 func _ready() -> void:
@@ -32,6 +31,7 @@ func spawn_enemy():
 	if enemies_num >= enemies_amount:
 		return
 	
+	var enemy = preload("res://nodes/enemy.tscn").instantiate()
 	var spawn_position = Global.positions[randi() % Global.positions.size()]
 	var animation = enemy.get_node("AnimationPlayer")
 
