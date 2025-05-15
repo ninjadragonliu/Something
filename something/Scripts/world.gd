@@ -77,10 +77,13 @@ func clear_tutorial_level():
 
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
-		print(enemy_in_range_left)
 		for enemy in enemy_in_range_left:
+			if enemy.is_in_group("boss"):
+				player.attack(enemy)
+				enemy_in_range_left.erase(enemy)
+				continue
 			player.attack(enemy)
-			enemy_in_range_left.remove_at(0)
+			enemy_in_range_left.erase(enemy)
 			enemies_remaining -= 1
 			animatation.play("Attack_Normal_Left")
 			if not Global.tutorial_cleared:
@@ -92,9 +95,12 @@ func _on_left_pressed() -> void:
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
+			if enemy.is_in_group("boss"):
+				player.attack(enemy)
+				enemy_in_range_right.erase(enemy)
+				continue
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
-			print("erase enemy " + str(enemy_in_range_right))
 			enemies_remaining -= 1
 			animatation.play("Attack_Normal_Right")
 			if not Global.tutorial_cleared:
@@ -104,11 +110,9 @@ func _on_right_pressed() -> void:
 
 
 func _on_line_left_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") or body.is_in_group("boss"):
 		enemy_in_range_left.append(body)
-		print("adding enemy to left " + str(enemy_in_range_left))
 
 func _on_line_right_body_entered(body: Node2D) -> void:
-	if body.is_in_group("enemy"):
+	if body.is_in_group("enemy") or body.is_in_group("boss"):
 		enemy_in_range_right.append(body)
-		print("adding enemy to right " + str(enemy_in_range_right))

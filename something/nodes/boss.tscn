@@ -13,10 +13,10 @@ bg_color = Color(0.247059, 0.854902, 0.239216, 1)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p3s3x"]
 size = Vector2(173.5, 128)
 
-[node name="boss" type="CharacterBody2D" groups=["enemy"]]
+[node name="boss" type="CharacterBody2D" groups=["boss"]]
 script = ExtResource("1_kjr47")
 
-[node name="Health" type="ProgressBar" parent="."]
+[node name="Health" type="ProgressBar" parent="." groups=["boss"]]
 offset_top = -28.0
 offset_right = 172.0
 offset_bottom = -1.0
