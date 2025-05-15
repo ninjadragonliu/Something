@@ -16,6 +16,7 @@ func _ready() -> void:
 	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
+	player.boss_hit_player.connect(_on_player_hit_by_boss)
 	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
@@ -40,6 +41,9 @@ func _on_player_damaged():
 	if enemies_remaining == 0:
 		clear_level()
 
+func _on_player_hit_by_boss():
+	player_damaged = true
+	
 func clear_level():
 	$EnemiesRemaining/Label.text = str(enemies_remaining)
 	if clear_screen:

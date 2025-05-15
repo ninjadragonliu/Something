@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var game_over : PackedScene = load("res://nodes/game_over.tscn")
 signal take_damaged
+signal boss_hit_player
 
 func attack(body : Node2D):
 	#if body.is_in_group("enemy"):
@@ -37,7 +38,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				current_scene.enemy_in_range_right.erase(body)
 				#print("✅ Removed enemy from right array:", body)
 		body.position = Global.positions[randi() % Global.positions.size()]
-		take_damaged.emit()
+		boss_hit_player.emit()
 
 	if body.is_in_group("enemy"):
 		take_damage(1)
