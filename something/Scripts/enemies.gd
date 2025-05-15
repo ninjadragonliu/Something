@@ -10,7 +10,7 @@ var enemies_speed = 1
 var boss_speed = 1.5
 
 var enemy = preload("res://nodes/enemy.tscn")
-var boss = preload("res://nodes/boss.tscn").instantiate()
+var boss = preload("res://nodes/boss.tscn")
 
 func _ready() -> void:
 	if Global.tutorial_cleared:
@@ -32,8 +32,19 @@ func spawn_enemy():
 	if enemies_num >= enemies_amount:
 		return
 	
-	var enemy = enemy.instantiate()
 	var spawn_position = Global.positions[randi() % Global.positions.size()]
+	# Spawning for boss
+	var boss = boss.instantiate()
+	if enemies_amount-enemies_num == boss.spawn_line:
+		var animation = boss.get_node("AnimationPlayer")
+
+		boss.position = spawn_position
+		animation.speed_scale = 0.08 + boss_speed*0.01
+		add_child(boss)
+		enemies_num += 1
+		return
+	# Spawning for enemy
+	var enemy = enemy.instantiate()
 	var animation = enemy.get_node("AnimationPlayer")
 
 	
@@ -42,16 +53,3 @@ func spawn_enemy():
 	animation.speed_scale = 0.08 + enemies_speed*0.01
 	add_child(enemy)
 	enemies_num += 1
-	
-	var world = get_parent()
-	if world.enemies_remaining == boss.spawn_line:
-		spawn_boss()
-
-func spawn_boss():
-	
-	var spawn_position = Global.positions[randi() % Global.positions.size()]
-	var animation = boss.get_node("AnimationPlayer")
-
-	boss.position = spawn_position
-	animation.speed_scale = 0.08 + boss_speed*0.01
-	add_child(boss)

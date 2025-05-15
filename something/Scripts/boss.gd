@@ -5,7 +5,7 @@ extends CharacterBody2D
 
 var health = 5
 var speed = 1
-var spawn_line = 1
+var spawn_line = 30
 
 func _process(delta: float) -> void:
 	if player.position.x - position.x > 0:
