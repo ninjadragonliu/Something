@@ -10,8 +10,6 @@ var enemy_in_range_right = []
 var level_cleared = false
 var player_damaged = false
 var enemies_remaining
-signal left
-signal right
 
 func _ready() -> void:
 	enemies_remaining = enemies.enemies_amount

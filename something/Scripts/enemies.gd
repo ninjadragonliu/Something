@@ -9,7 +9,7 @@ var enemies_num = 0
 var enemies_speed = 1
 var boss_speed = 1.5
 
-var enemy = preload("res://nodes/enemy.tscn").instantiate()
+var enemy = preload("res://nodes/enemy.tscn")
 var boss = preload("res://nodes/boss.tscn").instantiate()
 
 func _ready() -> void:
@@ -32,9 +32,11 @@ func spawn_enemy():
 	if enemies_num >= enemies_amount:
 		return
 	
+	var enemy = enemy.instantiate()
 	var spawn_position = Global.positions[randi() % Global.positions.size()]
 	var animation = enemy.get_node("AnimationPlayer")
 
+	
 	enemy.position = spawn_position
 	enemy.speed = enemies_speed+randf_range(-0.15*enemies_speed, max(0.5,0.25*enemies_speed))
 	animation.speed_scale = 0.08 + enemies_speed*0.01
@@ -46,6 +48,7 @@ func spawn_enemy():
 		spawn_boss()
 
 func spawn_boss():
+	
 	var spawn_position = Global.positions[randi() % Global.positions.size()]
 	var animation = boss.get_node("AnimationPlayer")
 
