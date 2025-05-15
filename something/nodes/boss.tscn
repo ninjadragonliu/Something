@@ -1,12 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dutd7wdecg5k2"]
+[gd_scene load_steps=4 format=3 uid="uid://dutd7wdecg5k2"]
 
 [ext_resource type="Script" uid="uid://bvdk5l2l20xsk" path="res://Scripts/boss.gd" id="1_kjr47"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_kjr47"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3s3x"]
+size = Vector2(173.5, 128)
 
 [node name="boss" type="CharacterBody2D"]
 script = ExtResource("1_kjr47")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 0.388235, 0.184314, 1)
+position = Vector2(85.75, 63.25)
+scale = Vector2(172.5, 127.5)
+texture = SubResource("CanvasTexture_kjr47")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(85.75, 63)
+shape = SubResource("RectangleShape2D_p3s3x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
