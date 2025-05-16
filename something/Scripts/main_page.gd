@@ -3,7 +3,6 @@ extends Control
 var profile : PackedScene = load("res://nodes/profile.tscn")
 
 func _ready() -> void:
-	Global.load_data()
 	$VBoxContainer/ID.text = "ID: " + Global.player_id
 	
 func _process(delta: float) -> void:

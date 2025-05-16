@@ -16,6 +16,7 @@ var vip_status = false
 var intro_text = "Introduce yourself"
 var coins = 0
 var diamonds = 0
+var last_login_date = ""
 #endregion
 
 #region New Code Region
@@ -81,7 +82,8 @@ func save_game_data():
 		"vip_status": vip_status,
 		"intro_text": intro_text,
 		"tutorial_counter": tutorial_counter,
-		"cleared_tutorial_levels": cleared_tutorial_levels
+		"cleared_tutorial_levels": cleared_tutorial_levels,
+		"last_login_date": last_login_date
 	}
 	SaveSystem.save_game(data)
 	print("💾 Global data saved:", data)
@@ -117,4 +119,5 @@ func load_data():
 		for i in loaded_array2:
 			cleared_tutorial_levels.append(int(i))
 		was_data_loaded = true
+		last_login_date = data.get("last_login_date", "")
 		print("✅ Global data loaded:", data)
