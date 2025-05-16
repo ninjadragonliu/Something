@@ -1,18 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3eawq1pp0ecf"]
+[gd_scene load_steps=4 format=3 uid="uid://d3eawq1pp0ecf"]
 
 [ext_resource type="Script" uid="uid://d15a1ln2hocf8" path="res://Scripts/daily_bonus.gd" id="1_7h5kw"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_c5dom"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7h5kw"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_w8wry"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_rxxdj"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_cywd0"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7g4qa"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_8ji1w"]
 
@@ -47,291 +37,6 @@ text = "Daily Login"
 horizontal_alignment = 1
 metadata/_edit_lock_ = true
 
-[node name="GridContainer" type="GridContainer" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -577.0
-offset_top = -241.0
-offset_right = 576.0
-offset_bottom = 321.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 7
-metadata/_edit_lock_ = true
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer2"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer2"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer2"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer2"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer2"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer3" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer3"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer3"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer3"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer3"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer3"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer4" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer4"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer4"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer4"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer4"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer4"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer4"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer5" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer5"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer5"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer5"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer5"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer5"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer5"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer6" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer6"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer6"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer6"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer6"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer6"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer6"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="VBoxContainer7" type="VBoxContainer" parent="GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="TextureRect" type="TextureRect" parent="GridContainer/VBoxContainer7"]
-self_modulate = Color(1, 0.462745, 1, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7h5kw")
-
-[node name="TextureRect2" type="TextureRect" parent="GridContainer/VBoxContainer7"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_w8wry")
-
-[node name="TextureRect3" type="TextureRect" parent="GridContainer/VBoxContainer7"]
-self_modulate = Color(1, 1, 0.352941, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_rxxdj")
-
-[node name="TextureRect4" type="TextureRect" parent="GridContainer/VBoxContainer7"]
-self_modulate = Color(0.72735, 0.620159, 0.480154, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_cywd0")
-
-[node name="TextureRect5" type="TextureRect" parent="GridContainer/VBoxContainer7"]
-self_modulate = Color(0.488727, 0.353406, 0.749044, 1)
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-texture = SubResource("CanvasTexture_7g4qa")
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer/VBoxContainer7"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -345,234 +50,240 @@ offset_right = 575.0
 offset_bottom = 322.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 30
 metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 0.396078, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 1, 0.521569, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(0.376471, 1, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(1, 0.564706, 0.568627, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(0.752941, 1, 0.223529, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
 self_modulate = Color(0.321569, 0.321569, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(1, 0.396078, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(1, 1, 0.521569, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(0.376471, 1, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(1, 0.564706, 0.568627, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(0.752941, 1, 0.223529, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
 self_modulate = Color(0.321569, 0.321569, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(1, 0.396078, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(1, 1, 0.521569, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(0.376471, 1, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(1, 0.564706, 0.568627, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(0.752941, 1, 0.223529, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
 self_modulate = Color(0.321569, 0.321569, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(1, 0.396078, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(1, 1, 0.521569, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(0.376471, 1, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(1, 0.564706, 0.568627, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(0.752941, 1, 0.223529, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
 self_modulate = Color(0.321569, 0.321569, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
 layout_mode = 2
 theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(1, 0.396078, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 25)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect2" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect3" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(1, 1, 0.521569, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect4" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(0.376471, 1, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect5" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(1, 0.564706, 0.568627, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect6" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(0.752941, 1, 0.223529, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="TextureRect7" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
 self_modulate = Color(0.321569, 0.321569, 1, 1)
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(80, 50)
 layout_mode = 2
 texture = SubResource("CanvasTexture_8ji1w")
