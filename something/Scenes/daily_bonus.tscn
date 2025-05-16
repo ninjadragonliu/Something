@@ -345,10 +345,11 @@ offset_right = 575.0
 offset_bottom = 322.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
@@ -394,7 +395,7 @@ texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer2"]
@@ -440,7 +441,7 @@ texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer3"]
@@ -486,7 +487,7 @@ texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer4"]
@@ -532,7 +533,7 @@ texture = SubResource("CanvasTexture_8ji1w")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 75
+theme_override_constants/separation = 60
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer5"]
