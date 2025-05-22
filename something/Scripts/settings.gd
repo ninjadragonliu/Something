@@ -4,6 +4,10 @@ var email = ""
 var details = ""
 var code = ""
 
+func _ready():
+	var UID = $General/UID
+	UID.text = Global.player_id
+
 func _on_back_pressed() -> void:
 	Global.save_game_data()
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
