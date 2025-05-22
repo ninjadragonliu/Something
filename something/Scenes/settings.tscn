@@ -35,7 +35,7 @@ grow_vertical = 2
 script = ExtResource("1_4geyq")
 
 [node name="Background" type="TextureRect" parent="."]
-self_modulate = Color(1, 0.298039, 0.368627, 1)
+self_modulate = Color(0.652071, 0, 0.163455, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -44,15 +44,25 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_eyi13")
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 69.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+horizontal_alignment = 1
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 self_modulate = Color(0.4, 0.219608, 0.494118, 1)
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -323.5
+offset_top = -249.0
 offset_right = 204.0
-offset_bottom = 323.5
+offset_bottom = 324.0
 grow_vertical = 2
 theme_override_constants/separation = -1
 
@@ -80,6 +90,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_4geyq")
 [node name="General" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 200.0
+offset_top = 73.0
 offset_right = 1153.0
 offset_bottom = 646.0
 mouse_filter = 2
@@ -92,15 +103,27 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -255.5
-offset_top = -201.0
-offset_right = -44.5
-offset_bottom = -159.0
+offset_left = -259.5
+offset_top = -181.5
+offset_right = -48.5
+offset_bottom = -139.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_i44u3")
 text = "UID:"
+
+[node name="Label" type="Label" parent="General/UID"]
+layout_mode = 0
+offset_left = -77.0
+offset_top = 2.0
+offset_right = 6.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 30
+text = "UID："
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="Resolution" type="OptionButton" parent="General"]
 layout_mode = 1
@@ -211,21 +234,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="General"]
-layout_mode = 0
-offset_left = 146.0
-offset_top = 120.0
-offset_right = 227.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 30
-text = "UID："
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Support" type="Panel" parent="."]
 visible = false
 layout_mode = 0
 offset_left = 200.0
+offset_top = 73.0
 offset_right = 1153.0
 offset_bottom = 646.0
 mouse_filter = 2
@@ -309,14 +322,15 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -331.0
-offset_top = -125.0
-offset_right = -220.0
-offset_bottom = -73.876
+offset_left = -313.0
+offset_top = -111.0
+offset_right = -202.0
+offset_bottom = -59.876
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Submit"
+metadata/_edit_lock_ = true
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1
