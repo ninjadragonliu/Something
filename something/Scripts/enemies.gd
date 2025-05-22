@@ -22,7 +22,6 @@ func _ready() -> void:
 		
 	boss_speed = 1.3*enemies_speed
 	spawn_duration = 30/enemies_speed
-	print(spawn_duration)
 	spawn_timer = Timer.new()
 	add_child(spawn_timer)
 	spawn_timer.timeout.connect(spawn_enemy)
