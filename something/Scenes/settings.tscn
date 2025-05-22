@@ -1,8 +1,14 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7i2048r8mry2"]
+[gd_scene load_steps=10 format=3 uid="uid://b7i2048r8mry2"]
 
 [ext_resource type="Script" uid="uid://ddtgx5pom42ct" path="res://Scripts/settings.gd" id="1_4geyq"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_eyi13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j2dne"]
+bg_color = Color(0.560784, 0.603922, 0.376471, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6kysc"]
+bg_color = Color(0.560784, 0.603922, 0.376471, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4geyq"]
 bg_color = Color(0.282353, 0.282353, 0.282353, 0.603922)
@@ -52,12 +58,18 @@ theme_override_constants/separation = -1
 
 [node name="General" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.506844, 0.224033, 0.710026, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_j2dne")
+toggle_mode = true
 text = "General"
 
 [node name="Support" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.505882, 0.223529, 0.709804, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6kysc")
+toggle_mode = true
 text = "Support"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
