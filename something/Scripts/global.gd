@@ -2,9 +2,9 @@ extends Node
 
 var positions  = [
 	Vector2(1, 100),
-	Vector2(1, 400),
+	Vector2(1, 385),
 	Vector2(1150, 100),
-	Vector2(1150, 400)
+	Vector2(1150, 385)
 ]
 
 #region New Code Region

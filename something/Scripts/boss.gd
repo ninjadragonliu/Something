@@ -14,14 +14,14 @@ func _process(delta: float) -> void:
 	$Health/Label.text = str(health) + "/" + str(max_health)
 	if player.position.x - position.x > 0:
 		position.x += speed
-		animatation.play("running_ToRight")
+		#animatation.play("running_ToRight")
 		if position.x >= 279.0 and position.y == 100:
-			position.y = 400.0
+			position.y = 385.0
 	elif player.position.x - position.x < 0:
 		position.x -= speed
-		animatation.play("running_ToLeft")
+		#animatation.play("running_ToLeft")
 		if position.x <= 873.0 and position.y == 100:
-			position.y = 400.0
+			position.y = 385.0
 
 func take_damage(damage : int):
 	health -= damage
