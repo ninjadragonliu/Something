@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b58sux74o2wjs"]
+[gd_scene load_steps=8 format=3 uid="uid://b58sux74o2wjs"]
 
 [ext_resource type="Script" uid="uid://dhl2sjde6bkl6" path="res://Scripts/shop.gd" id="1_a0mxf"]
 [ext_resource type="PackedScene" uid="uid://b2utovt4d6tv8" path="res://Scenes/store_item.tscn" id="2_2shtd"]
@@ -9,6 +9,12 @@
 bg_color = Color(0.577697, 0.708223, 0.930097, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
+bg_color = Color(0.576471, 0.709804, 0.929412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fdj0q"]
+bg_color = Color(0.576471, 0.709804, 0.929412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6jq0"]
 bg_color = Color(0.576471, 0.709804, 0.929412, 1)
 
 [node name="Shop" type="Control"]
@@ -46,6 +52,7 @@ layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.734863, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2shtd")
+toggle_mode = true
 text = "Costume"
 
 [node name="Skills" type="Button" parent="VBoxContainer"]
@@ -53,16 +60,23 @@ layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
+toggle_mode = true
 text = "Skills"
 
 [node name="Weapons" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fdj0q")
+toggle_mode = true
 text = "Weapons"
 
 [node name="Equipment" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6jq0")
+toggle_mode = true
 text = "Equipment"
 
 [node name="Panel" type="Panel" parent="VBoxContainer"]
@@ -205,7 +219,7 @@ columns = 5
 layout_mode = 2
 
 [node name="TextureRect" parent="Weapons/GridContainer/Skill 1" index="0"]
-self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+self_modulate = Color(0.758774, 0.878858, 0.371976, 1)
 
 [node name="Skill 2" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
@@ -266,7 +280,7 @@ columns = 5
 layout_mode = 2
 
 [node name="TextureRect" parent="Equipment/GridContainer/Skill 1" index="0"]
-self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
+self_modulate = Color(0.572041, 0.876755, 0.922636, 1)
 
 [node name="Skill 2" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
