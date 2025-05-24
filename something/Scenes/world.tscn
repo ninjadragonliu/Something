@@ -44,13 +44,12 @@ texture = ExtResource("3_fo5ed")
 expand_mode = 1
 
 [node name="Ground" type="TextureRect" parent="."]
+self_modulate = Color(0.980263, 0.649225, 0.629422, 1)
 layout_mode = 0
-offset_left = 2.0
 offset_top = 475.0
-offset_right = 1153.0
+offset_right = 1152.0
 offset_bottom = 660.0
 texture = ExtResource("4_5ukr8")
-metadata/_edit_lock_ = true
 
 [node name="PlatformLeft" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
