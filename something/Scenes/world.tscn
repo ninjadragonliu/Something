@@ -55,18 +55,18 @@ texture = ExtResource("4_5ukr8")
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
 offset_left = -1.0
-offset_top = 177.0
+offset_top = 190.0
 offset_right = 309.0
-offset_bottom = 231.0
+offset_bottom = 244.0
 texture = ExtResource("5_o06y3")
 
 [node name="PlatformRight" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
 offset_left = 844.0
-offset_top = 177.0
+offset_top = 190.0
 offset_right = 1154.0
-offset_bottom = 231.0
+offset_bottom = 244.0
 texture = ExtResource("5_o06y3")
 flip_h = true
 
