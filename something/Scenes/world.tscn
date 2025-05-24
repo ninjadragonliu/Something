@@ -6,8 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d2xrg4l5upc3k" path="res://Assets/red-cloud-view-with-pixel-art-style_475147-251.jpg" id="3_fo5ed"]
 [ext_resource type="Texture2D" uid="uid://dme0hqlqv07ng" path="res://Assets/Landscape/stage.png" id="4_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://umxr8kup42na" path="res://nodes/clear_window.tscn" id="4_8j60k"]
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_go701"]
+[ext_resource type="Texture2D" uid="uid://cp5u1usid1f40" path="res://Assets/Landscape/platform_left.png" id="5_o06y3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -56,22 +55,21 @@ metadata/_edit_lock_ = true
 [node name="PlatformLeft" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
-offset_left = 1.0
+offset_left = -1.0
 offset_top = 177.0
-offset_right = 280.0
+offset_right = 309.0
 offset_bottom = 231.0
-texture = SubResource("CanvasTexture_go701")
-metadata/_edit_lock_ = true
+texture = ExtResource("5_o06y3")
 
 [node name="PlatformRight" type="TextureRect" parent="."]
 self_modulate = Color(0.893515, 0.420776, 0.278331, 1)
 layout_mode = 0
-offset_left = 873.0
+offset_left = 844.0
 offset_top = 177.0
-offset_right = 1152.0
+offset_right = 1154.0
 offset_bottom = 231.0
-texture = SubResource("CanvasTexture_go701")
-metadata/_edit_lock_ = true
+texture = ExtResource("5_o06y3")
+flip_h = true
 
 [node name="Health" type="ProgressBar" parent="."]
 layout_mode = 0
