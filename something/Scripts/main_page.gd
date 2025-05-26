@@ -27,7 +27,7 @@ func _on_shop_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
 
 func _on_character_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Scenes/character_page.tscn")
 
 func _on_profile_pic_pressed() -> void:
 	if profile:

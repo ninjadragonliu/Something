@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=14 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
 
@@ -7,6 +7,33 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkdtw"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_xkdtw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hxf2x"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42qqq"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2psqf"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5y8m"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pi1no"]
+bg_color = Color(0.6, 0.827451, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ck1n1"]
+bg_color = Color(0.6, 0.6, 0.211765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a33jj"]
+bg_color = Color(0.187748, 0.55817, 0.64594, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mkmqd"]
+bg_color = Color(0.926408, 0.832791, 0.644594, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h2jp"]
+bg_color = Color(0.487766, 0.718664, 0.200745, 1)
 
 [node name="CharacterPage" type="Control"]
 layout_mode = 3
@@ -103,7 +130,117 @@ offset_right = 431.0
 offset_bottom = 484.0
 text = "Current Skill"
 
-[node name="Button" type="Button" parent="."]
+[node name="Equipment" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Weapon2" type="Button" parent="Equipment"]
+z_index = 5
+layout_mode = 0
+offset_left = 26.0
+offset_top = 50.0
+offset_right = 190.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_hxf2x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_42qqq")
+toggle_mode = true
+text = "Weapon"
+
+[node name="Armor2" type="Button" parent="Equipment"]
+z_index = 5
+offset_left = 190.0
+offset_top = 50.0
+offset_right = 354.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
+theme_override_styles/normal = SubResource("StyleBoxFlat_c5y8m")
+toggle_mode = true
+text = "Armor"
+
+[node name="Placeholder2" type="Button" parent="Equipment"]
+z_index = 5
+offset_left = 354.0
+offset_top = 50.0
+offset_right = 533.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
+theme_override_styles/normal = SubResource("StyleBoxFlat_ck1n1")
+toggle_mode = true
+text = "Placeholder"
+
+[node name="Weapon" type="Panel" parent="Equipment"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 50.0
+offset_right = 540.0
+offset_bottom = 578.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_a33jj")
+metadata/_edit_lock_ = true
+
+[node name="Armor" type="Panel" parent="Equipment"]
+visible = false
+layout_mode = 0
+offset_left = 19.0
+offset_top = 50.0
+offset_right = 539.0
+offset_bottom = 578.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="Placeholder" type="Panel" parent="Equipment"]
+visible = false
+layout_mode = 0
+offset_left = 19.0
+offset_top = 50.0
+offset_right = 539.0
+offset_bottom = 578.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -133.0
+offset_top = -108.0
+offset_bottom = 115.0
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="Equip" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "EQUIP"
+
+[node name="Skill" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "SKILL"
+
+[node name="Customize" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "CUSTOMIZE"
+
+[node name="Back" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -114,15 +251,4 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "X"
 
-[node name="Panel2" type="Panel" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -680.0
-offset_top = -322.0
-offset_bottom = 322.0
-grow_horizontal = 0
-grow_vertical = 2
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
