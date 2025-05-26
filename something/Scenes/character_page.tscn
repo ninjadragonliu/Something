@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=17 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
 
@@ -34,6 +34,15 @@ bg_color = Color(0.926408, 0.832791, 0.644594, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h2jp"]
 bg_color = Color(0.487766, 0.718664, 0.200745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lvidk"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ec72m"]
+bg_color = Color(0.6, 0.243137, 0.6, 1)
 
 [node name="CharacterPage" type="Control"]
 layout_mode = 3
@@ -153,7 +162,7 @@ offset_top = 50.0
 offset_right = 190.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hxf2x")
 theme_override_styles/normal = SubResource("StyleBoxFlat_42qqq")
 toggle_mode = true
@@ -166,7 +175,7 @@ offset_top = 50.0
 offset_right = 354.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c5y8m")
 toggle_mode = true
@@ -179,7 +188,7 @@ offset_top = 50.0
 offset_right = 533.0
 offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ck1n1")
 toggle_mode = true
@@ -230,14 +239,20 @@ alignment = 1
 
 [node name="Equip" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpm7e")
+toggle_mode = true
 text = "EQUIP"
 
 [node name="Skill" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lvidk")
+toggle_mode = true
 text = "SKILL"
 
 [node name="Customize" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ec72m")
+toggle_mode = true
 text = "CUSTOMIZE"
 
 [node name="Back" type="Button" parent="."]
@@ -251,4 +266,7 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "X"
 
+[connection signal="pressed" from="VBoxContainer/Equip" to="." method="_on_equip_pressed"]
+[connection signal="pressed" from="VBoxContainer/Skill" to="." method="_on_skill_pressed"]
+[connection signal="pressed" from="VBoxContainer/Customize" to="." method="_on_customize_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

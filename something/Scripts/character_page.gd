@@ -2,5 +2,29 @@ extends Control
 
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
+	$Equipment.show()
+	$VBoxContainer/Equip.button_pressed = true
+
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
+
+
+func _on_equip_pressed() -> void:
+	$Equipment.show()
+	$VBoxContainer/Equip.button_pressed = true
+	$VBoxContainer/Skill.button_pressed = false
+	$VBoxContainer/Customize.button_pressed = false
+
+
+func _on_skill_pressed() -> void:
+	$Equipment.hide()
+	$VBoxContainer/Equip.button_pressed = false
+	$VBoxContainer/Skill.button_pressed = true
+	$VBoxContainer/Customize.button_pressed = false
+
+
+func _on_customize_pressed() -> void:
+	$Equipment.hide()
+	$VBoxContainer/Equip.button_pressed = false
+	$VBoxContainer/Skill.button_pressed = false
+	$VBoxContainer/Customize.button_pressed = true
