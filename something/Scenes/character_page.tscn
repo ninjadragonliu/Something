@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=18 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
 
@@ -34,6 +34,9 @@ bg_color = Color(0.926408, 0.832791, 0.644594, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h2jp"]
 bg_color = Color(0.487766, 0.718664, 0.200745, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tra4b"]
+bg_color = Color(0.910297, 0.611479, 0.434111, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
 bg_color = Color(0.6, 0.243137, 0.6, 1)
@@ -170,6 +173,7 @@ text = "Weapon"
 
 [node name="Armor2" type="Button" parent="Equipment"]
 z_index = 5
+layout_mode = 0
 offset_left = 190.0
 offset_top = 50.0
 offset_right = 354.0
@@ -183,6 +187,7 @@ text = "Armor"
 
 [node name="Placeholder2" type="Button" parent="Equipment"]
 z_index = 5
+layout_mode = 0
 offset_left = 354.0
 offset_top = 50.0
 offset_right = 533.0
@@ -221,6 +226,40 @@ offset_top = 50.0
 offset_right = 539.0
 offset_bottom = 578.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
+metadata/_edit_lock_ = true
+
+[node name="Skill" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
+metadata/_edit_lock_ = true
+
+[node name="Customize" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -680.0
+offset_top = -322.0
+offset_right = -3.0
+offset_bottom = 322.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tra4b")
 metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
