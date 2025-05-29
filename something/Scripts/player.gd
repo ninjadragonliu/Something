@@ -63,4 +63,5 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				current_scene.enemy_in_range_right.erase(body)
 				#print("✅ Removed enemy from right array:", body)
 				
+		body.queue_free()
 		take_damaged.emit()
