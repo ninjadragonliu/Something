@@ -33,3 +33,18 @@ func _on_customize_pressed() -> void:
 	$VBoxContainer/Equip.button_pressed = false
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = true
+
+func _on_weapon_2_pressed() -> void:
+	$Equipment/Weapon.show()
+	$Equipment/Armor.hide()
+	$Equipment/Placeholder.hide()
+
+func _on_armor_2_pressed() -> void:
+	$Equipment/Weapon.hide()
+	$Equipment/Armor.show()
+	$Equipment/Placeholder.hide()
+
+func _on_placeholder_2_pressed() -> void:
+	$Equipment/Weapon.hide()
+	$Equipment/Armor.hide()
+	$Equipment/Placeholder.show()
