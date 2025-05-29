@@ -42,6 +42,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 	if body.is_in_group("enemy"):
 		var explosion = body.get_node("Explosion")
+		var sprite = body.get_node("Sprite2D")
+		sprite.hide()
 		explosion.show()
 		explosion.play("explosion_default")
 		await get_tree().create_timer(0.2).timeout
