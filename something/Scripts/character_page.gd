@@ -11,6 +11,8 @@ func _on_back_pressed() -> void:
 
 func _on_equip_pressed() -> void:
 	$Equipment.show()
+	$Skill.hide()
+	$Customize.hide()
 	$VBoxContainer/Equip.button_pressed = true
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = false
@@ -18,13 +20,16 @@ func _on_equip_pressed() -> void:
 
 func _on_skill_pressed() -> void:
 	$Equipment.hide()
+	$Skill.show()
+	$Customize.hide()
 	$VBoxContainer/Equip.button_pressed = false
 	$VBoxContainer/Skill.button_pressed = true
 	$VBoxContainer/Customize.button_pressed = false
 
-
 func _on_customize_pressed() -> void:
 	$Equipment.hide()
+	$Skill.hide()
+	$Customize.show()
 	$VBoxContainer/Equip.button_pressed = false
 	$VBoxContainer/Skill.button_pressed = false
 	$VBoxContainer/Customize.button_pressed = true
