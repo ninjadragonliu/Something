@@ -234,6 +234,7 @@ shape = SubResource("RectangleShape2D_8j60k")
 script = ExtResource("3_5a7ea")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_0pcbe")
 animation = &"explosion_default"
 

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var animatation = $AnimationPlayer
+@onready var explosion = $Explosion
 var health = 1
 var speed = 1
 

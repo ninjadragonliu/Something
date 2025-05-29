@@ -41,6 +41,11 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		boss_hit_player.emit()
 
 	if body.is_in_group("enemy"):
+		var explosion = body.get_node("Explosion")
+		explosion.show()
+		explosion.play("explosion_default")
+		await get_tree().create_timer(0.2).timeout
+		
 		take_damage(1)
 		
 		var current_scene = get_tree().current_scene
