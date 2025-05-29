@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=23 format=3 uid="uid://dlhpeoka1b654"]
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dme0hqlqv07ng" path="res://Assets/Landscape/stage.png" id="4_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://umxr8kup42na" path="res://nodes/clear_window.tscn" id="4_8j60k"]
 [ext_resource type="Texture2D" uid="uid://cp5u1usid1f40" path="res://Assets/Landscape/platform_left.png" id="5_o06y3"]
+[ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="9_5v1tr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -20,6 +21,70 @@ size = Vector2(10, 457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8j60k"]
 size = Vector2(10, 461)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fj1v"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(0, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikia7"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(176, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7yui6"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(352, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5t2i"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(528, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0ngr"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(704, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn0ld"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(880, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgpy0"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(1056, 0, 176, 175)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2t4p"]
+atlas = ExtResource("9_5v1tr")
+region = Rect2(1232, 0, 176, 175)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0pcbe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fj1v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikia7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7yui6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5t2i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0ngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn0ld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgpy0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t2t4p")
+}],
+"loop": true,
+"name": &"explosion_default",
+"speed": 5.0
+}]
 
 [node name="World" type="Control"]
 layout_mode = 3
@@ -53,6 +118,7 @@ expand_mode = 1
 [node name="Ground" type="TextureRect" parent="."]
 self_modulate = Color(0.980263, 0.649225, 0.629422, 1)
 layout_mode = 0
+offset_left = -14.0
 offset_top = 475.0
 offset_right = 1152.0
 offset_bottom = 660.0
@@ -166,6 +232,10 @@ shape = SubResource("RectangleShape2D_8j60k")
 
 [node name="Enemies" type="Node2D" parent="."]
 script = ExtResource("3_5a7ea")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Enemies"]
+sprite_frames = SubResource("SpriteFrames_0pcbe")
+animation = &"explosion_default"
 
 [node name="EnemiesRemaining" type="Label" parent="."]
 layout_mode = 1
