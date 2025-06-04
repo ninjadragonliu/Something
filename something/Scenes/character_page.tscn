@@ -1,6 +1,9 @@
-[gd_scene load_steps=27 format=3 uid="uid://bxnto03l5mjxr"]
+[gd_scene load_steps=28 format=3 uid="uid://bxnto03l5mjxr"]
 
 [ext_resource type="Script" uid="uid://bsplvgh7yjodf" path="res://Scripts/character_page.gd" id="1_xkdtw"]
+[ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="2_a33jj"]
+[ext_resource type="Texture2D" uid="uid://c6esf6htp0x8o" path="res://Assets/1293 - Icon.png" id="3_7h2jp"]
+[ext_resource type="Texture2D" uid="uid://bp6in66f85tf0" path="res://Assets/1294 - Icon.png" id="4_hxf2x"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_a33jj"]
 
@@ -55,14 +58,8 @@ bg_color = Color(0.576471, 0.705882, 0.917647, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j31l"]
 bg_color = Color(0.698193, 0.407158, 0.910998, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nno4j"]
-bg_color = Color(0.638426, 0.642331, 0.499068, 1)
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7bts"]
 bg_color = Color(0.397713, 0.611938, 0.873446, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxdvd"]
-bg_color = Color(0.199623, 0.697081, 0.870217, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpm7e"]
 bg_color = Color(0.6, 0.243137, 0.6, 1)
@@ -736,6 +733,7 @@ text = "Passive"
 metadata/_edit_lock_ = true
 
 [node name="Active2" type="Panel" parent="Skill"]
+visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 70.0
@@ -744,7 +742,7 @@ offset_bottom = 563.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2j31l")
 metadata/_edit_lock_ = true
 
-[node name="ActiveSkill1" type="Button" parent="Skill/Active2"]
+[node name="ActiveSkill1" type="TextureButton" parent="Skill/Active2"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -757,11 +755,10 @@ offset_right = 97.0
 offset_bottom = 84.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_nno4j")
-text = "Active Skill 1"
+texture_normal = ExtResource("2_a33jj")
+stretch_mode = 0
 
 [node name="Passive2" type="Panel" parent="Skill"]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 70.0
@@ -770,7 +767,7 @@ offset_bottom = 563.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_m7bts")
 metadata/_edit_lock_ = true
 
-[node name="PassiveSkill1" type="Button" parent="Skill/Passive2"]
+[node name="PassiveSkill1" type="TextureButton" parent="Skill/Passive2"]
 layout_mode = 2
 offset_left = 50.0
 offset_top = 160.0
@@ -778,11 +775,11 @@ offset_right = 216.0
 offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_dxdvd")
-text = "Passive Skill 1"
+texture_normal = ExtResource("3_7h2jp")
+stretch_mode = 0
 metadata/_edit_lock_ = true
 
-[node name="PassiveSkill2" type="Button" parent="Skill/Passive2"]
+[node name="PassiveSkill2" type="TextureButton" parent="Skill/Passive2"]
 layout_mode = 2
 offset_left = 285.0
 offset_top = 160.0
@@ -790,8 +787,8 @@ offset_right = 451.0
 offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_dxdvd")
-text = "Passive Skill 1"
+texture_normal = ExtResource("4_hxf2x")
+stretch_mode = 0
 metadata/_edit_lock_ = true
 
 [node name="Customize" type="Panel" parent="."]
