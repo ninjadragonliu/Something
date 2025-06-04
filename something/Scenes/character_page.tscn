@@ -368,6 +368,149 @@ offset_bottom = 618.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mkmqd")
 metadata/_edit_lock_ = true
 
+[node name="GridContainer" type="GridContainer" parent="Equipment/Armor"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = -255.5
+offset_right = 256.5
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect2" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect3" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect4" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect16" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect17" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect18" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect19" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect20" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect21" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect22" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect23" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect24" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect25" type="TextureRect" parent="Equipment/Armor/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
 [node name="Placeholder" type="Panel" parent="Equipment"]
 visible = false
 layout_mode = 0
@@ -377,6 +520,149 @@ offset_right = 537.0
 offset_bottom = 619.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
 metadata/_edit_lock_ = true
+
+[node name="GridContainer" type="GridContainer" parent="Equipment/Placeholder"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -259.5
+offset_top = -255.5
+offset_right = 256.5
+offset_bottom = 263.5
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect2" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect3" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect4" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect5" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect6" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect7" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect8" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect9" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect10" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect11" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect12" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect13" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+metadata/_edit_lock_ = true
+
+[node name="TextureRect14" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect15" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect16" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect17" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect18" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect19" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect20" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect21" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect22" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect23" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect24" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
+
+[node name="TextureRect25" type="TextureRect" parent="Equipment/Placeholder/GridContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = SubResource("CanvasTexture_mkmqd")
 
 [node name="Skill" type="Panel" parent="."]
 visible = false
