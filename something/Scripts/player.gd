@@ -41,17 +41,19 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		boss_hit_player.emit()
 
 	if body.is_in_group("enemy"):
-		var explosion = body.get_node("Explosion")
-		var sprite = body.get_node("Sprite2D")
-		body.set_process(false)
-		sprite.hide()
-		explosion.show()
-		explosion.play("explosion_default")
-		await get_tree().create_timer(0.2).timeout
-		
-		take_damage(1)
-		
+		#var explosion = body.get_node("Explosion")
+		#var sprite = body.get_node("Sprite2D")
+		#body.set_process(false)
+		#sprite.hide()
+		#explosion.show()
+		#explosion.play("explosion_default")
+		#await get_tree().create_timer(0.2).timeout
+		var explosion = preload("res://nodes/explosion.tscn").instantiate()
+		explosion.position = body.position
 		var current_scene = get_tree().current_scene
+		take_damage(1)
+		current_scene.add_child(explosion)
+		
 		if current_scene:
 			# Remove from left array if it's in range
 			if current_scene.enemy_in_range_left.has(body):
