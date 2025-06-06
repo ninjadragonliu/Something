@@ -18,6 +18,8 @@ var coins = 0
 var diamonds = 0
 var last_login_date = ""
 var player_weapon_list = ["Sword", "Lance"]
+var player_armor_list = ["Sword", "Lance"]
+var player_placeholder_list = ["Sword", "Lance"]
 #endregion
 
 #region New Code Region

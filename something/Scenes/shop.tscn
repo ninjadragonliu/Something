@@ -39,18 +39,19 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = SubResource("CanvasTexture_6mhmv")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -225.0
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_top = 99.0
 offset_right = 240.0
-offset_bottom = 324.0
-grow_vertical = 2
+offset_bottom = 649.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 theme_override_constants/separation = -1
 
-[node name="Featured" type="Button" parent="VBoxContainer"]
+[node name="Featured" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -58,7 +59,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3ps1r")
 toggle_mode = true
 text = "Featured"
 
-[node name="Costume" type="Button" parent="VBoxContainer"]
+[node name="Costume" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.734863, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -66,7 +67,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2shtd")
 toggle_mode = true
 text = "Costume"
 
-[node name="Skills" type="Button" parent="VBoxContainer"]
+[node name="Skills" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -74,7 +75,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
 toggle_mode = true
 text = "Skills"
 
-[node name="Weapons" type="Button" parent="VBoxContainer"]
+[node name="Weapons" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -82,7 +83,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_fdj0q")
 toggle_mode = true
 text = "Weapons"
 
-[node name="Equipment" type="Button" parent="VBoxContainer"]
+[node name="Equipment" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -90,7 +91,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_k6jq0")
 toggle_mode = true
 text = "Equipment"
 
-[node name="Panel" type="Panel" parent="VBoxContainer"]
+[node name="Panel" type="Panel" parent="ScrollContainer/VBoxContainer"]
 self_modulate = Color(0.769244, 0.560079, 0.578251, 1)
 layout_mode = 2
 size_flags_vertical = 3
@@ -109,35 +110,52 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Featured"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 910.0
-offset_bottom = 386.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Featured"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Featured/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Costume 1" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 1" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Featured/GridContainer/Costume 1" index="0"]
+[node name="TextureRect" parent="Featured/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.32549, 0.733333, 0.815686, 1)
 
-[node name="Costume 2" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 2" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 3" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 3" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 4" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 4" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 5" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 5" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 6" parent="Featured/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 6" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 7" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 8" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 9" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
+layout_mode = 2
+
+[node name="Costume 10" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
 [node name="Costume" type="Panel" parent="."]
@@ -155,35 +173,40 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Costume"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 910.0
-offset_bottom = 386.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Costume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Costume/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Costume 1" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 1" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Costume/GridContainer/Costume 1" index="0"]
+[node name="TextureRect" parent="Costume/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Costume 2" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 2" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 3" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 3" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 4" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 4" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 5" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 5" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="Costume 6" parent="Costume/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Costume 6" parent="Costume/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
 [node name="Skills" type="Panel" parent="."]
@@ -201,50 +224,55 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Skills"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 910.0
-offset_bottom = 386.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Skills"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Skills/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Skill 1" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 1" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 1" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 2" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 2" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 2" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 3" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 3" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 3" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 4" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 4" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 4" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 5" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 5" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 5" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 6" parent="Skills/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 6" parent="Skills/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Skills/GridContainer/Skill 6" index="0"]
+[node name="TextureRect" parent="Skills/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Weapons" type="Panel" parent="."]
@@ -262,50 +290,55 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Weapons"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 910.0
-offset_bottom = 386.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Weapons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Weapons/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Skill 1" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 1" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 1" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.758774, 0.878858, 0.371976, 1)
 
-[node name="Skill 2" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 2" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 2" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 3" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 3" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 3" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 4" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 4" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 4" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 5" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 5" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 5" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 6" parent="Weapons/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 6" parent="Weapons/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Weapons/GridContainer/Skill 6" index="0"]
+[node name="TextureRect" parent="Weapons/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Equipment" type="Panel" parent="."]
@@ -323,50 +356,55 @@ offset_bottom = 325.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Equipment"]
-layout_mode = 0
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 910.0
-offset_bottom = 386.0
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Equipment/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 40
 columns = 5
 
-[node name="Skill 1" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 1" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 1" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.572041, 0.876755, 0.922636, 1)
 
-[node name="Skill 2" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 2" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 2" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 3" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 3" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 3" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 4" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 4" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 4" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 5" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 5" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 5" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
-[node name="Skill 6" parent="Equipment/GridContainer" instance=ExtResource("2_2shtd")]
+[node name="Skill 6" parent="Equipment/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
 
-[node name="TextureRect" parent="Equipment/GridContainer/Skill 6" index="0"]
+[node name="TextureRect" parent="Equipment/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Label" type="Label" parent="."]
@@ -391,30 +429,30 @@ grow_horizontal = 0
 theme_override_font_sizes/font_size = 40
 text = "X"
 
-[connection signal="pressed" from="VBoxContainer/Featured" to="." method="_on_featured_pressed"]
-[connection signal="pressed" from="VBoxContainer/Costume" to="." method="_on_costume_pressed"]
-[connection signal="pressed" from="VBoxContainer/Skills" to="." method="_on_skills_pressed"]
-[connection signal="pressed" from="VBoxContainer/Weapons" to="." method="_on_weapons_pressed"]
-[connection signal="pressed" from="VBoxContainer/Equipment" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Featured" to="." method="_on_featured_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Costume" to="." method="_on_costume_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Weapons" to="." method="_on_weapons_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Equipment" to="." method="_on_equipment_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 
-[editable path="Featured/GridContainer/Costume 1"]
-[editable path="Costume/GridContainer/Costume 1"]
-[editable path="Skills/GridContainer/Skill 1"]
-[editable path="Skills/GridContainer/Skill 2"]
-[editable path="Skills/GridContainer/Skill 3"]
-[editable path="Skills/GridContainer/Skill 4"]
-[editable path="Skills/GridContainer/Skill 5"]
-[editable path="Skills/GridContainer/Skill 6"]
-[editable path="Weapons/GridContainer/Skill 1"]
-[editable path="Weapons/GridContainer/Skill 2"]
-[editable path="Weapons/GridContainer/Skill 3"]
-[editable path="Weapons/GridContainer/Skill 4"]
-[editable path="Weapons/GridContainer/Skill 5"]
-[editable path="Weapons/GridContainer/Skill 6"]
-[editable path="Equipment/GridContainer/Skill 1"]
-[editable path="Equipment/GridContainer/Skill 2"]
-[editable path="Equipment/GridContainer/Skill 3"]
-[editable path="Equipment/GridContainer/Skill 4"]
-[editable path="Equipment/GridContainer/Skill 5"]
-[editable path="Equipment/GridContainer/Skill 6"]
+[editable path="Featured/ScrollContainer/GridContainer/Costume 1"]
+[editable path="Costume/ScrollContainer/GridContainer/Costume 1"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 1"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 2"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 3"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 4"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 5"]
+[editable path="Skills/ScrollContainer/GridContainer/Skill 6"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 1"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 2"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 3"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 4"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 5"]
+[editable path="Weapons/ScrollContainer/GridContainer/Skill 6"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 1"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 2"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 3"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 4"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 5"]
+[editable path="Equipment/ScrollContainer/GridContainer/Skill 6"]
