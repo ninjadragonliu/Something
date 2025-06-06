@@ -27,7 +27,7 @@ window/stretch/aspect="keep_width"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/admob/plugin.cfg", "res://addons/applovin_max/plugin.cfg")
+enabled=PackedStringArray("res://addons/admob/plugin.cfg")
 
 [file_customization]
 

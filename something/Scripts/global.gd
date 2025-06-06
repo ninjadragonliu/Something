@@ -17,6 +17,7 @@ var intro_text = "Introduce yourself"
 var coins = 0
 var diamonds = 0
 var last_login_date = ""
+var player_weapon_list = ["Sword", "Lance"]
 #endregion
 
 #region New Code Region

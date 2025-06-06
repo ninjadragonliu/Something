@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bgbd8dgd1ug5c"]
 
 [ext_resource type="Script" uid="uid://t4cr3dwvl4u1" path="res://Scripts/player.gd" id="1_u63mc"]
-[ext_resource type="Texture2D" uid="uid://2u3tk0iqe4jh" path="res://Assets/Animation/character_animation_attack.png" id="2_bms3g"]
+[ext_resource type="Texture2D" uid="uid://cbxmuuoc76sow" path="res://Assets/Animation/ATTACK 1.png" id="2_bms3g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go701"]
 size = Vector2(111, 165)
@@ -105,6 +105,7 @@ _data = {
 script = ExtResource("1_u63mc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2.4, 2.4)
 texture = ExtResource("2_bms3g")
 flip_h = true
 hframes = 5

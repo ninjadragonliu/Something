@@ -4,6 +4,33 @@ func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
 	$Equipment.show()
 	$VBoxContainer/Equip.button_pressed = true
+	
+	var weapon_grid = $Equipment/Weapon/VScrollBar/GridContainer
+	
+#	for child in weapon_grid.get_children():
+#		weapon_grid.remove_child(child)
+#		child.queue_free()
+	
+	for weapon_name in Global.player_weapon_list:
+		var button = TextureButton.new()
+		
+		var icon_path = "res://Assets/"+weapon_name+".png"
+		
+		if ResourceLoader.exists(icon_path):
+			button.texture_normal = load(icon_path)
+		else:
+			print("Icon: " +weapon_name+ " not found man, try check the asset")
+		
+		button.ignore_texture_size = true
+		button.stretch_mode = 0
+		button.custom_minimum_size = Vector2(100,100)
+		
+		button.connect("pressed", _on_weapon_icon_pressed.bind(weapon_name))
+		
+		weapon_grid.add_child(button)
+
+func _on_weapon_icon_pressed(weapon_name):
+	print("Description screen not built for "+weapon_name)
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
