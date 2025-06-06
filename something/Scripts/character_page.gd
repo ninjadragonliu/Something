@@ -6,13 +6,13 @@ func _ready() -> void:
 	$Skill.hide()
 	$Customize.hide()
 	$VBoxContainer/Equip.button_pressed = true
-<<<<<<< HEAD
+	$Skill/Active.button_pressed = true
 	
 	var weapon_grid = $Equipment/Weapon/VScrollBar/GridContainer
 	
-#	for child in weapon_grid.get_children():
-#		weapon_grid.remove_child(child)
-#		child.queue_free()
+	for child in weapon_grid.get_children():
+		weapon_grid.remove_child(child)
+		child.queue_free()
 	
 	for weapon_name in Global.player_weapon_list:
 		var button = TextureButton.new()
@@ -34,9 +34,6 @@ func _ready() -> void:
 
 func _on_weapon_icon_pressed(weapon_name):
 	print("Description screen not built for "+weapon_name)
-=======
-	$Skill/Active.button_pressed = true
->>>>>>> 8a674c45b8c170205081cca6ea9d7a809acc87b2
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
