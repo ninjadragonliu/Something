@@ -173,3 +173,6 @@ func _on_passive_skills_close_requested() -> void:
 
 func _on_active_skills_close_requested() -> void:
 	$ActiveSkills.hide()
+
+func _on_active_skill_1_pressed() -> void:
+	$ActiveSkills.show()

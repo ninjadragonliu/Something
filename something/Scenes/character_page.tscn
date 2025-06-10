@@ -1174,6 +1174,7 @@ texture = SubResource("CanvasTexture_mkmqd")
 [connection signal="pressed" from="Equipment/Placeholder2" to="." method="_on_placeholder_2_pressed"]
 [connection signal="pressed" from="Skill/Active" to="." method="_on_active_pressed"]
 [connection signal="pressed" from="Skill/Passive" to="." method="_on_passive_pressed"]
+[connection signal="pressed" from="Skill/Active2/ActiveSkill1" to="." method="_on_active_skill_1_pressed"]
 [connection signal="pressed" from="Skill/Passive2/PassiveSkill1" to="." method="_on_passive_skill_1_pressed"]
 [connection signal="pressed" from="Skill/Passive2/PassiveSkill2" to="." method="_on_passive_skill_2_pressed"]
 [connection signal="pressed" from="VBoxContainer/Equip" to="." method="_on_equip_pressed"]
