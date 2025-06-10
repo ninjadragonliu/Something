@@ -97,7 +97,6 @@ func _on_placeholder_icon_pressed(placeholder_name):
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
 
-
 func _on_equip_pressed() -> void:
 	$Equipment.show()
 	$Skill.hide()
@@ -162,3 +161,15 @@ func _on_passive_pressed() -> void:
 	$Skill/Passive.button_pressed = true
 	$Skill/Active2.hide()
 	$Skill/Passive2.show()
+
+func _on_passive_skill_1_pressed() -> void:
+	$PassiveSkills.show()
+
+func _on_passive_skill_2_pressed() -> void:
+	$PassiveSkills.show()
+
+func _on_passive_skills_close_requested() -> void:
+	$PassiveSkills.hide()
+
+func _on_active_skills_close_requested() -> void:
+	$ActiveSkills.hide()
