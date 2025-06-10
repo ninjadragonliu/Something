@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2utovt4d6tv8"]
+[gd_scene load_steps=3 format=3 uid="uid://b2utovt4d6tv8"]
+
+[ext_resource type="Script" uid="uid://byv2062to2mtd" path="res://Scripts/store_item.gd" id="1_00k36"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rsc2u"]
 
@@ -6,6 +8,7 @@
 custom_minimum_size = Vector2(100, 140)
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_00k36")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.916726, 0.162508, 0.52688, 1)
@@ -15,5 +18,7 @@ texture = SubResource("CanvasTexture_rsc2u")
 
 [node name="Buy" type="Button" parent="."]
 layout_mode = 2
-theme_override_font_sizes/font_size = 23
-text = "Buy"
+theme_override_font_sizes/font_size = 22
+text = "Buy 100 coins"
+
+[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]

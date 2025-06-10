@@ -3,6 +3,10 @@ extends Control
 func _ready() -> void:
 	$ScrollContainer/VBoxContainer/Featured.button_pressed = true
 
+func _process(delta: float) -> void:
+	$VBoxContainer2/Coins/Label.text = str(Global.coins)
+	$VBoxContainer2/Diamonds/Label.text =  str(Global.diamonds)
+
 func _on_back_pressed() -> void:
 	Global.save_game_data()
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
