@@ -34,6 +34,9 @@ tracks/1/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_cgypo"]
+resource_name = "jump"
+
 [sub_resource type="Animation" id="Animation_g5f4b"]
 resource_name = "running_ToLeft"
 length = 0.06
@@ -93,9 +96,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [Rect2(0, 0, 1080, 210), Rect2(120, 0, 1080, 210), Rect2(240, 0, 1080, 210), Rect2(360, 0, 1080, 210), Rect2(480, 0, 1080, 210), Rect2(600, 0, 1080, 210)]
 }
-
-[sub_resource type="Animation" id="Animation_cgypo"]
-resource_name = "jump"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cgypo"]
 _data = {

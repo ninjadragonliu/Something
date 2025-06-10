@@ -9,6 +9,8 @@ func _ready() -> void:
 	$Skill/Active.button_pressed = true
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
+	
+
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
@@ -91,6 +93,55 @@ func _ready_placeholder_page():
 		
 		placeholder_grid.add_child(button)
 
+func _ready_active_page():
+	var active_skill_grid = $ActiveSkills/ScrollContainer/GridContainer
+	
+	for child in active_skill_grid.get_children():
+		active_skill_grid.remove_child(child)
+		child.queue_free()
+	
+	for skill_name in Global.player_active_skill_list:
+		var button = TextureButton.new()
+		
+		var icon_path = "res://Assets/1421 - Icon.png"#"res://Assets/"+skill_name+".png"
+		
+		if ResourceLoader.exists(icon_path):
+			button.texture_normal = load(icon_path)
+		else:
+			print("Icon: " +skill_name+ " not found man, try check the asset")
+		
+		button.ignore_texture_size = true
+		button.stretch_mode = 0
+		button.custom_minimum_size = Vector2(100,100)
+		
+		button.connect("pressed", _on_active_skill_icon_pressed.bind(skill_name))
+		
+		active_skill_grid.add_child(button)
+
+func _ready_passive_page():
+	var passive_skill_grid = $PassiveSkills/ScrollContainer/GridContainer
+	
+	for child in passive_skill_grid.get_children():
+		passive_skill_grid.remove_child(child)
+		child.queue_free()
+	
+	for skill_name in Global.player_passive_skill_list:
+		var button = TextureButton.new()
+		
+		var icon_path = "res://Assets/1420 - Icon.png"#"res://Assets/"+skill_name+".png"
+		
+		if ResourceLoader.exists(icon_path):
+			button.texture_normal = load(icon_path)
+		else:
+			print("Icon: " +skill_name+ " not found man, try check the asset")
+		
+		button.ignore_texture_size = true
+		button.stretch_mode = 0
+		button.custom_minimum_size = Vector2(100,100)
+		
+		button.connect("pressed", _on_passive_skill_icon_pressed.bind(skill_name))
+		
+		passive_skill_grid.add_child(button)
 func _on_weapon_icon_pressed(weapon_name):
 	print("Description screen not built for "+weapon_name)
 
@@ -100,6 +151,12 @@ func _on_armor_icon_pressed(armor_name):
 func _on_placeholder_icon_pressed(placeholder_name):
 	print("Description screen not built for "+placeholder_name)
 
+func _on_active_skill_icon_pressed(skill_name):
+	print("Guess what is not done? yeah, active skill replacemen: " + skill_name)
+
+func _on_passive_skill_icon_pressed(skill_name):
+	print("Guess what is not done? yeah, active skill replacemen: " + skill_name)
+	
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
 
@@ -169,9 +226,11 @@ func _on_passive_pressed() -> void:
 	$Skill/Passive2.show()
 
 func _on_passive_skill_1_pressed() -> void:
+	_ready_passive_page()
 	$PassiveSkills.show()
 
 func _on_passive_skill_2_pressed() -> void:
+	_ready_passive_page()
 	$PassiveSkills.show()
 
 func _on_passive_skills_close_requested() -> void:
@@ -181,4 +240,5 @@ func _on_active_skills_close_requested() -> void:
 	$ActiveSkills.hide()
 
 func _on_active_skill_1_pressed() -> void:
+	_ready_active_page()
 	$ActiveSkills.show()
