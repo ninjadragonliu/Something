@@ -20,8 +20,10 @@ var last_login_date = ""
 var player_weapon_list = ["Sword", "Lance"]
 var player_armor_list = ["Sword", "Lance"]
 var player_placeholder_list = ["Sword", "Lance"]
-var player_active_skill_list = ["HP+2"]
-var player_passive_skill_list = ["MAXHP+2"]
+var player_active_skill_list = ["Empty", "HP+2"]
+var player_passive_skill_list = ["Empty", "MAXHP+2"]
+var player_current_active = ["Empty"]
+var player_current_passive = ["Empty", "Empty"]
 #endregion
 
 #region New Code Region
