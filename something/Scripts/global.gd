@@ -52,10 +52,32 @@ var growthFactor_Speed = 0.03
 var amplitude_Speed = 0.1 * mapNumber
 var was_data_loaded = false
 #endregion
+# reference weapon list in 1st code region
+#region New Code Region shoppable items
+# value = 1 - not sold, 0 is sold, -1 - unlimited value
+var shop_costumes = [] # 3 types
+var shop_skills = [] # 2 types
+var shop_featured = [] # too many types
+var coin_object = objectCreation.objectCreation("coins_110", "currency", -1)
+#var shop_equipment = [coin_object] # 2 types 
+var shop_equipment = {
+	"currency": {
+		"coins_110" : -1
+	}
+}
+		
+# weapon, armor, placeholder this is for adding to player bag
+# (item_name, classification) - key : value
+#var shop_weapons = [] # 3 types
+var shop_weapons = {
+	"sword": {
+		"broadsword": 1
+	}
+}
+#endregion
 
-var costumes = []
-var skills = []
 
+	
 func _ready() -> void:
 	player_id = generate_player_id()
 
