@@ -165,7 +165,7 @@ offset_bottom = 77.0
 theme_override_font_sizes/font_size = 20
 text = "Equip 2"
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Current SKill" type="Label" parent="Panel"]
 layout_mode = 2
 offset_left = 48.0
 offset_top = 537.0

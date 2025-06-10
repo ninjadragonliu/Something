@@ -8,8 +8,14 @@ func _ready() -> void:
 	$VBoxContainer/Equip.button_pressed = true
 	$Skill/Active.button_pressed = true
 	_ready_weapon_page()
+	$Panel/Player.text = "Player: " + Global.player_name
 
-
+func _process(delta: float) -> void:
+	$Panel/HP.text = "HP: " + str(Global.health)
+	$"Panel/Current SKill".text = "Current Skill: " + "N/A" # N/A is placeholder
+	$"Panel/Current Equip/Equip 1".text = "Equip 1: " + "N/A" # N/A is placeholder
+	$"Panel/Current Equip/Equip 2".text = "Equip 2: " + "N/A" # N/A is placeholder
+ 
 func _ready_weapon_page():
 	var weapon_grid = $Equipment/Weapon/ScrollContainer/GridContainer
 	
