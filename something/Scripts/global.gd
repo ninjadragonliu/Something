@@ -206,8 +206,6 @@ func load_data():
 		for i in loaded_array2:
 			cleared_tutorial_levels.append(int(i))
 		was_data_loaded = true
-		var last_login_date = data.get("last_login_date", "")
-		var loaded_saving_list = data.get("saving_list", [])
-		for i in loaded_saving_list:
-			saving_list.append(i)
+		last_login_date = data.get("last_login_date", "")
+		saving_list = data.get("saving_list", [])
 		print("✅ Global data loaded:", data)
