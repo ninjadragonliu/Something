@@ -17,14 +17,7 @@ var intro_text = "Introduce yourself"
 var coins = 0
 var diamonds = 0
 var last_login_date = ""
-var player_weapon_list = ["Sword", "Lance"]
-var player_armor_list = ["Sword", "Lance"]
-var player_placeholder_list = ["Sword", "Lance"]
-var player_active_skill_list = ["Empty", "HP+2"]
-var player_passive_skill_list = ["Empty", "MAXHP+2"]
-var player_current_active = ["Empty"]
-var player_current_passive = ["Empty", "Empty"]
-
+#endregion
 
 #region
 # [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
