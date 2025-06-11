@@ -122,28 +122,28 @@ texture = SubResource("CanvasTexture_xkdtw")
 
 [node name="Player" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = 52.0
-offset_top = 384.0
-offset_right = 404.0
-offset_bottom = 412.0
+offset_left = 49.0
+offset_top = 345.0
+offset_right = 401.0
+offset_bottom = 373.0
 theme_override_font_sizes/font_size = 20
 text = "Player"
 
 [node name="HP" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = 53.0
-offset_top = 417.0
-offset_right = 405.0
-offset_bottom = 445.0
+offset_left = 48.0
+offset_top = 368.0
+offset_right = 400.0
+offset_bottom = 396.0
 theme_override_font_sizes/font_size = 20
 text = "HP"
 
 [node name="Current Equip" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = 48.0
-offset_top = 456.0
-offset_right = 429.0
-offset_bottom = 484.0
+offset_left = 46.0
+offset_top = 410.0
+offset_right = 427.0
+offset_bottom = 438.0
 theme_override_font_sizes/font_size = 20
 text = "Current Equip"
 
@@ -154,25 +154,60 @@ offset_top = 27.0
 offset_right = 381.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 20
-text = "Equip 1"
+text = "Weapon"
 
 [node name="Equip 2" type="Label" parent="Panel/Current Equip"]
 layout_mode = 2
 offset_left = 29.0
 offset_top = 54.0
 offset_right = 381.0
-offset_bottom = 77.0
+offset_bottom = 82.0
 theme_override_font_sizes/font_size = 20
-text = "Equip 2"
+text = "Top"
+
+[node name="Equip 3" type="Label" parent="Panel/Current Equip"]
+offset_left = 28.0
+offset_top = 84.0
+offset_right = 380.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 20
+text = "Bottom"
 
 [node name="Current SKill" type="Label" parent="Panel"]
 layout_mode = 2
-offset_left = 48.0
-offset_top = 537.0
-offset_right = 429.0
-offset_bottom = 565.0
+offset_left = 47.0
+offset_top = 527.0
+offset_right = 428.0
+offset_bottom = 555.0
 theme_override_font_sizes/font_size = 20
 text = "Current Skill"
+
+[node name="Active" type="Label" parent="Panel/Current SKill"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 26.0
+offset_right = 405.0
+offset_bottom = 85.0
+theme_override_font_sizes/font_size = 20
+text = "Active"
+
+[node name="Passive 1" type="Label" parent="Panel/Current SKill"]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 54.0
+offset_right = 404.0
+offset_bottom = 82.0
+theme_override_font_sizes/font_size = 20
+text = "Passive1"
+
+[node name="Passive 2" type="Label" parent="Panel/Current SKill"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = 82.0
+offset_right = 403.0
+offset_bottom = 110.0
+theme_override_font_sizes/font_size = 20
+text = "Passive2"
 
 [node name="Equipment" type="Panel" parent="."]
 layout_mode = 1

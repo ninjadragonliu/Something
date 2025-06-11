@@ -17,12 +17,12 @@ var intro_text = "Introduce yourself"
 var coins = 0
 var diamonds = 0
 var last_login_date = ""
+
+var gm_mode = false
+var loading_mode = true
 #endregion
 
 #region
-# [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
-# [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
-
 # run to assign types
 func _readyLists():
 	for weapon in weapon_list_fist:
@@ -40,46 +40,58 @@ func _readyLists():
 	for passive in passive_skill_list:
 		passive[1] = "passive"
 	
-	# testing lists
-	print(saving_list)
+	if gm_mode:
+		for i in range(7):
+			for item in saving_list[i]:
+				item[2] = true #own all items
+	#print(saving_list)
+
+# [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
+# [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
 
 # How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
 var weapon_list_fist = [
-	["Bare Fist","", true],
-	["Soldier Glove","", false]
+	["Bare Fist","", true, 1],
+	["Soldier Glove","", false, 0]
 ]
  
 var weapon_list_sword = [
-	["Wooden Sword","", false],
-	["Soldier Sword","", false]
+	["Wooden Sword","", false, 0],
+	["Soldier Sword","", false, 0]
 ]
 
 var weapon_list_lance = [
-	["Wooden Lance","", false],
-	["Soldier Lance","", false]
+	["Wooden Lance","", false, 0],
+	["Soldier Lance","", false, 0]
 ]
  
 var top_list = [
-	["Skin Armor", "", false],
-	["Leather Armor", "", false]
+	["Empty", "", true, 1],
+	["Skin Armor", "", false, 0],
+	["Leather Armor", "", false, 0]
 ]
 
 var bottom_list = [
-	["Skin Pants", "", false],
-	["Leather Pants", "", false]
+	["Empty", "", true, 1],
+	["Skin Pants", "", false, 0],
+	["Leather Pants", "", false, 0]
 ]
 
 var active_skill_list = [
-	["Empty", "", true],
-	["HP+3", "", false]
+	["Empty", "", true, 1],
+	["HP+3", "", false, 0]
 ]
 
+# passive skill index 3 (equip attribute) is special, 'Empty' can be set as 2 for 'Empty' may take up both slot
 var passive_skill_list = [
-	["Empty", "", true],
-	["MaxHP+2", "", false]
+	["Empty", "", true, 1],
+	["MaxHP+2", "", false, 0]
 ]
 
-var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list]
+# player current equip only stores the index of what is equiped [weapon, weaponType, top, bottom, active, passive1, passive2]
+var player_current_equip = ["fist", 0, 0, 0, 0, 0, 0]
+
+var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, player_current_equip]
 #endregion
 
 #region New Code Region
@@ -207,5 +219,6 @@ func load_data():
 			cleared_tutorial_levels.append(int(i))
 		was_data_loaded = true
 		last_login_date = data.get("last_login_date", "")
-		saving_list = data.get("saving_list", [])
+		if(loading_mode):
+			saving_list = data.get("saving_list", [])
 		print("✅ Global data loaded:", data)

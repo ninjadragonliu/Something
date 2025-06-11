@@ -1,5 +1,7 @@
 extends Control
 
+var passive_slot = 0
+
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
 	$Equipment.show()
@@ -12,9 +14,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current SKill".text = "Current Skill: " + "N/A" # N/A is placeholder
-	$"Panel/Current Equip/Equip 1".text = "Equip 1: " + "N/A" # N/A is placeholder
-	$"Panel/Current Equip/Equip 2".text = "Equip 2: " + "N/A" # N/A is placeholder
+	$"Panel/Current Equip/Equip 1".text = "Weapon: " #+ "N/A" # N/A is placeholder
+	$"Panel/Current Equip/Equip 2".text = "Top: " #+  Global.top_list[Global.player_current_equip[2]][0] # N/A is placeholder
+	$"Panel/Current Equip/Equip 2".text = "Bottom: " #+ Global.bottom_list[Global.player_current_equip[3]][0] # N/A is placeholder
+	
+	$"Panel/Current SKill/Active".text = "Active: " + Global.active_skill_list[Global.player_current_equip[4]][0]
+	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.passive_skill_list[Global.player_current_equip[5]][0]
+	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.passive_skill_list[Global.player_current_equip[6]][0]
  
 func _ready_weapon_page():
 	var weapon_grid = $Equipment/Weapon/ScrollContainer/GridContainer
@@ -22,27 +28,29 @@ func _ready_weapon_page():
 	for child in weapon_grid.get_children():
 		weapon_grid.remove_child(child)
 		child.queue_free()
-		
+	
 	for i in range(3):
 		for weapon in Global.saving_list[i]:
-			var button = TextureButton.new()
-			# weapon_name => weapon[0]
-			var icon_path = "res://Assets/testing.png" # testing use code
-			#var icon_path = "res://Assets/"+weapon[0]+".png"
-			
-			if ResourceLoader.exists(icon_path):
-				button.texture_normal = load(icon_path)
-			else:
-				print("Icon: " +weapon[0]+ " not found man, try check the asset")
-			
-			button.ignore_texture_size = true
-			button.stretch_mode = 0
-			button.custom_minimum_size = Vector2(100,100)
-			
-			button.connect("pressed", _on_weapon_icon_pressed.bind(weapon[0]))
-			weapon_grid.add_child(button)
+			#print(weapon)
+			if(weapon[3] != 1):
+				var button = TextureButton.new()
+				# weapon_name => weapon[0]
+				var icon_path = "res://Assets/testing.png" # testing use code
+				#var icon_path = "res://Assets/"+weapon[0]+".png"
+				
+				if ResourceLoader.exists(icon_path):
+					button.texture_normal = load(icon_path)
+				else:
+					print("Icon: " +weapon[0]+ " not found man, try check the asset")
+				
+				button.ignore_texture_size = true
+				button.stretch_mode = 0
+				button.custom_minimum_size = Vector2(100,100)
+				
+				button.connect("pressed", _on_weapon_icon_pressed.bind(weapon[0]))
+				weapon_grid.add_child(button)
 
-func _ready_armor_page():
+func _ready_top_page():
 	var armor_grid = $Equipment/Armor/ScrollContainer/GridContainer
 	
 	for child in armor_grid.get_children():
@@ -64,11 +72,11 @@ func _ready_armor_page():
 		button.stretch_mode = 0
 		button.custom_minimum_size = Vector2(100,100)
 		
-		button.connect("pressed", _on_armor_icon_pressed.bind(top[0]))
+		button.connect("pressed", _on_top_icon_pressed.bind(top[0]))
 		
 		armor_grid.add_child(button)
 
-func _ready_placeholder_page():
+func _ready_bottom_page():
 	var placeholder_grid = $Equipment/Placeholder/ScrollContainer/GridContainer
 	
 	for child in placeholder_grid.get_children():
@@ -90,7 +98,7 @@ func _ready_placeholder_page():
 		button.stretch_mode = 0
 		button.custom_minimum_size = Vector2(100,100)
 		
-		button.connect("pressed", _on_armor_icon_pressed.bind(bottom[0]))
+		button.connect("pressed", _on_bottom_icon_pressed.bind(bottom[0]))
 		
 		placeholder_grid.add_child(button)
 
@@ -101,68 +109,101 @@ func _ready_active_page():
 		active_skill_grid.remove_child(child)
 		child.queue_free()
 	
-	for skill_name in Global.active_skill_list:
-		var button = TextureButton.new()
-		
-		var icon_path = "res://Assets/1421 - Icon.png"#"res://Assets/"+skill_name+".png"
-		
-		if ResourceLoader.exists(icon_path):
-			button.texture_normal = load(icon_path)
-		else:
-			print("Icon: " +skill_name+ " not found man, try check the asset")
-		
-		button.ignore_texture_size = true
-		button.stretch_mode = 0
-		button.custom_minimum_size = Vector2(100,100)
-		
-		button.connect("pressed", _on_active_skill_icon_pressed.bind(skill_name))
-		
-		active_skill_grid.add_child(button)
+	for skill in Global.active_skill_list:
+		if skill[2] == true:
+			var button = TextureButton.new()
+			# skill_name => skill[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+skill[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +skill[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_active_skill_icon_pressed.bind(skill[0]))
+			if skill[3] == 1 and skill[0] != "Empty":
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			active_skill_grid.add_child(button)
 
 func _ready_passive_page():
+	passive_slot = 0
 	var passive_skill_grid = $PassiveSkills/ScrollContainer/GridContainer
 	
 	for child in passive_skill_grid.get_children():
 		passive_skill_grid.remove_child(child)
 		child.queue_free()
 	
-	for skill_name in Global.passive_skill_list:
-		var button = TextureButton.new()
-		
-		var icon_path = "res://Assets/1420 - Icon.png"#"res://Assets/"+skill_name+".png"
-		
-		if ResourceLoader.exists(icon_path):
-			button.texture_normal = load(icon_path)
-		else:
-			print("Icon: " +skill_name+ " not found man, try check the asset")
-		
-		button.ignore_texture_size = true
-		button.stretch_mode = 0
-		button.custom_minimum_size = Vector2(100,100)
-		
-		button.connect("pressed", _on_passive_skill_icon_pressed.bind(skill_name))
-		
-		passive_skill_grid.add_child(button)
+	for skill in Global.passive_skill_list: 
+		if skill[2] == true:
+			var button = TextureButton.new()
+			# skill_name => skill[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+skill[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +skill[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_passive_skill_icon_pressed.bind(skill[0]))
+			if skill[3] == 1 and skill[0] != "Empty":
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			passive_skill_grid.add_child(button)
 
 func _on_weapon_icon_pressed(weapon_name):
 	print("Description screen not built for "+weapon_name)
 
-func _on_armor_icon_pressed(armor_name):
-	print("Description screen not built for "+armor_name)
+func _on_top_icon_pressed(top_name):
+	print("Description screen not built for "+top_name)
 
-func _on_placeholder_icon_pressed(placeholder_name):
-	print("Description screen not built for "+placeholder_name)
+func _on_bottom_icon_pressed(bottom_name):
+	print("Description screen not built for "+bottom_name)
 
 func _on_active_skill_icon_pressed(skill_name):
-	if skill_name == "Empty":
-		
+	var index = 0
+	
+	#unequip
+	Global.active_skill_list[Global.player_current_equip[4]][3] = 0
+	
+	for skill in Global.active_skill_list:
+		if skill[0] == skill_name:
+			skill[3] = 1
+			Global.player_current_equip[4] = index
+			break
 			
-		Global.player_current_active = "Empty"
-	print("Guess what is not done? yeah, active skill replacemen: " + skill_name)
+		index += 1# keep track of index
+	_on_active_skills_close_requested()
 
 func _on_passive_skill_icon_pressed(skill_name):
-	print("Guess what is not done? yeah, active skill replacemen: " + skill_name)
+	#print(skill_name+" skillName\n")
+	var index = 0
+	var slot = passive_slot+4 #calculate correct slot user are switching
 	
+	#unequip
+	if !(Global.player_current_equip[5] == 0 and Global.player_current_equip[6] == 0):
+		Global.passive_skill_list[Global.player_current_equip[slot]][3] = 0
+	#print(Global.passive_skill_list[Global.player_current_equip[slot]])
+	
+	for skill in Global.passive_skill_list:
+		if skill[0] == skill_name:
+			skill[3] = 1
+			Global.player_current_equip[slot] = index
+			#print(skill)
+			break
+		
+		index += 1# keep track of index
+	#print(Global.passive_skill_list[Global.player_current_equip[slot]][0])
+	_on_passive_skills_close_requested()
+
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
 
@@ -208,7 +249,7 @@ func _on_armor_2_pressed() -> void:
 	$Equipment/Weapon2.button_pressed = false
 	$Equipment/Armor2.button_pressed = true
 	$Equipment/Placeholder2.button_pressed = false
-	_ready_armor_page()
+	_ready_top_page()
 
 func _on_placeholder_2_pressed() -> void:
 	$Equipment/Weapon.hide()
@@ -217,7 +258,7 @@ func _on_placeholder_2_pressed() -> void:
 	$Equipment/Weapon2.button_pressed = false
 	$Equipment/Armor2.button_pressed = false
 	$Equipment/Placeholder2.button_pressed = true
-	_ready_placeholder_page()
+	_ready_bottom_page()
 
 func _on_active_pressed() -> void:
 	$Skill/Active.button_pressed = true
@@ -234,10 +275,12 @@ func _on_passive_pressed() -> void:
 func _on_passive_skill_1_pressed() -> void:
 	_ready_passive_page()
 	$PassiveSkills.show()
+	passive_slot = 1
 
 func _on_passive_skill_2_pressed() -> void:
 	_ready_passive_page()
 	$PassiveSkills.show()
+	passive_slot = 2
 
 func _on_passive_skills_close_requested() -> void:
 	$PassiveSkills.hide()
