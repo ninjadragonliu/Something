@@ -24,6 +24,69 @@ var player_active_skill_list = ["Empty", "HP+2"]
 var player_passive_skill_list = ["Empty", "MAXHP+2"]
 var player_current_active = ["Empty"]
 var player_current_passive = ["Empty", "Empty"]
+
+
+#region
+# [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
+# [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
+
+# run to assign types
+func _readyLists():
+	for weapon in weapon_list_fist:
+		weapon[1] = "fist"
+	for weapon in weapon_list_sword:
+		weapon[1] = "sword"
+	for weapon in weapon_list_lance:
+		weapon[1] = "lance"
+	for top in top_list:
+		top[1] = "top"
+	for bottom in bottom_list:
+		bottom[1] = "bottom"
+	for active in active_skill_list:
+		active[1] = "active"
+	for passive in passive_skill_list:
+		passive[1] = "passive"
+	
+	# testing lists
+	print(saving_list)
+
+# How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
+var weapon_list_fist = [
+	["Bare Fist","", true],
+	["Soldier Glove","", false]
+]
+ 
+var weapon_list_sword = [
+	["Wooden Sword","", false],
+	["Soldier Sword","", false]
+]
+
+var weapon_list_lance = [
+	["Wooden Lance","", false],
+	["Soldier Lance","", false]
+]
+ 
+var top_list = [
+	["Skin Armor", "", false],
+	["Leather Armor", "", false]
+]
+
+var bottom_list = [
+	["Skin Pants", "", false],
+	["Leather Pants", "", false]
+]
+
+var active_skill_list = [
+	["Empty", "", true],
+	["HP+3", "", false]
+]
+
+var passive_skill_list = [
+	["Empty", "", true],
+	["MaxHP+2", "", false]
+]
+
+var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list]
 #endregion
 
 #region New Code Region
@@ -80,6 +143,7 @@ var shop_weapons = {
 	
 func _ready() -> void:
 	player_id = generate_player_id()
+	_readyLists()
 
 func generate_player_id():
 	var temp = ""
@@ -112,7 +176,8 @@ func save_game_data():
 		"intro_text": intro_text,
 		"tutorial_counter": tutorial_counter,
 		"cleared_tutorial_levels": cleared_tutorial_levels,
-		"last_login_date": last_login_date
+		"last_login_date": last_login_date,
+		"saving_list": saving_list
 	}
 	SaveSystem.save_game(data)
 	print("💾 Global data saved:", data)
@@ -149,4 +214,5 @@ func load_data():
 			cleared_tutorial_levels.append(int(i))
 		was_data_loaded = true
 		last_login_date = data.get("last_login_date", "")
+		saving_list = data.get("saving_list")
 		print("✅ Global data loaded:", data)

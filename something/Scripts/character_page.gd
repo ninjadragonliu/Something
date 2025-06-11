@@ -9,8 +9,6 @@ func _ready() -> void:
 	$Skill/Active.button_pressed = true
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
-	
-
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
@@ -24,24 +22,25 @@ func _ready_weapon_page():
 	for child in weapon_grid.get_children():
 		weapon_grid.remove_child(child)
 		child.queue_free()
-	
-	for weapon_name in Global.player_weapon_list:
-		var button = TextureButton.new()
 		
-		var icon_path = "res://Assets/"+weapon_name+".png"
-		
-		if ResourceLoader.exists(icon_path):
-			button.texture_normal = load(icon_path)
-		else:
-			print("Icon: " +weapon_name+ " not found man, try check the asset")
-		
-		button.ignore_texture_size = true
-		button.stretch_mode = 0
-		button.custom_minimum_size = Vector2(100,100)
-		
-		button.connect("pressed", _on_weapon_icon_pressed.bind(weapon_name))
-		
-		weapon_grid.add_child(button)
+	for i in range(3):
+		for weapon in Global.saving_list[i]:
+			var button = TextureButton.new()
+			# weapon_name => weapon[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+weapon[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +weapon[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_weapon_icon_pressed.bind(weapon[0]))
+			weapon_grid.add_child(button)
 
 func _ready_armor_page():
 	var armor_grid = $Equipment/Armor/ScrollContainer/GridContainer
@@ -152,6 +151,10 @@ func _on_placeholder_icon_pressed(placeholder_name):
 	print("Description screen not built for "+placeholder_name)
 
 func _on_active_skill_icon_pressed(skill_name):
+	if skill_name == "Empty":
+		
+			
+		Global.player_current_active = "Empty"
 	print("Guess what is not done? yeah, active skill replacemen: " + skill_name)
 
 func _on_passive_skill_icon_pressed(skill_name):
