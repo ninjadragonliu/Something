@@ -49,21 +49,22 @@ func _ready_armor_page():
 		armor_grid.remove_child(child)
 		child.queue_free()
 	
-	for armor_name in Global.player_armor_list:
+	for top in Global.top_list:
 		var button = TextureButton.new()
-		
-		var icon_path = "res://Assets/"+armor_name+".png"
+		# top_name => top[0]
+		var icon_path = "res://Assets/testing.png" # testing use code
+		#var icon_path = "res://Assets/"+top[0]+".png"
 		
 		if ResourceLoader.exists(icon_path):
 			button.texture_normal = load(icon_path)
 		else:
-			print("Icon: " +armor_name+ " not found man, try check the asset")
+			print("Icon: " +top[0]+ " not found man, try check the asset")
 		
 		button.ignore_texture_size = true
 		button.stretch_mode = 0
 		button.custom_minimum_size = Vector2(100,100)
 		
-		button.connect("pressed", _on_armor_icon_pressed.bind(armor_name))
+		button.connect("pressed", _on_armor_icon_pressed.bind(top[0]))
 		
 		armor_grid.add_child(button)
 
@@ -74,21 +75,22 @@ func _ready_placeholder_page():
 		placeholder_grid.remove_child(child)
 		child.queue_free()
 	
-	for placeholder_name in Global.player_placeholder_list:
+	for bottom in Global.bottom_list:
 		var button = TextureButton.new()
-		
-		var icon_path = "res://Assets/"+placeholder_name+".png"
+		# bottom_name => bottom[0]
+		var icon_path = "res://Assets/testing.png" # testing use code
+		#var icon_path = "res://Assets/"+bottom[0]+".png"
 		
 		if ResourceLoader.exists(icon_path):
 			button.texture_normal = load(icon_path)
 		else:
-			print("Icon: " +placeholder_name+ " not found man, try check the asset")
+			print("Icon: " +bottom[0]+ " not found man, try check the asset")
 		
 		button.ignore_texture_size = true
 		button.stretch_mode = 0
 		button.custom_minimum_size = Vector2(100,100)
 		
-		button.connect("pressed", _on_armor_icon_pressed.bind(placeholder_name))
+		button.connect("pressed", _on_armor_icon_pressed.bind(bottom[0]))
 		
 		placeholder_grid.add_child(button)
 
@@ -99,7 +101,7 @@ func _ready_active_page():
 		active_skill_grid.remove_child(child)
 		child.queue_free()
 	
-	for skill_name in Global.player_active_skill_list:
+	for skill_name in Global.active_skill_list:
 		var button = TextureButton.new()
 		
 		var icon_path = "res://Assets/1421 - Icon.png"#"res://Assets/"+skill_name+".png"
@@ -124,7 +126,7 @@ func _ready_passive_page():
 		passive_skill_grid.remove_child(child)
 		child.queue_free()
 	
-	for skill_name in Global.player_passive_skill_list:
+	for skill_name in Global.passive_skill_list:
 		var button = TextureButton.new()
 		
 		var icon_path = "res://Assets/1420 - Icon.png"#"res://Assets/"+skill_name+".png"
