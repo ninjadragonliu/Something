@@ -175,7 +175,6 @@ theme_override_font_sizes/font_size = 20
 text = "Current Skill"
 
 [node name="Equipment" type="Panel" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -193,10 +192,10 @@ metadata/_edit_lock_ = true
 [node name="Weapon2" type="Button" parent="Equipment"]
 z_index = 5
 layout_mode = 0
-offset_left = 23.0
-offset_top = 33.0
-offset_right = 187.0
-offset_bottom = 83.0
+offset_left = 19.0
+offset_top = 21.0
+offset_right = 183.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_hxf2x")
@@ -207,10 +206,10 @@ text = "Weapon"
 [node name="Armor2" type="Button" parent="Equipment"]
 z_index = 5
 layout_mode = 0
-offset_left = 188.0
-offset_top = 33.0
-offset_right = 352.0
-offset_bottom = 83.0
+offset_left = 184.0
+offset_top = 21.0
+offset_right = 348.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
@@ -221,10 +220,10 @@ text = "Armor"
 [node name="Placeholder2" type="Button" parent="Equipment"]
 z_index = 5
 layout_mode = 0
-offset_left = 353.0
-offset_top = 33.0
-offset_right = 532.0
-offset_bottom = 83.0
+offset_left = 349.0
+offset_top = 21.0
+offset_right = 528.0
+offset_bottom = 71.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
@@ -811,6 +810,7 @@ texture = SubResource("CanvasTexture_mkmqd")
 expand_mode = 2
 
 [node name="Skill" type="Panel" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
