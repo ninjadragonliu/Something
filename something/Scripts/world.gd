@@ -8,7 +8,6 @@ extends Control
 var enemy_in_range_left = []
 var enemy_in_range_right = []
 var level_cleared = false
-var player_damaged = false
 var enemies_remaining
 
 func _ready() -> void:
@@ -16,7 +15,6 @@ func _ready() -> void:
 	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
-	player.boss_hit_player.connect(_on_player_hit_by_boss)
 	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
@@ -37,12 +35,9 @@ func _process(delta: float) -> void:
 
 func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
-	player_damaged = true
+	#player_damaged = true
 	if enemies_remaining == 0:
 		clear_level()
-
-func _on_player_hit_by_boss():
-	player_damaged = true
 	
 func clear_level():
 	$EnemiesRemaining/Label.text = str(enemies_remaining)
