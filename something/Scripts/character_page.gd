@@ -143,6 +143,7 @@ func _ready_passive_page():
 		button.connect("pressed", _on_passive_skill_icon_pressed.bind(skill_name))
 		
 		passive_skill_grid.add_child(button)
+
 func _on_weapon_icon_pressed(weapon_name):
 	print("Description screen not built for "+weapon_name)
 
