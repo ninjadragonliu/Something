@@ -24,7 +24,7 @@ func _ready_weapon_page():
 		child.queue_free()
 		
 	for i in range(3):
-		for weapon in Global.saving_list:
+		for weapon in Global.saving_list[i]:
 			var button = TextureButton.new()
 			# weapon_name => weapon[0]
 			var icon_path = "res://Assets/testing.png" # testing use code
