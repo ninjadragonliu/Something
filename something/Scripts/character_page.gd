@@ -128,6 +128,7 @@ func _ready_active_page():
 			button.connect("pressed", _on_active_skill_icon_pressed.bind(skill[0]))
 			if skill[3] == 1 and skill[0] != "Empty":
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
 			active_skill_grid.add_child(button)
 
 func _ready_passive_page():
