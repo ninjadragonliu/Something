@@ -4,6 +4,16 @@ var passive_slot = 0
 var player_weapon_type_id = 0
 
 func _ready() -> void:
+	if Global.loading_mode:
+		Global.weapon_list_fist = Global.saving_list[0]
+		Global.weapon_list_sword = Global.saving_list[1]
+		Global.weapon_list_lance = Global.saving_list[2]
+		Global.top_list = Global.saving_list[3]
+		Global.bottom_list = Global.saving_list[4]
+		Global.active_skill_list = Global.saving_list[5]
+		Global.passive_skill_list = Global.saving_list[6]
+		Global.player_current_equip = Global.saving_list[7]
+	
 	$Equipment/Weapon2.button_pressed = true
 	$Equipment.show()
 	$Skill.hide()
@@ -13,6 +23,14 @@ func _ready() -> void:
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
 	
+	match Global.player_current_equip[0]:
+		"fist":
+			player_weapon_type_id = 0
+		"sword":
+			player_weapon_type_id = 1
+		"lance":
+			player_weapon_type_id = 2
+		
 	print("Saving List:")
 	print(Global.saving_list)
 	
@@ -224,9 +242,9 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.player_current_equip[1]])
 	
-	Global.saving_list[0] = Global.weapon_list_fist
-	Global.saving_list[1] = Global.weapon_list_sword
-	Global.saving_list[2] = Global.weapon_list_lance
+	Global.weapon_list_fist = Global.saving_list[0]
+	Global.weapon_list_sword = Global.saving_list[1]
+	Global.weapon_list_lance = Global.saving_list[2]
 	Global.saving_list[7] = Global.player_current_equip
 	_ready_weapon_page()
 
