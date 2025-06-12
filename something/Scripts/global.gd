@@ -46,13 +46,38 @@ func _readyLists():
 				item[2] = true #own all items
 	#print(saving_list)
 
+func _update_for_new_items():
+	for i in range(7):
+		match i:
+			0:
+				while saving_list[i].size() < weapon_list_fist.size():
+					saving_list[i].append(weapon_list_fist[saving_list[i].size()])
+			1:
+				while saving_list[i].size() < weapon_list_sword.size():
+					saving_list[i].append(weapon_list_sword[saving_list[i].size()])
+			2:
+				while saving_list[i].size() < weapon_list_lance.size():
+					saving_list[i].append(weapon_list_lance[saving_list[i].size()])
+			3:
+				while saving_list[i].size() < top_list.size():
+					saving_list[i].append(top_list[saving_list[i].size()])
+			4:
+				while saving_list[i].size() < bottom_list.size():
+					saving_list[i].append(bottom_list[saving_list[i].size()])
+			5:
+				while saving_list[i].size() < active_skill_list.size():
+					saving_list[i].append(active_skill_list[saving_list[i].size()])
+			6:
+				while saving_list[i].size() < passive_skill_list.size():
+					saving_list[i].append(passive_skill_list[saving_list[i].size()])
+
 # [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
 # [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
 
 # How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
 var weapon_list_fist = [
 	["Bare Fist","", true, 1],
-	["Soldier Glove","", false, 0]
+	["Soldier Glove","", false, 0],
 ]
  
 var weapon_list_sword = [
@@ -221,4 +246,5 @@ func load_data():
 		last_login_date = data.get("last_login_date", "")
 		if(loading_mode):
 			saving_list = data.get("saving_list", [])
+		_update_for_new_items()
 		print("✅ Global data loaded:", data)
