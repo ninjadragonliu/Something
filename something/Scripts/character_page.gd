@@ -13,6 +13,9 @@ func _ready() -> void:
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
 	
+	print("Saving List:")
+	print(Global.saving_list)
+	
 	print("-----Current Equipment-----")
 	print(Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]][0])
 	print(Global.top_list[Global.player_current_equip[2]][0])
@@ -220,6 +223,11 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	player_weapon_type_id = weapon_type_id
 	#print("----Equipped----")
 	#print(Global.saving_list[weapon_type_id][Global.player_current_equip[1]])
+	
+	Global.saving_list[0] = Global.weapon_list_fist
+	Global.saving_list[1] = Global.weapon_list_sword
+	Global.saving_list[2] = Global.weapon_list_lance
+	Global.saving_list[7] = Global.player_current_equip
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
@@ -235,6 +243,8 @@ func _on_top_icon_pressed(top_name):
 			break
 			
 		index += 1# keep track of index
+	Global.saving_list[3] = Global.top_list
+	Global.saving_list[7] = Global.player_current_equip
 	_ready_top_page()
 
 func _on_bottom_icon_pressed(bottom_name):
@@ -250,6 +260,8 @@ func _on_bottom_icon_pressed(bottom_name):
 			break
 			
 		index += 1# keep track of index
+	Global.saving_list[4] = Global.bottom_list
+	Global.saving_list[7] = Global.player_current_equip
 	_ready_bottom_page()
 
 func _on_active_skill_icon_pressed(skill_name):
@@ -265,6 +277,8 @@ func _on_active_skill_icon_pressed(skill_name):
 			break
 			
 		index += 1# keep track of index
+	Global.saving_list[5] = Global.active_skill_list
+	Global.saving_list[7] = Global.player_current_equip
 	_on_active_skills_close_requested()
 
 func _on_passive_skill_icon_pressed(skill_name):
@@ -286,6 +300,8 @@ func _on_passive_skill_icon_pressed(skill_name):
 		
 		index += 1# keep track of index
 	#print(Global.passive_skill_list[Global.player_current_equip[slot]][0])
+	Global.saving_list[6] = Global.passive_skill_list
+	Global.saving_list[7] = Global.player_current_equip
 	_on_passive_skills_close_requested()
 
 func _on_back_pressed() -> void:

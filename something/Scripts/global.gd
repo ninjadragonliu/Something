@@ -44,6 +44,16 @@ func _readyLists():
 		for i in range(7):
 			for item in saving_list[i]:
 				item[2] = true #own all items
+	
+	if loading_mode:
+		weapon_list_fist = saving_list[0]
+		weapon_list_sword = saving_list[1]
+		weapon_list_lance = saving_list[2]
+		top_list = saving_list[3]
+		bottom_list = saving_list[4]
+		active_skill_list = saving_list[5]
+		passive_skill_list = saving_list[6]
+		player_current_equip = saving_list[7]
 	#print(saving_list)
 
 # [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
