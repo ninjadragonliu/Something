@@ -170,9 +170,10 @@ func _ready_passive_page():
 
 func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	var index = 0
-	
+	#print("----Unequipped----")
+	#print(Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]])
 	#unequip
-	Global.saving_list[weapon_type_id][Global.player_current_equip[1]][3] = 0
+	Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]][3] = 0
 	
 	match(weapon_type_id):
 		0:
@@ -189,6 +190,8 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 			break
 		index += 1# keep track of index
 	player_weapon_type_id = weapon_type_id
+	#print("----Equipped----")
+	#print(Global.saving_list[weapon_type_id][Global.player_current_equip[1]])
 	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
