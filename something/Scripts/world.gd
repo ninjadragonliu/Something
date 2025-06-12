@@ -24,15 +24,11 @@ func _ready() -> void:
 
 	timer.timeout.connect(enemies.spawn_enemy)
 	
-	
-	
 func _process(delta: float) -> void:
-	
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
 	$EnemiesRemaining/Label.text = str(enemies_remaining)
 	$Health.value = Global.health
 	
-
 func _on_player_damaged():
 	enemies_remaining -= 1  # Decrease enemy count when player is hit
 	#player_damaged = true
@@ -70,7 +66,6 @@ func clear_tutorial_level():
 		# Pause the game
 		get_tree().paused = true
 
-
 		# Allow the game over screen to function while paused
 		popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -96,7 +91,6 @@ func _on_left_pressed() -> void:
 			elif enemies_remaining == 0:
 				clear_level()
 
-
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
@@ -118,7 +112,6 @@ func _on_right_pressed() -> void:
 				clear_tutorial_level()
 			elif enemies_remaining == 0:
 				clear_level()
-
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):

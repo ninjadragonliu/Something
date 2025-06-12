@@ -1,9 +1,5 @@
 extends Control
 
-var total_levels = 5
-var cleared_levels = []
-var level_counter = 1
-
 func _ready() -> void:
 	for i in range(1, Global.tutorial_levels + 1):  # Loop through all level buttons
 		var button = get_node("Button" + str(i))  # Find the button (e.g., "Button1", "Button2", etc.)
