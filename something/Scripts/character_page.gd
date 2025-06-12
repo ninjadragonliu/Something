@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 	$"Panel/Current SKill/Passive 2".text = "Passive 2: " + Global.passive_skill_list[Global.player_current_equip[6]][0]
  
 func _ready_weapon_page():
+	Global.save_game_data()
 	var weapon_grid = $Equipment/Weapon/ScrollContainer/GridContainer
 	
 	match Global.player_current_equip[0]:
@@ -70,6 +71,7 @@ func _ready_weapon_page():
 			weapon_grid.add_child(button)
 
 func _ready_top_page():
+	Global.save_game_data()
 	var armor_grid = $Equipment/Top/ScrollContainer/GridContainer
 	
 	for child in armor_grid.get_children():
@@ -98,6 +100,7 @@ func _ready_top_page():
 		armor_grid.add_child(button)
 
 func _ready_bottom_page():
+	Global.save_game_data()
 	var placeholder_grid = $Equipment/Bottom/ScrollContainer/GridContainer
 	
 	for child in placeholder_grid.get_children():
@@ -126,6 +129,7 @@ func _ready_bottom_page():
 		placeholder_grid.add_child(button)
 
 func _ready_active_page():
+	Global.save_game_data()
 	var active_skill_grid = $ActiveSkills/ScrollContainer/GridContainer
 	
 	for child in active_skill_grid.get_children():
@@ -155,6 +159,7 @@ func _ready_active_page():
 			active_skill_grid.add_child(button)
 
 func _ready_passive_page():
+	Global.save_game_data()
 	passive_slot = 0
 	var passive_skill_grid = $PassiveSkills/ScrollContainer/GridContainer
 	
@@ -362,9 +367,11 @@ func _on_passive_skill_2_pressed() -> void:
 	passive_slot = 2
 
 func _on_passive_skills_close_requested() -> void:
+	Global.save_game_data()
 	$PassiveSkills.hide()
 
 func _on_active_skills_close_requested() -> void:
+	Global.save_game_data()
 	$ActiveSkills.hide()
 
 func _on_active_skill_1_pressed() -> void:
