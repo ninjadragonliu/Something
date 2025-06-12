@@ -18,8 +18,8 @@ var coins = 0
 var diamonds = 0
 var last_login_date = ""
 
-var gm_mode = false
-var loading_mode = true
+var gm_mode = true
+var loading_mode = false
 #endregion
 
 #region

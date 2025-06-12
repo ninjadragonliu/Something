@@ -166,6 +166,7 @@ theme_override_font_sizes/font_size = 20
 text = "Top"
 
 [node name="Equip 3" type="Label" parent="Panel/Current Equip"]
+layout_mode = 0
 offset_left = 28.0
 offset_top = 84.0
 offset_right = 380.0

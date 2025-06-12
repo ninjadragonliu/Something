@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
 	$"Panel/Current Equip/Equip 1".text = "Weapon: " #+ "N/A" # N/A is placeholder
 	$"Panel/Current Equip/Equip 2".text = "Top: " #+  Global.top_list[Global.player_current_equip[2]][0] # N/A is placeholder
-	$"Panel/Current Equip/Equip 2".text = "Bottom: " #+ Global.bottom_list[Global.player_current_equip[3]][0] # N/A is placeholder
+	$"Panel/Current Equip/Equip 3".text = "Bottom: " #+ Global.bottom_list[Global.player_current_equip[3]][0] # N/A is placeholder
 	
 	$"Panel/Current SKill/Active".text = "Active: " + Global.active_skill_list[Global.player_current_equip[4]][0]
 	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.passive_skill_list[Global.player_current_equip[5]][0]
