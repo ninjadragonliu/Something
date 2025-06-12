@@ -127,8 +127,8 @@ func _ready_active_page():
 			
 			button.connect("pressed", _on_active_skill_icon_pressed.bind(skill[0]))
 			if skill[3] == 1 and skill[0] != "Empty":
-				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			active_skill_grid.add_child(button)
 
 func _ready_passive_page():
@@ -157,6 +157,7 @@ func _ready_passive_page():
 			
 			button.connect("pressed", _on_passive_skill_icon_pressed.bind(skill[0]))
 			if skill[3] == 1 and skill[0] != "Empty":
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			passive_skill_grid.add_child(button)
 
@@ -164,10 +165,34 @@ func _on_weapon_icon_pressed(weapon_name):
 	print("Description screen not built for "+weapon_name)
 
 func _on_top_icon_pressed(top_name):
-	print("Description screen not built for "+top_name)
+	var index = 0
+	
+	#unequip
+	Global.bottom_list[Global.player_current_equip[2]][3] = 0
+	
+	for top in Global.top_list:
+		if top[0] == top_name:
+			top[3] = 1
+			Global.player_current_equip[2] = index
+			break
+			
+		index += 1# keep track of index
+	_ready_top_page()
 
 func _on_bottom_icon_pressed(bottom_name):
-	print("Description screen not built for "+bottom_name)
+	var index = 0
+	
+	#unequip
+	Global.bottom_list[Global.player_current_equip[3]][3] = 0
+	
+	for bottom in Global.bottom_list:
+		if bottom[0] == bottom_name:
+			bottom[3] = 1
+			Global.player_current_equip[3] = index
+			break
+			
+		index += 1# keep track of index
+	_ready_bottom_page()
 
 func _on_active_skill_icon_pressed(skill_name):
 	var index = 0
