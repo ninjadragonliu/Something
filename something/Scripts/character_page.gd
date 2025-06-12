@@ -26,6 +26,14 @@ func _process(delta: float) -> void:
 func _ready_weapon_page():
 	var weapon_grid = $Equipment/Weapon/ScrollContainer/GridContainer
 	
+	match Global.player_current_equip[0]:
+		"fist":
+			player_weapon_type_id = 0
+		"sword":
+			player_weapon_type_id = 1
+		"lance":
+			player_weapon_type_id = 2
+	
 	for child in weapon_grid.get_children():
 		weapon_grid.remove_child(child)
 		child.queue_free()
