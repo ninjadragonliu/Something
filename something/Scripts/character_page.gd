@@ -12,6 +12,14 @@ func _ready() -> void:
 	$Skill/Active.button_pressed = true
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
+	
+	print("-----Current Equipment-----")
+	print(Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]][0])
+	print(Global.top_list[Global.player_current_equip[2]][0])
+	print(Global.active_skill_list[Global.player_current_equip[4]][0])
+	print(Global.passive_skill_list[Global.player_current_equip[5]][0])
+	print(Global.passive_skill_list[Global.player_current_equip[6]][0])
+	print("---------------------------")
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
