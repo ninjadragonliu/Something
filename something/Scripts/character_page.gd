@@ -1,6 +1,7 @@
 extends Control
 
 var passive_slot = 0
+var player_weapon_type_id = 0
 
 func _ready() -> void:
 	$Equipment/Weapon2.button_pressed = true
@@ -14,9 +15,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current Equip/Equip 1".text = "Weapon: " #+ "N/A" # N/A is placeholder
-	$"Panel/Current Equip/Equip 2".text = "Top: " #+  Global.top_list[Global.player_current_equip[2]][0] # N/A is placeholder
-	$"Panel/Current Equip/Equip 3".text = "Bottom: " #+ Global.bottom_list[Global.player_current_equip[3]][0] # N/A is placeholder
+	$"Panel/Current Equip/Equip 1".text = "Weapon: " + Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]][0]
+	$"Panel/Current Equip/Equip 2".text = "Top: " +  Global.top_list[Global.player_current_equip[2]][0]
+	$"Panel/Current Equip/Equip 3".text = "Bottom: " + Global.bottom_list[Global.player_current_equip[3]][0]
 	
 	$"Panel/Current SKill/Active".text = "Active: " + Global.active_skill_list[Global.player_current_equip[4]][0]
 	$"Panel/Current SKill/Passive 1".text = "Passive 1: " + Global.passive_skill_list[Global.player_current_equip[5]][0]
@@ -32,23 +33,25 @@ func _ready_weapon_page():
 	for i in range(3):
 		for weapon in Global.saving_list[i]:
 			#print(weapon)
-			if(weapon[3] != 1):
-				var button = TextureButton.new()
-				# weapon_name => weapon[0]
-				var icon_path = "res://Assets/testing.png" # testing use code
-				#var icon_path = "res://Assets/"+weapon[0]+".png"
-				
-				if ResourceLoader.exists(icon_path):
-					button.texture_normal = load(icon_path)
-				else:
-					print("Icon: " +weapon[0]+ " not found man, try check the asset")
-				
-				button.ignore_texture_size = true
-				button.stretch_mode = 0
-				button.custom_minimum_size = Vector2(100,100)
-				
-				button.connect("pressed", _on_weapon_icon_pressed.bind(weapon[0]))
-				weapon_grid.add_child(button)
+			var button = TextureButton.new()
+			# weapon_name => weapon[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+weapon[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +weapon[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_weapon_icon_pressed.bind(i, weapon[0]))
+			if weapon[3] == 1:
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			weapon_grid.add_child(button)
 
 func _ready_top_page():
 	var armor_grid = $Equipment/Top/ScrollContainer/GridContainer
@@ -73,7 +76,9 @@ func _ready_top_page():
 		button.custom_minimum_size = Vector2(100,100)
 		
 		button.connect("pressed", _on_top_icon_pressed.bind(top[0]))
-		
+		if top[3] == 1 and top[0] != "Empty":
+			button.texture_disabled = load("res://Assets/testing_disabled.png")
+			button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 		armor_grid.add_child(button)
 
 func _ready_bottom_page():
@@ -99,7 +104,9 @@ func _ready_bottom_page():
 		button.custom_minimum_size = Vector2(100,100)
 		
 		button.connect("pressed", _on_bottom_icon_pressed.bind(bottom[0]))
-		
+		if bottom[3] == 1 and bottom[0] != "Empty":
+			button.texture_disabled = load("res://Assets/testing_disabled.png")
+			button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 		placeholder_grid.add_child(button)
 
 func _ready_active_page():
@@ -161,14 +168,34 @@ func _ready_passive_page():
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			passive_skill_grid.add_child(button)
 
-func _on_weapon_icon_pressed(weapon_name):
-	print("Description screen not built for "+weapon_name)
+func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
+	var index = 0
+	
+	#unequip
+	Global.saving_list[weapon_type_id][Global.player_current_equip[1]][3] = 0
+	
+	match(weapon_type_id):
+		0:
+			Global.player_current_equip[0] = "fist"
+		1:
+			Global.player_current_equip[0] = "sword"
+		2:
+			Global.player_current_equip[0] = "lance"
+		
+	for weapon in Global.saving_list[weapon_type_id]:
+		if weapon[0] == weapon_name:
+			weapon[3] = 1
+			Global.player_current_equip[1] = index
+			break
+		index += 1# keep track of index
+	player_weapon_type_id = weapon_type_id
+	_ready_weapon_page()
 
 func _on_top_icon_pressed(top_name):
 	var index = 0
 	
 	#unequip
-	Global.bottom_list[Global.player_current_equip[2]][3] = 0
+	Global.top_list[Global.player_current_equip[2]][3] = 0
 	
 	for top in Global.top_list:
 		if top[0] == top_name:
