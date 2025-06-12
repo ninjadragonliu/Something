@@ -51,7 +51,7 @@ func _ready_weapon_page():
 				weapon_grid.add_child(button)
 
 func _ready_top_page():
-	var armor_grid = $Equipment/Armor/ScrollContainer/GridContainer
+	var armor_grid = $Equipment/Top/ScrollContainer/GridContainer
 	
 	for child in armor_grid.get_children():
 		armor_grid.remove_child(child)
@@ -77,7 +77,7 @@ func _ready_top_page():
 		armor_grid.add_child(button)
 
 func _ready_bottom_page():
-	var placeholder_grid = $Equipment/Placeholder/ScrollContainer/GridContainer
+	var placeholder_grid = $Equipment/Bottom/ScrollContainer/GridContainer
 	
 	for child in placeholder_grid.get_children():
 		placeholder_grid.remove_child(child)
@@ -261,29 +261,29 @@ func _on_customize_pressed() -> void:
 
 func _on_weapon_2_pressed() -> void:
 	$Equipment/Weapon.show()
-	$Equipment/Armor.hide()
-	$Equipment/Placeholder.hide()
+	$Equipment/Top.hide()
+	$Equipment/Bottom.hide()
 	$Equipment/Weapon2.button_pressed = true
-	$Equipment/Armor2.button_pressed = false
-	$Equipment/Placeholder2.button_pressed = false
+	$Equipment/Top2.button_pressed = false
+	$Equipment/Bottom2.button_pressed = false
 	_ready_weapon_page()
 
-func _on_armor_2_pressed() -> void:
+func _on_top_2_pressed() -> void:
 	$Equipment/Weapon.hide()
-	$Equipment/Armor.show()
-	$Equipment/Placeholder.hide()
+	$Equipment/Top.show()
+	$Equipment/Bottom.hide()
 	$Equipment/Weapon2.button_pressed = false
-	$Equipment/Armor2.button_pressed = true
-	$Equipment/Placeholder2.button_pressed = false
+	$Equipment/Top2.button_pressed = true
+	$Equipment/Bottom2.button_pressed = false
 	_ready_top_page()
 
-func _on_placeholder_2_pressed() -> void:
+func _on_bottom_2_pressed() -> void:
 	$Equipment/Weapon.hide()
-	$Equipment/Armor.hide()
-	$Equipment/Placeholder.show()
+	$Equipment/Top.hide()
+	$Equipment/Bottom.show()
 	$Equipment/Weapon2.button_pressed = false
-	$Equipment/Armor2.button_pressed = false
-	$Equipment/Placeholder2.button_pressed = true
+	$Equipment/Top2.button_pressed = false
+	$Equipment/Bottom2.button_pressed = true
 	_ready_bottom_page()
 
 func _on_active_pressed() -> void:

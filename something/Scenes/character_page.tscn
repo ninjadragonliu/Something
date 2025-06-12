@@ -239,7 +239,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_42qqq")
 toggle_mode = true
 text = "Weapon"
 
-[node name="Armor2" type="Button" parent="Equipment"]
+[node name="Top2" type="Button" parent="Equipment"]
 z_index = 5
 layout_mode = 0
 offset_left = 184.0
@@ -251,9 +251,9 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_2psqf")
 theme_override_styles/normal = SubResource("StyleBoxFlat_c5y8m")
 toggle_mode = true
-text = "Armor"
+text = "Top"
 
-[node name="Placeholder2" type="Button" parent="Equipment"]
+[node name="Bottom2" type="Button" parent="Equipment"]
 z_index = 5
 layout_mode = 0
 offset_left = 349.0
@@ -265,7 +265,7 @@ theme_override_font_sizes/font_size = 25
 theme_override_styles/pressed = SubResource("StyleBoxFlat_pi1no")
 theme_override_styles/normal = SubResource("StyleBoxFlat_ck1n1")
 toggle_mode = true
-text = "Placeholder"
+text = "Bottom"
 
 [node name="Weapon" type="Panel" parent="Equipment"]
 layout_mode = 0
@@ -290,7 +290,7 @@ columns = 5
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Armor" type="Panel" parent="Equipment"]
+[node name="Top" type="Panel" parent="Equipment"]
 visible = false
 layout_mode = 0
 offset_left = 17.0
@@ -300,7 +300,7 @@ offset_bottom = 618.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_mkmqd")
 metadata/_edit_lock_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Armor"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Top"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -308,13 +308,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Equipment/Armor/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Equipment/Top/ScrollContainer"]
 layout_mode = 2
 columns = 5
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 
-[node name="Placeholder" type="Panel" parent="Equipment"]
+[node name="Bottom" type="Panel" parent="Equipment"]
 visible = false
 layout_mode = 0
 offset_left = 17.0
@@ -324,7 +324,7 @@ offset_bottom = 619.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_7h2jp")
 metadata/_edit_lock_ = true
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Placeholder"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Equipment/Bottom"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -332,7 +332,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GridContainer" type="GridContainer" parent="Equipment/Placeholder/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Equipment/Bottom/ScrollContainer"]
 layout_mode = 2
 columns = 5
 metadata/_edit_group_ = true
@@ -699,8 +699,8 @@ layout_mode = 2
 texture = SubResource("CanvasTexture_mkmqd")
 
 [connection signal="pressed" from="Equipment/Weapon2" to="." method="_on_weapon_2_pressed"]
-[connection signal="pressed" from="Equipment/Armor2" to="." method="_on_armor_2_pressed"]
-[connection signal="pressed" from="Equipment/Placeholder2" to="." method="_on_placeholder_2_pressed"]
+[connection signal="pressed" from="Equipment/Top2" to="." method="_on_top_2_pressed"]
+[connection signal="pressed" from="Equipment/Bottom2" to="." method="_on_bottom_2_pressed"]
 [connection signal="pressed" from="Skill/Active" to="." method="_on_active_pressed"]
 [connection signal="pressed" from="Skill/Passive" to="." method="_on_passive_pressed"]
 [connection signal="pressed" from="Skill/Active2/ActiveSkill1" to="." method="_on_active_skill_1_pressed"]
