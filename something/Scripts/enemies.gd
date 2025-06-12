@@ -46,7 +46,6 @@ func spawn_enemy():
 	var enemy = enemy.instantiate()
 	var animation = enemy.get_node("AnimationPlayer")
 
-	
 	enemy.position = spawn_position
 	enemy.speed = enemies_speed+randf_range(-0.15*enemies_speed, max(0.5,0.25*enemies_speed))
 	animation.speed_scale = 0.08 + enemies_speed*0.01

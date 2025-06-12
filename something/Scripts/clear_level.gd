@@ -23,7 +23,6 @@ func _ready() -> void:
 		$"Stars/Star 2".frame = 1
 		$"Stars/Star 3".frame = 1
 
-
 func _on_ok_pressed() -> void:
 	if Global.tutorial_cleared:
 		get_tree().paused = false
@@ -37,7 +36,6 @@ func _on_ok_pressed() -> void:
 		Global.save_game_data()
 		await get_tree().process_frame
 		get_tree().change_scene_to_file("res://Scenes/tutorial.tscn")
-
 
 func _on_next_level_pressed() -> void:
 	if Global.level < Global.levels_in_map and Global.tutorial_cleared:

@@ -5,9 +5,6 @@ signal take_damaged
 signal boss_hit_player
 
 func attack(body : Node2D):
-	#if body.is_in_group("enemy"):
-		#var enemy = body.get_node("enemy")
-		#enemy.take_damage(1)
 	body.take_damage(1)
 
 func take_damage(damage: int):
@@ -41,13 +38,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		boss_hit_player.emit()
 
 	if body.is_in_group("enemy"):
-		#var explosion = body.get_node("Explosion")
-		#var sprite = body.get_node("Sprite2D")
-		#body.set_process(false)
-		#sprite.hide()
-		#explosion.show()
-		#explosion.play("explosion_default")
-		#await get_tree().create_timer(0.2).timeout
 		var explosion = preload("res://nodes/explosion.tscn").instantiate()
 		explosion.position = body.position
 		var current_scene = get_tree().current_scene
