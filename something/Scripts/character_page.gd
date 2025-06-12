@@ -173,9 +173,16 @@ func _on_weapon_icon_pressed(weapon_type_id, weapon_name):
 	#print("----Unequipped----")
 	#print(Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]])
 	#unequip
+	match Global.player_current_equip[0]:
+		"fist":
+			player_weapon_type_id = 0
+		"sword":
+			player_weapon_type_id = 1
+		"lance":
+			player_weapon_type_id = 2
 	Global.saving_list[player_weapon_type_id][Global.player_current_equip[1]][3] = 0
 	
-	match(weapon_type_id):
+	match weapon_type_id :
 		0:
 			Global.player_current_equip[0] = "fist"
 		1:
