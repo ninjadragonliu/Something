@@ -76,41 +76,41 @@ func _update_for_new_items():
 
 # How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
 var weapon_list_fist = [
-	["Bare Fist","", true, 1],
-	["Soldier Glove","", false, 0],
+	["Bare Fist","", true, 1, "-", -1, false, false, -1],
+	["Soldier Glove","", false, 0, "coin", 100, true, false, -1],
 ]
  
 var weapon_list_sword = [
-	["Wooden Sword","", false, 0],
-	["Soldier Sword","", false, 0]
+	["Wooden Sword","", false, 0, "diamond", 1, true, false, -1],
+	["Soldier Sword","", false, 0, "diamond", 5, true, true, 3]
 ]
 
 var weapon_list_lance = [
-	["Wooden Lance","", false, 0],
-	["Soldier Lance","", false, 0]
+	["Wooden Lance","", false, 0, "diamond", 5, true, true, 3],
+	["Soldier Lance","", false, 0, "diamond", 9, true, true, 5]
 ]
  
 var top_list = [
-	["Empty", "", true, 1],
-	["Skin Armor", "", false, 0],
-	["Leather Armor", "", false, 0]
+	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Skin Armor", "", false, 0, "coin", 100, true, false, -1],
+	["Leather Armor", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var bottom_list = [
-	["Empty", "", true, 1],
-	["Skin Pants", "", false, 0],
-	["Leather Pants", "", false, 0]
+	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Skin Pants", "", false, 0, "coin", 100, true, false, -1],
+	["Leather Pants", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var active_skill_list = [
-	["Empty", "", true, 1],
-	["HP+3", "", false, 0]
+	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["HP+3", "", false, 0, "coin", 1000, true, false, -1]
 ]
 
 # passive skill index 3 (equip attribute) is special, 'Empty' can be set as 2 for 'Empty' may take up both slot
 var passive_skill_list = [
-	["Empty", "", true, 1],
-	["MaxHP+2", "", false, 0]
+	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["MaxHP+2", "", false, 0, "coin", 300, true, false, -1]
 ]
 
 # player current equip only stores the index of what is equiped [weapon, weaponType, top, bottom, active, passive1, passive2]

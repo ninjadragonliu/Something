@@ -20,17 +20,16 @@ func _ready() -> void:
 			player_weapon_type_id = 1
 		"lance":
 			player_weapon_type_id = 2
-		
-	print("Saving List:")
-	print(Global.saving_list)
 	
-	print("-----Current Equipment-----")
-	print(Global.saving_list[player_weapon_type_id][Global.saving_list[7][1]][0])
-	print(Global.saving_list[3][Global.saving_list[7][2]][0])
-	print(Global.saving_list[5][Global.saving_list[7][4]][0])
-	print(Global.saving_list[6][Global.saving_list[7][5]][0])
-	print(Global.saving_list[6][Global.saving_list[7][6]][0])
-	print("---------------------------")
+	#print("Saving List:")
+	#print(Global.saving_list)
+	#print("-----Current Equipment-----")
+	#print(Global.saving_list[player_weapon_type_id][Global.saving_list[7][1]][0])
+	#print(Global.saving_list[3][Global.saving_list[7][2]][0])
+	#print(Global.saving_list[5][Global.saving_list[7][4]][0])
+	#print(Global.saving_list[6][Global.saving_list[7][5]][0])
+	#print(Global.saving_list[6][Global.saving_list[7][6]][0])
+	#print("---------------------------")
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
