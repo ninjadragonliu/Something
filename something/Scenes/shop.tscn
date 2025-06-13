@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b58sux74o2wjs"]
+[gd_scene load_steps=8 format=3 uid="uid://b58sux74o2wjs"]
 
 [ext_resource type="Script" uid="uid://dhl2sjde6bkl6" path="res://Scripts/shop.gd" id="1_a0mxf"]
 [ext_resource type="PackedScene" uid="uid://b2utovt4d6tv8" path="res://Scenes/store_item.tscn" id="2_2shtd"]
@@ -7,9 +7,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ps1r"]
 bg_color = Color(0.576471, 0.709804, 0.929412, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2shtd"]
-bg_color = Color(0.577697, 0.708223, 0.930097, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_io27d"]
 bg_color = Color(0.576471, 0.709804, 0.929412, 1)
@@ -62,42 +59,109 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_3ps1r")
 toggle_mode = true
 text = "Featured"
 
-[node name="Costume" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Costume" type="Label" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0.734863, 0, 1)
 theme_override_font_sizes/font_size = 40
-theme_override_styles/pressed = SubResource("StyleBoxFlat_2shtd")
-toggle_mode = true
-text = "Costume"
+text = "Costume ↓"
+horizontal_alignment = 1
 
-[node name="Skills" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Hair" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
 toggle_mode = true
-text = "Skills"
+text = "Hair"
 
-[node name="Weapons" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Top" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
+toggle_mode = true
+text = "Top"
+
+[node name="Bottom" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
+toggle_mode = true
+text = "Bottom"
+
+[node name="Skills" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Skills ↓"
+horizontal_alignment = 1
+
+[node name="ActiveSkill" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
+toggle_mode = true
+text = "Active Skill"
+
+[node name="PassiveSkill" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_io27d")
+toggle_mode = true
+text = "Passive Skill"
+
+[node name="Weapons" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Weapons ↓"
+horizontal_alignment = 1
+
+[node name="Fist" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_fdj0q")
 toggle_mode = true
-text = "Weapons"
+text = "Fist"
 
-[node name="Equipment" type="Button" parent="ScrollContainer/VBoxContainer"]
+[node name="Sword" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fdj0q")
+toggle_mode = true
+text = "Sword"
+
+[node name="Lance" type="Button" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fdj0q")
+toggle_mode = true
+text = "Lance"
+
+[node name="Equipment" type="Label" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Equipment ↓"
+horizontal_alignment = 1
+
+[node name="EquipmentTop" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
 theme_override_font_sizes/font_size = 40
 theme_override_styles/pressed = SubResource("StyleBoxFlat_k6jq0")
 toggle_mode = true
-text = "Equipment"
+text = "Top"
 
-[node name="Panel" type="Panel" parent="ScrollContainer/VBoxContainer"]
-self_modulate = Color(0.769244, 0.560079, 0.578251, 1)
+[node name="EquipmentBottom" type="Button" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+theme_override_colors/font_pressed_color = Color(0, 0.733333, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/pressed = SubResource("StyleBoxFlat_k6jq0")
+toggle_mode = true
+text = "Bottom"
 
 [node name="Featured" type="Panel" parent="."]
 layout_mode = 1
@@ -476,10 +540,16 @@ text = "10"
 metadata/_edit_lock_ = true
 
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Featured" to="." method="_on_featured_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Costume" to="." method="_on_costume_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Skills" to="." method="_on_skills_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Weapons" to="." method="_on_weapons_pressed"]
-[connection signal="pressed" from="ScrollContainer/VBoxContainer/Equipment" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Hair" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Top" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Bottom" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/ActiveSkill" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/PassiveSkill" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Fist" to="." method="_on_weapons_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Sword" to="." method="_on_weapons_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Lance" to="." method="_on_weapons_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/EquipmentTop" to="." method="_on_equipment_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/EquipmentBottom" to="." method="_on_equipment_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 
 [editable path="Featured/ScrollContainer/GridContainer/Costume 1"]

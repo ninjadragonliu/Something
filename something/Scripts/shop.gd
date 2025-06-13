@@ -1,4 +1,5 @@
 extends Control
+signal tab_changed(tab_name: String)
 
 func _ready() -> void:
 	$ScrollContainer/VBoxContainer/Featured.button_pressed = true
