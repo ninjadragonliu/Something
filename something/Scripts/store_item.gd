@@ -13,7 +13,6 @@ func _on_buy_pressed() -> void:
 		$Buy.disabled = true
 		$Buy.text = "Bought"
 		
-
 func boughtFromStore(param):
 	for key in param:
 		match key:
