@@ -12,7 +12,7 @@ func _on_back_pressed() -> void:
 	Global.save_game_data()
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
 
-func _on_costume_pressed() -> void:
+func _on_costume_pressed1() -> void:
 	$ScrollContainer/VBoxContainer/Costume.button_pressed = true
 	$ScrollContainer/VBoxContainer/Skills.button_pressed = false
 	$ScrollContainer/VBoxContainer/Weapons.button_pressed = false
@@ -71,3 +71,15 @@ func _on_featured_pressed() -> void:
 	$Weapons.hide()
 	$Skills.hide()
 	$Costume.hide()
+
+func _on_costume_pressed() -> void:
+	if $ScrollContainer/VBoxContainer/Costume/Costume.button_down:
+		$ScrollContainer/VBoxContainer/Costume/Hair.show()
+		$ScrollContainer/VBoxContainer/Costume/Top.show()
+		$ScrollContainer/VBoxContainer/Costume/Bottom.show()
+		$ScrollContainer/VBoxContainer/Costume/Costume.button_pressed = true
+	else:
+		$ScrollContainer/VBoxContainer/Costume/Hair.hide()
+		$ScrollContainer/VBoxContainer/Costume/Top.hide()
+		$ScrollContainer/VBoxContainer/Costume/Bottom.hide()
+		$ScrollContainer/VBoxContainer/Costume/Costume.button_pressed = false
