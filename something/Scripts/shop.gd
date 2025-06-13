@@ -106,6 +106,19 @@ func _on_hair_pressed() -> void:
 			child.show()
 			continue
 		child.hide()
+	
+	for child in $ScrollContainer/VBoxContainer/Skills.get_children():
+		if child.name.begins_with("Skills"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Weapons.get_children():
+		if child.name.begins_with("Weapons"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Equipment.get_children():
+		if child.name.begins_with("Equipment"):
+			continue
+		child.button_pressed = false
 
 func _on_costop_pressed() -> void:
 	$Costume.show()
@@ -123,6 +136,19 @@ func _on_costop_pressed() -> void:
 			child.show()
 			continue
 		child.hide()
+	
+	for child in $ScrollContainer/VBoxContainer/Skills.get_children():
+		if child.name.begins_with("Skills"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Weapons.get_children():
+		if child.name.begins_with("Weapons"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Equipment.get_children():
+		if child.name.begins_with("Equipment"):
+			continue
+		child.button_pressed = false
 
 func _on_cosbottom_pressed() -> void:
 	$Costume.show()
@@ -140,6 +166,19 @@ func _on_cosbottom_pressed() -> void:
 			child.show()
 			continue
 		child.hide()
+		
+	for child in $ScrollContainer/VBoxContainer/Skills.get_children():
+		if child.name.begins_with("Skills"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Weapons.get_children():
+		if child.name.begins_with("Weapons"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Equipment.get_children():
+		if child.name.begins_with("Equipment"):
+			continue
+		child.button_pressed = false
 
 func _on_active_pressed() -> void: # active skills
 	$Skills.show()
