@@ -22,6 +22,18 @@ func _on_featured_pressed() -> void:
 		if child.name.begins_with("Costume"):
 			continue
 		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Skills.get_children():
+		if child.name.begins_with("Skills"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Weapons.get_children():
+		if child.name.begins_with("Weapons"):
+			continue
+		child.button_pressed = false
+	for child in $ScrollContainer/VBoxContainer/Equipment.get_children():
+		if child.name.begins_with("Equipment"):
+			continue
+		child.button_pressed = false
 
 func _on_costume_toggled(toggled_on: bool) -> void:
 	if toggled_on:
