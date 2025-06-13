@@ -18,6 +18,7 @@ var coins = 0
 var diamonds = 0
 var last_login_date = ""
 
+var new_attribute = true
 var gm_mode = true
 var loading_mode = true
 #endregion
@@ -47,37 +48,98 @@ func _readyLists():
 	#print(saving_list)
 
 func _update_for_new_items():
+	var size_tracker = [[0], [0], [0], [0], [0], [0], [0]] # will contain the items that has new attribute
+	var temp_list = player_current_equip
+	
 	for i in range(7):
-		match i:
-			0:
-				while saving_list[i].size() < weapon_list_fist.size():
-					saving_list[i].append(weapon_list_fist[saving_list[i].size()])
-			1:
-				while saving_list[i].size() < weapon_list_sword.size():
-					saving_list[i].append(weapon_list_sword[saving_list[i].size()])
-			2:
-				while saving_list[i].size() < weapon_list_lance.size():
-					saving_list[i].append(weapon_list_lance[saving_list[i].size()])
-			3:
-				while saving_list[i].size() < top_list.size():
-					saving_list[i].append(top_list[saving_list[i].size()])
-			4:
-				while saving_list[i].size() < bottom_list.size():
-					saving_list[i].append(bottom_list[saving_list[i].size()])
-			5:
-				while saving_list[i].size() < active_skill_list.size():
-					saving_list[i].append(active_skill_list[saving_list[i].size()])
-			6:
-				while saving_list[i].size() < passive_skill_list.size():
-					saving_list[i].append(passive_skill_list[saving_list[i].size()])
+		temp_list = getLocalList_throughSavingIdex(i)
+		while saving_list[i].size() < temp_list.size(): # check if item saved < item exist
+			saving_list[i].append(temp_list[saving_list[i].size()]) # if so, add the newest item exist to saved item data list
+			if temp_list[saving_list[i].size()-1].size() > size_tracker[i].size(): # check if total attribute of new item is > old item
+				size_tracker[i] = temp_list[saving_list[i].size()-1] # track down the new item types
+	
+	if new_attribute:
+		_update_for_new_attribute(size_tracker) # update the old item's attribute in same array to keep them at same size
+
+func _update_for_new_attribute(size_tracker):
+	var type_to_match = TYPE_NIL
+	
+	for i in range(7):
+		for item in saving_list[i]:
+			while item.size() < size_tracker[i].size():
+				type_to_match = typeof(size_tracker[i][item.size()])
+				match type_to_match:
+					TYPE_STRING:
+						item.append(String_Default)
+					TYPE_BOOL:
+						item.append(Bool_Default)
+					TYPE_INT:
+						item.append(Int_Default)
+					TYPE_NIL:
+						print("Error item: " + item[0] + " detected type NIL data as attribute. Check update_for_new_attribute")
+					_:
+						print("Error item: " + item[0] + " undetected type data as attribute. Check update_for_new_attribute")
+			type_to_match = TYPE_NIL
+
+func getLocalList_throughSavingIdex(count):
+	match count:
+		0:
+			return weapon_list_fist
+		1:
+			return weapon_list_sword
+		2:
+			return weapon_list_lance
+		3:
+			return top_list
+		4:
+			return bottom_list
+		5:
+			return active_skill_list
+		6:
+			return passive_skill_list
+		7:
+			print("Warning: Do not use getLocalList_throughSavingIdex() for getting player_current_equip, local version of it should remain unchanged")
+
+func getSavedList_throughLocalArray(array):
+	match typeof(array[1]):
+		TYPE_STRING:
+			match array[1]:
+				"fist":
+					return saving_list[0]
+				"sword":
+					return saving_list[1]
+				"lance":
+					return saving_list[2]
+				"top":
+					return saving_list[3]
+				"bottom":
+					return saving_list[4]
+				"active":
+					return saving_list[5]
+				"passive":
+					return saving_list[6]
+				_:
+					print("Error: Invalid type when using getSavedList_throughLocalArray()")
+		TYPE_INT:
+			var Accessing_player_current_equip_List = true
+			for i in range(array.size()):
+				if typeof(array[i]) != typeof(player_current_equip[i]):
+					Accessing_player_current_equip_List = false
+					break
+			if Accessing_player_current_equip_List:
+				return saving_list[7]
 
 # [Item_Name, Item_Type	, Player_Owns, Equipped , Currency of Cost, Cost, Shop   , OnSalesShop  , Sales Price]
 # [String	, String	, Boolean	 , Int		, String		  , Int	, Boolean, Boolean		, Int]
 
+var String_Default = ""
+var Bool_Default = false
+var Int_Default = 0
+
 # How to make event reward => give out the item as finish reward of event, then make sure Shop and on SalesShop => false 
 var weapon_list_fist = [
-	["Bare Fist","", true, 1, "-", -1, false, false, -1],
-	["Soldier Glove","", false, 0, "coin", 100, true, false, -1],
+	["Bare Fist","", true, 1, "", -1, false, false, -1],
+	["Soldier Glove","", false, 0, "coin", 100, true, false, -1]
 ]
  
 var weapon_list_sword = [
@@ -91,25 +153,25 @@ var weapon_list_lance = [
 ]
  
 var top_list = [
-	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Empty", "", true, 1, "", -1, false, false, -1],
 	["Skin Armor", "", false, 0, "coin", 100, true, false, -1],
 	["Leather Armor", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var bottom_list = [
-	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Empty", "", true, 1, "", -1, false, false, -1],
 	["Skin Pants", "", false, 0, "coin", 100, true, false, -1],
 	["Leather Pants", "", false, 0, "coin", 500, true, false, -1]
 ]
 
 var active_skill_list = [
-	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Empty", "", true, 1, "", -1, false, false, -1],
 	["HP+3", "", false, 0, "coin", 1000, true, false, -1]
 ]
 
 # passive skill index 3 (equip attribute) is special, 'Empty' can be set as 2 for 'Empty' may take up both slot
 var passive_skill_list = [
-	["Empty", "", true, 1, "-", -1, false, false, -1],
+	["Empty", "", true, 1, "", -1, false, false, -1],
 	["MaxHP+2", "", false, 0, "coin", 300, true, false, -1]
 ]
 
