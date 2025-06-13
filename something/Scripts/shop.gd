@@ -12,42 +12,6 @@ func _on_back_pressed() -> void:
 	Global.save_game_data()
 	get_tree().change_scene_to_file("res://Scenes/main_page.tscn")
 
-func _on_skills_pressed() -> void:
-	$ScrollContainer/VBoxContainer/Costume.button_pressed = false
-	$ScrollContainer/VBoxContainer/Skills.button_pressed = true
-	$ScrollContainer/VBoxContainer/Weapons.button_pressed = false
-	$ScrollContainer/VBoxContainer/Equipment.button_pressed = false
-	$ScrollContainer/VBoxContainer/Featured.button_pressed = false
-	$Costume.hide()
-	$Skills.show()
-	$Weapons.hide()
-	$Equipment.hide()
-	$Featured.hide()
-
-func _on_weapons_pressed() -> void:
-	$ScrollContainer/VBoxContainer/Costume.button_pressed = false
-	$ScrollContainer/VBoxContainer/Skills.button_pressed = false
-	$ScrollContainer/VBoxContainer/Weapons.button_pressed = true
-	$ScrollContainer/VBoxContainer/Equipment.button_pressed = false
-	$ScrollContainer/VBoxContainer/Featured.button_pressed = false
-	$Weapons.show()
-	$Costume.hide()
-	$Skills.hide()
-	$Equipment.hide()
-	$Featured.hide()
-
-func _on_equipment_pressed() -> void:
-	$ScrollContainer/VBoxContainer/Costume.button_pressed = false
-	$ScrollContainer/VBoxContainer/Skills.button_pressed = false
-	$ScrollContainer/VBoxContainer/Weapons.button_pressed = false
-	$ScrollContainer/VBoxContainer/Equipment.button_pressed = true
-	$ScrollContainer/VBoxContainer/Featured.button_pressed = false
-	$Equipment.show()
-	$Weapons.hide()
-	$Skills.hide()
-	$Costume.hide()
-	$Featured.hide()
-
 func _on_featured_pressed() -> void:
 	$Featured.show()
 	$Equipment.hide()
