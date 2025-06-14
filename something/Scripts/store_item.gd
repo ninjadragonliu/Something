@@ -3,16 +3,6 @@ var current_tab
 
 func _ready() -> void:
 	pass
-
-func _on_buy_pressed() -> void:
-	var button_text = $Buy.text.split(" ")
-	var cost = button_text[1].to_int()
-	if Global.coins < cost:
-		print("Not enough coins")
-	else:
-		Global.coins -= cost
-		$Buy.disabled = true
-		$Buy.text = "Bought"
 		
 func boughtFromStoreWeapon(param):
 	for key in param:

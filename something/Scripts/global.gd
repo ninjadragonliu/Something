@@ -14,12 +14,12 @@ var player_id
 var player_name = "John Doe"
 var vip_status = false
 var intro_text = "Introduce yourself"
-var coins = 0
-var diamonds = 0
+var coins = int(0)
+var diamonds = int(0)
 var last_login_date = ""
 
 var new_attribute = true
-var gm_mode = true
+var gm_mode = false
 var loading_mode = true
 #endregion
 
@@ -52,7 +52,7 @@ func _update_for_new_items():
 	var temp_list = player_current_equip
 	
 	for i in range(7):
-		temp_list = getLocalList_throughSavingIdex(i)
+		temp_list = getLocalList_throughSavingIndex(i)
 		while saving_list[i].size() < temp_list.size(): # check if item saved < item exist
 			saving_list[i].append(temp_list[saving_list[i].size()]) # if so, add the newest item exist to saved item data list
 			if temp_list[saving_list[i].size()-1].size() > size_tracker[i].size(): # check if total attribute of new item is > old item
@@ -81,7 +81,7 @@ func _update_for_new_attribute(size_tracker):
 						print("Error item: " + item[0] + " undetected type data as attribute. Check update_for_new_attribute")
 			type_to_match = TYPE_NIL
 
-func getLocalList_throughSavingIdex(count):
+func getLocalList_throughSavingIndex(count):
 	match count:
 		0:
 			return weapon_list_fist

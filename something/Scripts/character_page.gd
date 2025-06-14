@@ -59,26 +59,27 @@ func _ready_weapon_page():
 	
 	for i in range(3):
 		for weapon in Global.saving_list[i]:
-			#print(weapon)
-			var button = TextureButton.new()
-			# weapon_name => weapon[0]
-			var icon_path = "res://Assets/testing.png" # testing use code
-			#var icon_path = "res://Assets/"+weapon[0]+".png"
-			
-			if ResourceLoader.exists(icon_path):
-				button.texture_normal = load(icon_path)
-			else:
-				print("Icon: " +weapon[0]+ " not found man, try check the asset")
-			
-			button.ignore_texture_size = true
-			button.stretch_mode = 0
-			button.custom_minimum_size = Vector2(100,100)
-			
-			button.connect("pressed", _on_weapon_icon_pressed.bind(i, weapon[0]))
-			if weapon[3] == 1:
-				button.texture_disabled = load("res://Assets/testing_disabled.png")
-				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-			weapon_grid.add_child(button)
+			if weapon[2]:
+				#print(weapon)
+				var button = TextureButton.new()
+				# weapon_name => weapon[0]
+				var icon_path = "res://Assets/testing.png" # testing use code
+				#var icon_path = "res://Assets/"+weapon[0]+".png"
+				
+				if ResourceLoader.exists(icon_path):
+					button.texture_normal = load(icon_path)
+				else:
+					print("Icon: " +weapon[0]+ " not found man, try check the asset")
+				
+				button.ignore_texture_size = true
+				button.stretch_mode = 0
+				button.custom_minimum_size = Vector2(100,100)
+				
+				button.connect("pressed", _on_weapon_icon_pressed.bind(i, weapon[0]))
+				if weapon[3] == 1:
+					button.texture_disabled = load("res://Assets/testing_disabled.png")
+					button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+				weapon_grid.add_child(button)
 
 func _ready_top_page():
 	Global.save_game_data()
@@ -89,25 +90,26 @@ func _ready_top_page():
 		child.queue_free()
 	
 	for top in Global.saving_list[3]:
-		var button = TextureButton.new()
-		# top_name => top[0]
-		var icon_path = "res://Assets/testing.png" # testing use code
-		#var icon_path = "res://Assets/"+top[0]+".png"
-		
-		if ResourceLoader.exists(icon_path):
-			button.texture_normal = load(icon_path)
-		else:
-			print("Icon: " +top[0]+ " not found man, try check the asset")
-		
-		button.ignore_texture_size = true
-		button.stretch_mode = 0
-		button.custom_minimum_size = Vector2(100,100)
-		
-		button.connect("pressed", _on_top_icon_pressed.bind(top[0]))
-		if top[3] == 1 and top[0] != "Empty":
-			button.texture_disabled = load("res://Assets/testing_disabled.png")
-			button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-		armor_grid.add_child(button)
+		if top[2]:
+			var button = TextureButton.new()
+			# top_name => top[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+top[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +top[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_top_icon_pressed.bind(top[0]))
+			if top[3] == 1 and top[0] != "Empty":
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			armor_grid.add_child(button)
 
 func _ready_bottom_page():
 	Global.save_game_data()
@@ -118,25 +120,26 @@ func _ready_bottom_page():
 		child.queue_free()
 	
 	for bottom in Global.saving_list[4]:
-		var button = TextureButton.new()
-		# bottom_name => bottom[0]
-		var icon_path = "res://Assets/testing.png" # testing use code
-		#var icon_path = "res://Assets/"+bottom[0]+".png"
-		
-		if ResourceLoader.exists(icon_path):
-			button.texture_normal = load(icon_path)
-		else:
-			print("Icon: " +bottom[0]+ " not found man, try check the asset")
-		
-		button.ignore_texture_size = true
-		button.stretch_mode = 0
-		button.custom_minimum_size = Vector2(100,100)
-		
-		button.connect("pressed", _on_bottom_icon_pressed.bind(bottom[0]))
-		if bottom[3] == 1 and bottom[0] != "Empty":
-			button.texture_disabled = load("res://Assets/testing_disabled.png")
-			button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
-		placeholder_grid.add_child(button)
+		if bottom[2]:
+			var button = TextureButton.new()
+			# bottom_name => bottom[0]
+			var icon_path = "res://Assets/testing.png" # testing use code
+			#var icon_path = "res://Assets/"+bottom[0]+".png"
+			
+			if ResourceLoader.exists(icon_path):
+				button.texture_normal = load(icon_path)
+			else:
+				print("Icon: " +bottom[0]+ " not found man, try check the asset")
+			
+			button.ignore_texture_size = true
+			button.stretch_mode = 0
+			button.custom_minimum_size = Vector2(100,100)
+			
+			button.connect("pressed", _on_bottom_icon_pressed.bind(bottom[0]))
+			if bottom[3] == 1 and bottom[0] != "Empty":
+				button.texture_disabled = load("res://Assets/testing_disabled.png")
+				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+			placeholder_grid.add_child(button)
 
 func _ready_active_page():
 	Global.save_game_data()

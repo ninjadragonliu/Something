@@ -1,8 +1,11 @@
 extends Control
 signal tab_changed(tab_name: String)
 
+@onready var store_item_scene = preload("res://Scenes/store_item.tscn")
+
 func _ready() -> void:
 	$ScrollContainer/VBoxContainer/Featured.button_pressed = true
+	_on_featured_pressed()
 
 func _process(delta: float) -> void:
 	$VBoxContainer2/Coins/Label.text = str(Global.coins)
@@ -49,11 +52,85 @@ func _on_equipment_pressed() -> void:
 	$Featured.hide()
 
 func _on_featured_pressed() -> void:
+	_ready_shop_feature_page()
 	$Featured.show()
 	$Equipment.hide()
 	$Weapons.hide()
 	$Skills.hide()
 	$Costume.hide()
+
+func _ready_shop_feature_page():
+	var shop_feature_grid = $Featured/ScrollContainer/GridContainer
+	
+	for child in shop_feature_grid.get_children():
+		shop_feature_grid.remove_child(child)
+		child.queue_free()
+	
+	for i in range(7):
+		for item in Global.saving_list[i]:
+			if item[7] == true:
+				var itemSlot = store_item_scene.instantiate()
+				# item_name => item[0]
+				var textureRect_path = "res://Assets/testing.png" # testing use code
+				#var icon_path = "res://Assets/"+item[0]+".png"
+				
+				if ResourceLoader.exists(textureRect_path):
+					itemSlot.get_node("TextureRect").texture = load(textureRect_path)
+					
+					#.texture_normal = load(icon_path)
+				else:
+					print("Icon: " +item[0]+ " not found man, try check the asset")
+				
+				#var icon_path = "res://Assets/"+item[0]+".png"
+				var icon_path = "res://Assets/stars.png"
+				itemSlot.get_node("Buy").icon = load(icon_path)
+				
+				if item[7]:
+					itemSlot.get_node("Buy").text = str(int(item[8]))
+				elif item[6]:
+					itemSlot.get_node("Buy").text = str(int(item[5]))
+				
+				#
+				#button.ignore_texture_size = true
+				#button.stretch_mode = 0
+				#button.custom_minimum_size = Vector2(100,100)
+				#
+				#button.connect("pressed", _on_weapon_icon_pressed.bind(i, item[0]))
+				#if weapon[3] == 1:
+					#button.texture_disabled = load("res://Assets/testing_disabled.png")
+					#button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
+				itemSlot.get_node("Buy").connect("pressed", _on_buy_pressed.bind(i, item))
+				if item[2] == true:
+					itemSlot.get_node("Buy").disabled = true
+					itemSlot.get_node("Buy").text = "Bought"
+				shop_feature_grid.add_child(itemSlot)
+
+func _on_buy_pressed(i, item) -> void:
+	var cost = 0
+	
+	if item[7]:
+		cost = int(item[8])
+	elif item[6]:
+		cost = int(item[5])
+	
+	match(item[4]):
+		"diamond":
+			if Global.diamonds < cost:
+				print("Not enough diamond")
+				return
+			else:
+				Global.diamonds -= cost
+		"coin":
+			if Global.coins < cost:
+				print("Not enough coins")
+				return
+			else:
+				Global.coins -= cost
+	
+	for target in Global.saving_list[i]:
+		if target == item:
+			target[2] = true
+	_ready_shop_feature_page()
 
 func _on_costume_toggled(toggled_on: bool) -> void:
 	if toggled_on:
