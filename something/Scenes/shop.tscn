@@ -208,7 +208,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_2shtd")
 toggle_mode = true
 text = "Equipment"
 
-[node name="Top" type="Button" parent="ScrollContainer/VBoxContainer/Equipment"]
+[node name="EquipTop" type="Button" parent="ScrollContainer/VBoxContainer/Equipment"]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -217,7 +217,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0vsm1")
 toggle_mode = true
 text = "Top"
 
-[node name="Bottom" type="Button" parent="ScrollContainer/VBoxContainer/Equipment"]
+[node name="EquipBottom" type="Button" parent="ScrollContainer/VBoxContainer/Equipment"]
 visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
@@ -1038,8 +1038,15 @@ metadata/_edit_lock_ = true
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Costume/CosTop" to="." method="_on_costop_pressed"]
 [connection signal="pressed" from="ScrollContainer/VBoxContainer/Costume/CosBottom" to="." method="_on_cosbottom_pressed"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Skills/Skills" to="." method="_on_skills_toggled"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Skills/Active" to="." method="_on_active_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Skills/Passive" to="." method="_on_passive_pressed"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Weapons/Weapons" to="." method="_on_weapons_toggled"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Weapons/Fist" to="." method="_on_fist_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Weapons/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Weapons/Lance" to="." method="_on_lance_pressed"]
 [connection signal="toggled" from="ScrollContainer/VBoxContainer/Equipment/Equipment" to="." method="_on_equipment_toggled"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Equipment/EquipTop" to="." method="_on_equip_top_pressed"]
+[connection signal="pressed" from="ScrollContainer/VBoxContainer/Equipment/EquipBottom" to="." method="_on_equip_bottom_pressed"]
 [connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
 
 [editable path="Featured/ScrollContainer/GridContainer/Costume 1"]
