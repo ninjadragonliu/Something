@@ -93,6 +93,9 @@ func _on_equipment_toggled(toggled_on: bool) -> void:
 func _on_hair_pressed() -> void:
 	$Costume.show()
 	$Featured.hide()
+	$Skills.hide()
+	$Weapons.hide()
+	$Equipment.hide()
 	for child in $ScrollContainer/VBoxContainer/Costume.get_children():
 		if child.name.begins_with("Costume"):
 			continue
@@ -123,6 +126,9 @@ func _on_hair_pressed() -> void:
 func _on_costop_pressed() -> void:
 	$Costume.show()
 	$Featured.hide()
+	$Skills.hide()
+	$Weapons.hide()
+	$Equipment.hide()
 	for child in $ScrollContainer/VBoxContainer/Costume.get_children():
 		if child.name.begins_with("Costume"):
 			continue
@@ -153,6 +159,9 @@ func _on_costop_pressed() -> void:
 func _on_cosbottom_pressed() -> void:
 	$Costume.show()
 	$Featured.hide()
+	$Skills.hide()
+	$Weapons.hide()
+	$Equipment.hide()
 	for child in $ScrollContainer/VBoxContainer/Costume.get_children():
 		if child.name.begins_with("Costume"):
 			continue
