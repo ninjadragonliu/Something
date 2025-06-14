@@ -1,5 +1,4 @@
 extends Control
-signal tab_changed(tab_name: String)
 
 @onready var store_item_scene = preload("res://Scenes/store_item.tscn")
 
@@ -445,7 +444,7 @@ func _on_equip_top_pressed() -> void:
 			continue
 		child.button_pressed = false
 
-	for child in $Weapons.get_children():
+	for child in $Equipment.get_children():
 		if child.name.begins_with("Top"):
 			child.show()
 			continue
@@ -478,7 +477,7 @@ func _on_equip_bottom_pressed() -> void:
 			continue
 		child.button_pressed = false
 
-	for child in $Weapons.get_children():
+	for child in $Equipment.get_children():
 		if child.name.begins_with("Bottom"):
 			child.show()
 			continue
