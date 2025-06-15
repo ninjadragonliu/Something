@@ -106,7 +106,7 @@ func _ready_top_page():
 			button.custom_minimum_size = Vector2(100,100)
 			
 			button.connect("pressed", _on_top_icon_pressed.bind(top[0]))
-			if top[3] == 1 and top[0] != "Empty":
+			if top[3] == 1:
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			armor_grid.add_child(button)
@@ -136,7 +136,7 @@ func _ready_bottom_page():
 			button.custom_minimum_size = Vector2(100,100)
 			
 			button.connect("pressed", _on_bottom_icon_pressed.bind(bottom[0]))
-			if bottom[3] == 1 and bottom[0] != "Empty":
+			if bottom[3] == 1:
 				button.texture_disabled = load("res://Assets/testing_disabled.png")
 				button.disabled = true # Unfinished, change this so that it also dims the image so it shows it can't be pressed
 			placeholder_grid.add_child(button)

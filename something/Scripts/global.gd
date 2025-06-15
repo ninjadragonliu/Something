@@ -20,6 +20,7 @@ var last_login_date = ""
 
 var new_attribute = true
 var gm_mode = false
+var money_mode = true
 var loading_mode = true
 #endregion
 
@@ -60,6 +61,9 @@ func _update_for_new_items():
 	
 	if new_attribute:
 		_update_for_new_attribute(size_tracker) # update the old item's attribute in same array to keep them at same size
+	if money_mode:
+		coins = 100000
+		diamonds = 5000
 
 func _update_for_new_attribute(size_tracker):
 	var type_to_match = TYPE_NIL
