@@ -261,36 +261,46 @@ columns = 5
 
 [node name="Costume 1" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Featured/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.32549, 0.733333, 0.815686, 1)
 
 [node name="Costume 2" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 3" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 4" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 5" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 6" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 7" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 8" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 9" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 10" parent="Featured/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume" type="Panel" parent="."]
 visible = false
@@ -339,24 +349,30 @@ columns = 5
 
 [node name="Costume 1" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Costume/Hair/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Costume 2" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 3" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 4" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 5" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 6" parent="Costume/Hair/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Top" type="Panel" parent="Costume"]
 visible = false
@@ -390,24 +406,30 @@ columns = 5
 
 [node name="Costume 1" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Costume/Top/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.992157, 0.733333, 0.192157, 1)
 
 [node name="Costume 2" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 3" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 4" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 5" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 6" parent="Costume/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Bottom" type="Panel" parent="Costume"]
 visible = false
@@ -441,24 +463,30 @@ columns = 5
 
 [node name="Costume 1" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Costume/Bottom/ScrollContainer/GridContainer/Costume 1" index="0"]
 self_modulate = Color(0.266667, 0.733333, 0.392157, 1)
 
 [node name="Costume 2" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 3" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 4" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 5" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Costume 6" parent="Costume/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="Skills" type="Panel" parent="."]
 visible = false
@@ -507,36 +535,42 @@ columns = 5
 
 [node name="Skill 1" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 2" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Skills/Active/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Active/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -573,36 +607,42 @@ columns = 5
 
 [node name="Skill 1" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 2" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Skills/Passive/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Skills/Passive/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -654,36 +694,42 @@ columns = 5
 
 [node name="Skill 1" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.758774, 0.878858, 0.371976, 1)
 
 [node name="Skill 2" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Weapons/Fist/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Fist/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -720,36 +766,42 @@ columns = 5
 
 [node name="Skill 1" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.758774, 0.878858, 0.371976, 1)
 
 [node name="Skill 2" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Weapons/Sword/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Sword/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -786,36 +838,42 @@ columns = 5
 
 [node name="Skill 1" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.758774, 0.878858, 0.371976, 1)
 
 [node name="Skill 2" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Weapons/Lance/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Weapons/Lance/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -867,36 +925,42 @@ columns = 5
 
 [node name="Skill 1" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.572041, 0.876755, 0.922636, 1)
 
 [node name="Skill 2" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Equipment/Top/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Top/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
@@ -933,36 +997,42 @@ columns = 5
 
 [node name="Skill 1" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 1" index="0"]
 self_modulate = Color(0.572041, 0.876755, 0.922636, 1)
 
 [node name="Skill 2" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 2" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 3" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 3" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 4" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 4" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 5" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 5" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)
 
 [node name="Skill 6" parent="Equipment/Bottom/ScrollContainer/GridContainer" instance=ExtResource("2_2shtd")]
 layout_mode = 2
+script = null
 
 [node name="TextureRect" parent="Equipment/Bottom/ScrollContainer/GridContainer/Skill 6" index="0"]
 self_modulate = Color(0.993752, 0.733883, 0.81683, 1)

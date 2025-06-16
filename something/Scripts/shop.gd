@@ -418,7 +418,7 @@ func _on_passive_pressed() -> void: # passive skills
 				itemSlot.get_node("Buy").text = "Bought"
 			shop_passive_grid.add_child(itemSlot)
 
-func _on_fist_pressed() -> void:
+func _on_fist_pressed() -> void: # fist
 	$Weapons.show()
 	$Featured.hide()
 	$Costume.hide()
