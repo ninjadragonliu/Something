@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2utovt4d6tv8"]
+[gd_scene load_steps=3 format=3 uid="uid://b2utovt4d6tv8"]
 
-[ext_resource type="Script" path="res://Scripts/store_item.gd" id="1_00k36"]
 [ext_resource type="Texture2D" uid="uid://m0ilh6yswe1m" path="res://icon.svg" id="2_xrmgs"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_rsc2u"]
@@ -12,7 +11,6 @@ offset_bottom = 423.0
 scale = Vector2(0.5, 0.5)
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_00k36")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 self_modulate = Color(0.916726, 0.162508, 0.52688, 1)
@@ -30,5 +28,3 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 22
 text = "Buy 100 coins"
 icon = ExtResource("2_xrmgs")
-
-[connection signal="pressed" from="Buy" to="." method="_on_buy_pressed"]
