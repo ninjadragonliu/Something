@@ -129,21 +129,13 @@ func _on_skills_pressed() -> void:
 	else:
 		Global.health += 3
 
-func _on_weapons_pressed() -> void:
-	$WeaponSelection.show()
-
 func _on_fist_pressed() -> void:
 	print("Weapon 1 selected")
 	
-	$WeaponSelection.hide()
-	
+
 func _on_sword_pressed() -> void:
 	print("Weapon 2 selected")
-	
-	$WeaponSelection.hide()
 
 
 func _on_lance_pressed() -> void:
 	print("Weapon 3 selected")
-	
-	$WeaponSelection.hide()

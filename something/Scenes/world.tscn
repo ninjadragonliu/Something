@@ -188,14 +188,13 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 75.0
-offset_top = -137.0
-offset_right = 236.0
-offset_bottom = -37.0
+offset_left = 64.0
+offset_top = -136.0
+offset_right = 225.0
+offset_bottom = -36.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "<"
-metadata/_edit_lock_ = true
 
 [node name="Right" type="Button" parent="."]
 layout_mode = 1
@@ -221,9 +220,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 80.0
+offset_left = 136.0
 offset_top = -136.0
-offset_right = 241.0
+offset_right = 297.0
 offset_bottom = -36.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -231,23 +230,6 @@ texture_normal = ExtResource("8_0fj1v")
 texture_pressed = ExtResource("9_ikia7")
 ignore_texture_size = true
 stretch_mode = 0
-metadata/_edit_lock_ = true
-
-[node name="Weapons" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -216.0
-offset_top = -136.0
-offset_right = -55.0
-offset_bottom = -36.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 30
-text = "Weapons"
 metadata/_edit_lock_ = true
 
 [node name="LineLeft" type="Area2D" parent="."]
@@ -309,60 +291,57 @@ theme_override_font_sizes/font_size = 25
 text = "10"
 horizontal_alignment = 1
 
-[node name="WeaponSelection" type="Panel" parent="."]
-visible = false
-self_modulate = Color(1, 1, 1, 0.411765)
-layout_mode = 0
-offset_top = 256.0
-offset_right = 1152.0
-offset_bottom = 480.0
-
-[node name="TextureRect" type="TextureRect" parent="WeaponSelection"]
+[node name="TextureRect" type="TextureRect" parent="."]
 clip_children = 1
 layout_mode = 0
-offset_left = 368.0
-offset_top = 80.0
-offset_right = 458.0
-offset_bottom = 170.0
+offset_left = 280.0
+offset_top = 520.0
+offset_right = 370.0
+offset_bottom = 610.0
 texture = ExtResource("12_kn0ld")
 expand_mode = 1
-metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
-[node name="Fist" type="TextureButton" parent="WeaponSelection/TextureRect"]
+[node name="Fist" type="TextureButton" parent="TextureRect"]
+layout_mode = 0
 offset_right = 90.0
 offset_bottom = 90.0
 texture_normal = ExtResource("13_hgpy0")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureRect2" type="TextureRect" parent="WeaponSelection"]
+[node name="TextureRect2" type="TextureRect" parent="."]
 clip_children = 1
 layout_mode = 0
-offset_left = 552.0
-offset_top = 80.0
-offset_right = 642.0
-offset_bottom = 170.0
+offset_left = 416.0
+offset_top = 520.0
+offset_right = 506.0
+offset_bottom = 610.0
 texture = ExtResource("12_kn0ld")
 expand_mode = 1
+metadata/_edit_group_ = true
 
-[node name="Sword" type="TextureButton" parent="WeaponSelection/TextureRect2"]
+[node name="Sword" type="TextureButton" parent="TextureRect2"]
+layout_mode = 0
 offset_right = 90.0
 offset_bottom = 90.0
 texture_normal = ExtResource("14_t2t4p")
 ignore_texture_size = true
 stretch_mode = 0
 
-[node name="TextureRect3" type="TextureRect" parent="WeaponSelection"]
+[node name="TextureRect3" type="TextureRect" parent="."]
 clip_children = 1
 layout_mode = 0
-offset_left = 728.0
-offset_top = 80.0
-offset_right = 818.0
-offset_bottom = 170.0
+offset_left = 560.0
+offset_top = 520.0
+offset_right = 650.0
+offset_bottom = 610.0
 texture = ExtResource("12_kn0ld")
 expand_mode = 1
+metadata/_edit_group_ = true
 
-[node name="Lance" type="TextureButton" parent="WeaponSelection/TextureRect3"]
+[node name="Lance" type="TextureButton" parent="TextureRect3"]
+layout_mode = 0
 offset_right = 90.0
 offset_bottom = 90.0
 texture_normal = ExtResource("15_0pcbe")
@@ -372,9 +351,8 @@ stretch_mode = 0
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
-[connection signal="pressed" from="Weapons" to="." method="_on_weapons_pressed"]
 [connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
 [connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]
-[connection signal="pressed" from="WeaponSelection/TextureRect/Fist" to="." method="_on_fist_pressed"]
-[connection signal="pressed" from="WeaponSelection/TextureRect2/Sword" to="." method="_on_sword_pressed"]
-[connection signal="pressed" from="WeaponSelection/TextureRect3/Lance" to="." method="_on_lance_pressed"]
+[connection signal="pressed" from="TextureRect/Fist" to="." method="_on_fist_pressed"]
+[connection signal="pressed" from="TextureRect2/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="TextureRect3/Lance" to="." method="_on_lance_pressed"]
