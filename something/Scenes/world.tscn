@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=26 format=3 uid="uid://dlhpeoka1b654"]
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="8_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="9_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://c7gy32v1morpq" path="res://Assets/1292 - Icon_pressed.png" id="9_ikia7"]
+[ext_resource type="Texture2D" uid="uid://cowltla60wvfs" path="res://Assets/PNG/daggers (5).png" id="12_7yui6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -305,9 +306,28 @@ theme_override_font_sizes/font_size = 25
 text = "10"
 horizontal_alignment = 1
 
+[node name="WeaponSelection" type="Window" parent="."]
+initial_position = 1
+size = Vector2i(600, 400)
+visible = false
+exclusive = true
+unresizable = true
+borderless = true
+
+[node name="Weapon1" type="TextureButton" parent="WeaponSelection"]
+process_mode = 2
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 94.0
+offset_bottom = 94.0
+texture_normal = ExtResource("12_7yui6")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
 [connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
 [connection signal="pressed" from="Weapons" to="." method="_on_weapons_pressed"]
 [connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
 [connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]
+[connection signal="pressed" from="WeaponSelection/Weapon1" to="." method="_on_weapon_1_pressed"]

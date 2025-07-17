@@ -130,4 +130,13 @@ func _on_skills_pressed() -> void:
 		Global.health += 3
 
 func _on_weapons_pressed() -> void:
-	pass # Replace with function body.
+	$WeaponSelection.show()
+	
+	get_tree().paused = true
+
+func _on_weapon_1_pressed() -> void:
+	print("Weapon selected")
+	
+	$WeaponSelection.hide()
+	get_tree().paused = false
+	
