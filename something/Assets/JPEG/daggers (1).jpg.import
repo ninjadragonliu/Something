@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2pgchcl7gvuo"
-path="res://.godot/imported/daggers (10).png-e8dfd270e2acf879619bf318f53b9775.ctex"
+uid="uid://cf6hsx0wkovl5"
+path="res://.godot/imported/daggers (1).jpg-ea6563cca70a3332b6e555a28d2586e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PNG/daggers (10).png"
-dest_files=["res://.godot/imported/daggers (10).png-e8dfd270e2acf879619bf318f53b9775.ctex"]
+source_file="res://Assets/JPEG/daggers (1).jpg"
+dest_files=["res://.godot/imported/daggers (1).jpg-ea6563cca70a3332b6e555a28d2586e8.ctex"]
 
 [params]
 

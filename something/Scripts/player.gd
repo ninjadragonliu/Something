@@ -18,7 +18,7 @@ func take_damage(damage: int):
 		get_tree().paused = true
 
 		# Allow the game over screen to function while paused
-		popup.process_mode = Node.PROCESS_MODE_ALWAYS
+		#popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("boss"):

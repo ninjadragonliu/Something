@@ -50,7 +50,7 @@ func clear_level():
 		get_tree().paused = true
 
 		# Allow the game over screen to function while paused
-		popup.process_mode = Node.PROCESS_MODE_ALWAYS
+		#popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func clear_tutorial_level():
 	$EnemiesRemaining.text = "Enemies Remaining: " + str(enemies_remaining)
@@ -67,7 +67,7 @@ func clear_tutorial_level():
 		get_tree().paused = true
 
 		# Allow the game over screen to function while paused
-		popup.process_mode = Node.PROCESS_MODE_ALWAYS
+		#popup.process_mode = Node.PROCESS_MODE_ALWAYS
 
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
@@ -131,12 +131,19 @@ func _on_skills_pressed() -> void:
 
 func _on_weapons_pressed() -> void:
 	$WeaponSelection.show()
-	
-	get_tree().paused = true
 
-func _on_weapon_1_pressed() -> void:
-	print("Weapon selected")
+func _on_fist_pressed() -> void:
+	print("Weapon 1 selected")
 	
 	$WeaponSelection.hide()
-	get_tree().paused = false
 	
+func _on_sword_pressed() -> void:
+	print("Weapon 2 selected")
+	
+	$WeaponSelection.hide()
+
+
+func _on_lance_pressed() -> void:
+	print("Weapon 3 selected")
+	
+	$WeaponSelection.hide()

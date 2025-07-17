@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=29 format=3 uid="uid://dlhpeoka1b654"]
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
@@ -11,7 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="8_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="9_5v1tr"]
 [ext_resource type="Texture2D" uid="uid://c7gy32v1morpq" path="res://Assets/1292 - Icon_pressed.png" id="9_ikia7"]
-[ext_resource type="Texture2D" uid="uid://cowltla60wvfs" path="res://Assets/PNG/daggers (5).png" id="12_7yui6"]
+[ext_resource type="Texture2D" uid="uid://vyhvkcgtxl8u" path="res://Assets/Token.png" id="12_kn0ld"]
+[ext_resource type="Texture2D" uid="uid://181gfrt10e1d" path="res://Assets/JPEG/daggers (5).jpg" id="13_hgpy0"]
+[ext_resource type="Texture2D" uid="uid://gx4y0ch4pb8i" path="res://Assets/JPEG/daggers (7).jpg" id="14_t2t4p"]
+[ext_resource type="Texture2D" uid="uid://dhjw3xgeixb4x" path="res://Assets/JPEG/daggers (9).jpg" id="15_0pcbe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -306,21 +309,63 @@ theme_override_font_sizes/font_size = 25
 text = "10"
 horizontal_alignment = 1
 
-[node name="WeaponSelection" type="Window" parent="."]
-initial_position = 1
-size = Vector2i(600, 400)
+[node name="WeaponSelection" type="Panel" parent="."]
 visible = false
-exclusive = true
-unresizable = true
-borderless = true
+self_modulate = Color(1, 1, 1, 0.411765)
+layout_mode = 0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 480.0
 
-[node name="Weapon1" type="TextureButton" parent="WeaponSelection"]
-process_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 94.0
-offset_bottom = 94.0
-texture_normal = ExtResource("12_7yui6")
+[node name="TextureRect" type="TextureRect" parent="WeaponSelection"]
+clip_children = 1
+layout_mode = 0
+offset_left = 368.0
+offset_top = 80.0
+offset_right = 458.0
+offset_bottom = 170.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Fist" type="TextureButton" parent="WeaponSelection/TextureRect"]
+offset_right = 90.0
+offset_bottom = 90.0
+texture_normal = ExtResource("13_hgpy0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect2" type="TextureRect" parent="WeaponSelection"]
+clip_children = 1
+layout_mode = 0
+offset_left = 552.0
+offset_top = 80.0
+offset_right = 642.0
+offset_bottom = 170.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+
+[node name="Sword" type="TextureButton" parent="WeaponSelection/TextureRect2"]
+offset_right = 90.0
+offset_bottom = 90.0
+texture_normal = ExtResource("14_t2t4p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TextureRect3" type="TextureRect" parent="WeaponSelection"]
+clip_children = 1
+layout_mode = 0
+offset_left = 728.0
+offset_top = 80.0
+offset_right = 818.0
+offset_bottom = 170.0
+texture = ExtResource("12_kn0ld")
+expand_mode = 1
+
+[node name="Lance" type="TextureButton" parent="WeaponSelection/TextureRect3"]
+offset_right = 90.0
+offset_bottom = 90.0
+texture_normal = ExtResource("15_0pcbe")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -330,4 +375,6 @@ stretch_mode = 0
 [connection signal="pressed" from="Weapons" to="." method="_on_weapons_pressed"]
 [connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
 [connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]
-[connection signal="pressed" from="WeaponSelection/Weapon1" to="." method="_on_weapon_1_pressed"]
+[connection signal="pressed" from="WeaponSelection/TextureRect/Fist" to="." method="_on_fist_pressed"]
+[connection signal="pressed" from="WeaponSelection/TextureRect2/Sword" to="." method="_on_sword_pressed"]
+[connection signal="pressed" from="WeaponSelection/TextureRect3/Lance" to="." method="_on_lance_pressed"]

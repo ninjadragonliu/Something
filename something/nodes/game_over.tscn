@@ -6,6 +6,7 @@
 bg_color = Color(0.266603, 0.253731, 0.276689, 1)
 
 [node name="Game Over" type="Window"]
+process_mode = 2
 auto_translate_mode = 1
 initial_position = 1
 size = Vector2i(700, 400)
