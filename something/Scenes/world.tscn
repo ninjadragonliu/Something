@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=25 format=3 uid="uid://dlhpeoka1b654"]
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dme0hqlqv07ng" path="res://Assets/Landscape/stage.png" id="4_5ukr8"]
 [ext_resource type="PackedScene" uid="uid://umxr8kup42na" path="res://nodes/clear_window.tscn" id="4_8j60k"]
 [ext_resource type="Texture2D" uid="uid://cp5u1usid1f40" path="res://Assets/Landscape/platform_left.png" id="5_o06y3"]
+[ext_resource type="Texture2D" uid="uid://c3r7clejaeea3" path="res://Assets/1292 - Icon.png" id="8_0fj1v"]
 [ext_resource type="Texture2D" uid="uid://bsdjfibajovyw" path="res://Assets/Animation/Effects/explosion_general.png" id="9_5v1tr"]
+[ext_resource type="Texture2D" uid="uid://c7gy32v1morpq" path="res://Assets/1292 - Icon_pressed.png" id="9_ikia7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -187,6 +189,7 @@ offset_top = -137.0
 offset_right = 236.0
 offset_bottom = -37.0
 grow_vertical = 0
+theme_override_font_sizes/font_size = 30
 text = "<"
 metadata/_edit_lock_ = true
 
@@ -203,7 +206,44 @@ offset_right = -67.0
 offset_bottom = -37.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_font_sizes/font_size = 30
 text = ">"
+metadata/_edit_lock_ = true
+
+[node name="Skills" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 80.0
+offset_top = -136.0
+offset_right = 241.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("8_0fj1v")
+texture_pressed = ExtResource("9_ikia7")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_lock_ = true
+
+[node name="Weapons" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -216.0
+offset_top = -136.0
+offset_right = -55.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Weapons"
 metadata/_edit_lock_ = true
 
 [node name="LineLeft" type="Area2D" parent="."]
@@ -267,5 +307,7 @@ horizontal_alignment = 1
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]
+[connection signal="pressed" from="Skills" to="." method="_on_skills_pressed"]
+[connection signal="pressed" from="Weapons" to="." method="_on_weapons_pressed"]
 [connection signal="body_entered" from="LineLeft" to="." method="_on_line_left_body_entered"]
 [connection signal="body_entered" from="LineRight" to="." method="_on_line_right_body_entered"]

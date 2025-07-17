@@ -386,7 +386,6 @@ text = "Passive"
 metadata/_edit_lock_ = true
 
 [node name="Active2" type="Panel" parent="Skill"]
-visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 70.0
@@ -412,6 +411,7 @@ texture_normal = ExtResource("2_a33jj")
 stretch_mode = 0
 
 [node name="Passive2" type="Panel" parent="Skill"]
+visible = false
 layout_mode = 0
 offset_left = 17.0
 offset_top = 70.0

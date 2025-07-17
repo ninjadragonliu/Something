@@ -120,3 +120,14 @@ func _on_line_left_body_entered(body: Node2D) -> void:
 func _on_line_right_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
 		enemy_in_range_right.append(body)
+
+
+func _on_skills_pressed() -> void:
+	print("Skill actived")
+	if Global.health + 3 > Global.max_health:
+		Global.health = Global.max_health
+	else:
+		Global.health += 3
+
+func _on_weapons_pressed() -> void:
+	pass # Replace with function body.
