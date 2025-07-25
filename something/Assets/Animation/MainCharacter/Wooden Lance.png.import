@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cco5bprb75yn1"
-path="res://.godot/imported/Punch.png-ad4c379c41967a73979fdd2ae646de5e.ctex"
+uid="uid://ppv7l7h25wp0"
+path="res://.godot/imported/Wooden Lance.png-e9e2269b63427c882fc9c7578ae14264.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/Punch.png"
-dest_files=["res://.godot/imported/Punch.png-ad4c379c41967a73979fdd2ae646de5e.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Wooden Lance.png"
+dest_files=["res://.godot/imported/Wooden Lance.png-e9e2269b63427c882fc9c7578ae14264.ctex"]
 
 [params]
 

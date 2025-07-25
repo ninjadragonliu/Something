@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ppv7l7h25wp0"
-path="res://.godot/imported/lance.png-6c0627f1ccb14038b6f6f69e8f953788.ctex"
+uid="uid://cco5bprb75yn1"
+path="res://.godot/imported/Bare Fist.png-b1dbc3514ebfec019c991e339c3f08c9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/lance.png"
-dest_files=["res://.godot/imported/lance.png-6c0627f1ccb14038b6f6f69e8f953788.ctex"]
+source_file="res://Assets/Animation/MainCharacter/Bare Fist.png"
+dest_files=["res://.godot/imported/Bare Fist.png-b1dbc3514ebfec019c991e339c3f08c9.ctex"]
 
 [params]
 

@@ -4,6 +4,15 @@ extends CharacterBody2D
 signal take_damaged
 signal boss_hit_player
 
+func _ready():
+	var resource_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[7][1]][0]+".png")
+	
+	$Body.texture = resource_path
+	$Pants.texture = resource_path
+	$Clothe.texture = resource_path
+	$Hair.texture = resource_path
+	$Weapon.texture = resource_path
+
 func attack(body : Node2D):
 	body.take_damage(1)
 
