@@ -5,13 +5,7 @@ signal take_damaged
 signal boss_hit_player
 
 func _ready():
-	var resource_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[7][1]][0]+".png")
-	
-	$Body.texture = resource_path
-	$Pants.texture = resource_path
-	$Clothe.texture = resource_path
-	$Hair.texture = resource_path
-	$Weapon.texture = resource_path
+	change_weapon()
 
 func attack(body : Node2D):
 	body.take_damage(1)
@@ -66,3 +60,12 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 				
 		body.queue_free()
 		take_damaged.emit()
+
+func change_weapon():
+	var resource_path = load("res://Assets/Animation/MainCharacter/"+Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[7][1]][0]+".png")
+	
+	$Body.texture = resource_path
+	$Pants.texture = resource_path
+	$Clothe.texture = resource_path
+	$Hair.texture = resource_path
+	$Weapon.texture = resource_path

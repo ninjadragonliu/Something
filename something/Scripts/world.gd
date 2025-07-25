@@ -130,12 +130,15 @@ func _on_skills_pressed() -> void:
 		Global.health += 3
 
 func _on_fist_pressed() -> void:
+	player.change_weapon()
 	print("Weapon 1 selected")
 	
 
 func _on_sword_pressed() -> void:
+	player.change_weapon()
 	print("Weapon 2 selected")
 
 
 func _on_lance_pressed() -> void:
+	player.change_weapon()
 	print("Weapon 3 selected")

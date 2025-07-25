@@ -195,6 +195,7 @@ offset_bottom = -36.0
 grow_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "<"
+metadata/_edit_lock_ = true
 
 [node name="Right" type="Button" parent="."]
 layout_mode = 1
