@@ -26,5 +26,5 @@ func _process(delta: float) -> void:
 func take_damage(damage : int):
 	health -= damage
 	position = Global.positions[randi() % Global.positions.size()]
-	if health == 0:
+	if health <= 0:
 		queue_free()

@@ -3,12 +3,17 @@ extends CharacterBody2D
 @onready var game_over : PackedScene = load("res://nodes/game_over.tscn")
 signal take_damaged
 signal boss_hit_player
+var damage_normal = 1
+var damage : int = damage_normal
+var damage_resistance_normal = 0
+var damage_resistance : int = 0
+
 
 func _ready():
 	change_weapon()
 
 func attack(body : Node2D):
-	body.take_damage(1)
+	body.take_damage(damage)
 
 func take_damage(damage: int):
 	Global.health -= damage
@@ -25,7 +30,7 @@ func take_damage(damage: int):
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("boss"):
-		take_damage(body.attack)
+		take_damage(body.attack - damage_resistance)
 		var current_scene = get_tree().current_scene
 		if current_scene:
 			# Remove from left array if it's in range
@@ -44,7 +49,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		var explosion = preload("res://nodes/explosion.tscn").instantiate()
 		explosion.position = body.position
 		var current_scene = get_tree().current_scene
-		take_damage(1)
+		take_damage(1 - damage_resistance)
 		current_scene.add_child(explosion)
 		
 		if current_scene:

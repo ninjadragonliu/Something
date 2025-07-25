@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 
 func take_damage(damage : int):
 	health -= damage
-	if health == 0:
+	if health <= 0:
 		queue_free()
 	

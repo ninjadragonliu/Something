@@ -124,11 +124,29 @@ func _on_line_right_body_entered(body: Node2D) -> void:
 
 func _on_skills_pressed() -> void:
 	print("Skill actived")
-	if Global.health + 3 > Global.max_health:
-		Global.health = Global.max_health
-	else:
-		Global.health += 3
+	print("timer activated")
+	var timer = Timer.new()
+	timer.wait_time = 4
+	timer.one_shot = true
+	timer.autostart = true
+	add_child(timer)
+	#if Global.health + 3 > Global.max_health:
+		#Global.health = Global.max_health
+	#else:
+		#Global.health += 3
+	#player.damage += 2
+	player.damage_resistance += 1
+	
+	# Connect the timeout signal
+	timer.timeout.connect(_on_skill_timer_timerout)  # Auto-delete itself
+	
+	
+	#print(player.damage)
 
+func _on_skill_timer_timerout():
+	#player.damage = player.damage_normal
+	player.damage_resistance = player.damage_resistance_normal
+	
 func _on_fist_pressed() -> void:
 	player.change_weapon()
 	print("Weapon 1 selected")
