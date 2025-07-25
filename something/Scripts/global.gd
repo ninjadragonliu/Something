@@ -85,6 +85,15 @@ func _update_for_new_attribute(size_tracker):
 						print("Error item: " + item[0] + " undetected type data as attribute. Check update_for_new_attribute")
 			type_to_match = TYPE_NIL
 
+func get_player_weapon_type_id():
+	match Global.saving_list[7][0]:
+		"fist":
+			return 0
+		"sword":
+			return 1
+		"lance":
+			return 2
+
 func getLocalList_throughSavingIndex(count):
 	match count:
 		0:
@@ -179,7 +188,7 @@ var passive_skill_list = [
 	["MaxHP+2", "", false, 0, "coin", 300, true, false, -1]
 ]
 
-# player current equip only stores the index of what is equiped [weapon, weaponType, top, bottom, active, passive1, passive2]
+# player current equip only stores the index of what is equiped [weaponType, weapon, top, bottom, active, passive1, passive2]
 var player_current_equip = ["fist", 0, 0, 0, 0, 0, 0]
 
 var saving_list = [weapon_list_fist, weapon_list_sword, weapon_list_lance, top_list, bottom_list, active_skill_list, passive_skill_list, player_current_equip]

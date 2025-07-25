@@ -13,13 +13,6 @@ func _ready() -> void:
 	_ready_weapon_page()
 	$Panel/Player.text = "Player: " + Global.player_name
 	
-	match Global.saving_list[7][0]:
-		"fist":
-			player_weapon_type_id = 0
-		"sword":
-			player_weapon_type_id = 1
-		"lance":
-			player_weapon_type_id = 2
 	
 	#print("Saving List:")
 	#print(Global.saving_list)
@@ -33,7 +26,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	$Panel/HP.text = "HP: " + str(Global.health)
-	$"Panel/Current Equip/Equip 1".text = "Weapon: " + Global.saving_list[player_weapon_type_id][Global.saving_list[7][1]][0]
+	$"Panel/Current Equip/Equip 1".text = "Weapon: " + Global.saving_list[Global.get_player_weapon_type_id()][Global.saving_list[7][1]][0]
 	$"Panel/Current Equip/Equip 2".text = "Top: " +  Global.saving_list[3][Global.saving_list[7][2]][0]
 	$"Panel/Current Equip/Equip 3".text = "Bottom: " + Global.saving_list[4][Global.saving_list[7][3]][0]
 	
