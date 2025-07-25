@@ -15,13 +15,13 @@ func _process(delta: float) -> void:
 	if player.position.x - position.x > 0:
 		position.x += speed
 		#animatation.play("running_ToRight")
-		if position.x >= 279.0 and position.y == 100:
-			position.y = 385.0
+		if position.x >= 279.0 and position.y == 110:
+			position.y = 400.0
 	elif player.position.x - position.x < 0:
 		position.x -= speed
 		#animatation.play("running_ToLeft")
-		if position.x <= 873.0 and position.y == 100:
-			position.y = 385.0
+		if position.x <= 873.0 and position.y == 110:
+			position.y = 400.0
 
 func take_damage(damage : int):
 	health -= damage

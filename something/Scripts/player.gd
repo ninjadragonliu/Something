@@ -16,6 +16,11 @@ func attack(body : Node2D):
 	body.take_damage(damage)
 
 func take_damage(damage: int):
+	if Global.reduce_count > 0:
+		damage = max(0, damage-Global.reduce_amount)
+		Global.reduce_count-=1
+	else:
+		Global.reduce_amount = 0
 	Global.health -= damage
 	if Global.health <= 0:
 		var popup = game_over.instantiate()

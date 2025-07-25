@@ -1,10 +1,10 @@
 extends Node
 
 var positions  = [
-	Vector2(1, 100),
-	Vector2(1, 385),
-	Vector2(1150, 100),
-	Vector2(1150, 385)
+	Vector2(1, 110),
+	Vector2(1, 400),
+	Vector2(1150, 110),
+	Vector2(1150, 400)
 ]
 
 #region New Code Region
@@ -179,7 +179,8 @@ var bottom_list = [
 
 var active_skill_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
-	["HP+3", "", false, 0, "coin", 1000, true, false, -1]
+	["HP+3", "", false, 0, "coin", 1000, true, false, -1],
+	["DamageReduction", "", false, 0, "coin", 2000, true, false, -1]
 ]
 
 # passive skill index 3 (equip attribute) is special, 'Empty' can be set as 2 for 'Empty' may take up both slot
@@ -199,6 +200,9 @@ var level = 0
 var mapNumber = 1
 var cleared_levels: Array[int] = []
 var levels_in_map = 11
+
+var reduce_count = 0
+var reduce_amount = 0
 #endregion
 
 #region New Code Region
