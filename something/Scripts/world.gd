@@ -4,7 +4,6 @@ extends Control
 @onready var enemies = $Enemies
 @onready var animatation = player.get_node("AnimationPlayer")
 @export var clear_screen : PackedScene
-@onready var skills = load("res://Scripts/skill_effect.gd")
 
 var enemy_in_range_left = []
 var enemy_in_range_right = []
@@ -125,7 +124,7 @@ func _on_line_right_body_entered(body: Node2D) -> void:
 
 func _on_skills_pressed() -> void:
 	print("Skill actived")
-	skills.calling_skill()
+	$Skill_effect.calling_skill()
 #	var timer = Timer.new()
 #	timer.wait_time = 4
 #	timer.one_shot = true

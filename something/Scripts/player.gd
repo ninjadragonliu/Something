@@ -3,10 +3,10 @@ extends CharacterBody2D
 @onready var game_over : PackedScene = load("res://nodes/game_over.tscn")
 signal take_damaged
 signal boss_hit_player
-var damage_normal = 1
-var damage : int = damage_normal
-var damage_resistance_normal = 0
-var damage_resistance : int = 0
+static var damage_normal = 1
+static var damage : int = damage_normal
+static var damage_resistance_normal = 0
+static var damage_resistance : int = 0
 
 
 func _ready():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dlhpeoka1b654"]
+[gd_scene load_steps=30 format=3 uid="uid://dlhpeoka1b654"]
 
 [ext_resource type="Script" uid="uid://b3vn5535ocs7l" path="res://Scripts/world.gd" id="1_a02cp"]
 [ext_resource type="PackedScene" uid="uid://bgbd8dgd1ug5c" path="res://nodes/player.tscn" id="2_5a7ea"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://181gfrt10e1d" path="res://Assets/JPEG/daggers (5).jpg" id="13_hgpy0"]
 [ext_resource type="Texture2D" uid="uid://gx4y0ch4pb8i" path="res://Assets/JPEG/daggers (7).jpg" id="14_t2t4p"]
 [ext_resource type="Texture2D" uid="uid://dhjw3xgeixb4x" path="res://Assets/JPEG/daggers (9).jpg" id="15_0pcbe"]
+[ext_resource type="Script" uid="uid://b17q51ds0whtu" path="res://Scripts/skill_effect.gd" id="16_hgpy0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
@@ -354,6 +355,9 @@ disabled = true
 texture_normal = ExtResource("15_0pcbe")
 ignore_texture_size = true
 stretch_mode = 0
+
+[node name="Skill_effect" type="Node" parent="."]
+script = ExtResource("16_hgpy0")
 
 [connection signal="pressed" from="Left" to="." method="_on_left_pressed"]
 [connection signal="pressed" from="Right" to="." method="_on_right_pressed"]

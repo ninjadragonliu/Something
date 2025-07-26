@@ -180,7 +180,8 @@ var bottom_list = [
 var active_skill_list = [
 	["Empty", "", true, 1, "", -1, false, false, -1],
 	["HP+3", "", false, 0, "coin", 1000, true, false, -1],
-	["DamageReduction", "", false, 0, "coin", 2000, true, false, -1]
+	["DamageReduction", "", false, 0, "coin", 2000, true, false, -1],
+	["AttackBoost", "", false, 0, "coin", 1000, true, false, -1]
 ]
 
 # passive skill index 3 (equip attribute) is special, 'Empty' can be set as 2 for 'Empty' may take up both slot
