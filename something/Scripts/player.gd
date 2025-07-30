@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var game_over : PackedScene = load("res://nodes/game_over.tscn")
 signal take_damaged
 signal boss_hit_player
+signal animation_signal
 static var damage_normal = 1
 static var damage : int = damage_normal
 static var damage_resistance_normal = 0
@@ -79,3 +80,7 @@ func change_weapon():
 	$Clothe.texture = resource_path
 	$Hair.texture = resource_path
 	$Weapon.texture = resource_path
+
+
+func animation_finished(anim_name: StringName) -> void:
+	animation_signal.emit()

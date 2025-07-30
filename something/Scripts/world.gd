@@ -2,7 +2,7 @@ extends Control
 
 @onready var player = get_tree().get_nodes_in_group("player")[0]
 @onready var enemies = $Enemies
-@onready var animatation = player.get_node("AnimationPlayer")
+@onready var animation = player.get_node("AnimationPlayer")
 @export var clear_screen : PackedScene
 
 var enemy_in_range_left = []
@@ -15,6 +15,7 @@ func _ready() -> void:
 	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
+	player.animation_signal.connect(attack_cooldown)
 	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
@@ -78,18 +79,28 @@ func _on_left_pressed() -> void:
 					player.attack(enemy)
 					enemy_in_range_left.erase(enemy)
 					enemies_remaining -= 1
+					animation.play("Attack_Left_Punch_default")
 					continue
 				player.attack(enemy)
 				enemy_in_range_left.erase(enemy)
+				animation.play("Attack_Left_Punch_default")
 				continue
 			player.attack(enemy)
 			enemy_in_range_left.erase(enemy)
 			enemies_remaining -= 1
-			animatation.play("Attack_Normal_Left")
+			animation.play("Attack_Left_Punch_default")
 			if not Global.tutorial_cleared:
 				clear_tutorial_level()
 			elif enemies_remaining == 0:
 				clear_level()
+	else:
+		animation.play("Attack_Left_Punch_default")
+		var result = attack_cooldown()
+		while not result:
+			$Left.disabled = true
+			$Right.disabled = true
+		$Left.disabled = false
+		$Right.disabled = false
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
@@ -100,18 +111,28 @@ func _on_right_pressed() -> void:
 					player.attack(enemy)
 					enemy_in_range_right.erase(enemy)
 					enemies_remaining -= 1
+					animation.play("Attack_Right_Punch_default")
 					continue
 				player.attack(enemy)
 				enemy_in_range_right.erase(enemy)
+				animation.play("Attack_Right_Punch_default")
 				continue
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
 			enemies_remaining -= 1
-			animatation.play("Attack_Normal_Right")
+			animation.play("Attack_Right_Punch_default")
 			if not Global.tutorial_cleared:
 				clear_tutorial_level()
 			elif enemies_remaining == 0:
 				clear_level()
+	else:
+		animation.play("Attack_Right_Punch_default")
+		var result = attack_cooldown()
+		while not result:
+			$Left.disabled = true
+			$Right.disabled = true
+		$Left.disabled = false
+		$Right.disabled = false
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
@@ -125,19 +146,6 @@ func _on_line_right_body_entered(body: Node2D) -> void:
 func _on_skills_pressed() -> void:
 	print("Skill actived")
 	$Skill_effect.calling_skill()
-#	var timer = Timer.new()
-#	timer.wait_time = 4
-#	timer.one_shot = true
-#	timer.autostart = true
-#	add_child(timer)
-#	player.damage_resistance += 1
-#	timer.timeout.connect(_on_skill_timer_timerout)  # Auto-delete itself
-	#player.damage += 2
-	
-	# Connect the timeout signal
-	
-	
-	#print(player.damage)
 
 func _on_skill_timer_timerout():
 	#player.damage = player.damage_normal
@@ -156,3 +164,6 @@ func _on_sword_pressed() -> void:
 func _on_lance_pressed() -> void:
 	player.change_weapon()
 	print("Weapon 3 selected")
+
+func attack_cooldown():
+	return true
