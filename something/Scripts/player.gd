@@ -3,7 +3,8 @@ extends CharacterBody2D
 @onready var game_over : PackedScene = load("res://nodes/game_over.tscn")
 signal take_damaged
 signal boss_hit_player
-signal animation_signal
+var left_button
+var right_button
 static var damage_normal = 1
 static var damage : int = damage_normal
 static var damage_resistance_normal = 0
@@ -12,6 +13,8 @@ static var damage_resistance : int = 0
 
 func _ready():
 	change_weapon()
+	left_button = get_tree().current_scene.get_node("Left")
+	right_button = get_tree().current_scene.get_node("Right")
 
 func attack(body : Node2D):
 	body.take_damage(damage)
@@ -81,6 +84,13 @@ func change_weapon():
 	$Hair.texture = resource_path
 	$Weapon.texture = resource_path
 
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	left_button.disabled = true
+	right_button.disabled = true
+	print("buttons disabled")
 
-func animation_finished(anim_name: StringName) -> void:
-	animation_signal.emit()
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	left_button.disabled = false
+	right_button.disabled = false
+	print("buttons enabled")
+	

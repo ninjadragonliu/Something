@@ -15,7 +15,6 @@ func _ready() -> void:
 	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
-	player.animation_signal.connect(attack_cooldown)
 	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
@@ -95,12 +94,7 @@ func _on_left_pressed() -> void:
 				clear_level()
 	else:
 		animation.play("Attack_Left_Punch_default")
-		var result = attack_cooldown()
-		while not result:
-			$Left.disabled = true
-			$Right.disabled = true
-		$Left.disabled = false
-		$Right.disabled = false
+
 
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
@@ -127,12 +121,6 @@ func _on_right_pressed() -> void:
 				clear_level()
 	else:
 		animation.play("Attack_Right_Punch_default")
-		var result = attack_cooldown()
-		while not result:
-			$Left.disabled = true
-			$Right.disabled = true
-		$Left.disabled = false
-		$Right.disabled = false
 
 func _on_line_left_body_entered(body: Node2D) -> void:
 	if body.is_in_group("enemy") or body.is_in_group("boss"):
@@ -164,6 +152,3 @@ func _on_sword_pressed() -> void:
 func _on_lance_pressed() -> void:
 	player.change_weapon()
 	print("Weapon 3 selected")
-
-func attack_cooldown():
-	return true
