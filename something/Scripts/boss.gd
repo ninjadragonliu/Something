@@ -7,6 +7,7 @@ var health = max_health
 var attack = 3
 var speed = 1
 var spawn_line = 30
+signal taken_down
 
 func _process(delta: float) -> void:
 	$Health.max_value = max_health
@@ -27,4 +28,5 @@ func take_damage(damage : int):
 	health -= damage
 	position = Global.positions[randi() % Global.positions.size()]
 	if health <= 0:
+		taken_down.emit()
 		queue_free()

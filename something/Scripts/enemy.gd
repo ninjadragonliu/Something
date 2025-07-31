@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var explosion = $Explosion
 var health = 1
 var speed = 1
+signal knocked_down
 
 func _process(delta: float) -> void:
 	if player.position.x - position.x > 0:
@@ -21,5 +22,6 @@ func _process(delta: float) -> void:
 func take_damage(damage : int):
 	health -= damage
 	if health <= 0:
+		knocked_down.emit()
 		queue_free()
 	

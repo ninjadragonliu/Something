@@ -69,7 +69,7 @@ theme_override_font_sizes/font_size = 13
 text = "AD (to continue)"
 autowrap_mode = 3
 
-[node name="Back to Map" type="Button" parent="."]
+[node name="Back to Menu" type="Button" parent="."]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -81,7 +81,7 @@ offset_right = -43.0
 offset_bottom = -86.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Back to Map"
+text = "Back to Menu"
 
 [node name="Retry" type="Button" parent="."]
 anchors_preset = 7
@@ -97,5 +97,13 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Retry"
 
-[connection signal="pressed" from="Back to Map" to="." method="_on_back_to_map_pressed"]
+[node name="Score" type="Label" parent="."]
+offset_left = 238.0
+offset_top = 140.0
+offset_right = 468.0
+offset_bottom = 176.0
+theme_override_font_sizes/font_size = 26
+text = "Your Score Was 10"
+
+[connection signal="pressed" from="Back to Menu" to="." method="_on_back_to_menu_pressed"]
 [connection signal="pressed" from="Retry" to="." method="_on_retry_pressed"]

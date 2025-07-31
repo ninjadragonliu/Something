@@ -9,12 +9,14 @@ var enemy_in_range_left = []
 var enemy_in_range_right = []
 var level_cleared = false
 var enemies_remaining
+var score = 0
 
 func _ready() -> void:
 	enemies_remaining = enemies.enemies_amount
 	$Health.max_value = Global.max_health
 	# Connect player's signal to decrease enemy count
 	player.take_damaged.connect(_on_player_damaged)
+	enemies.enemy_down.connect(add_point)
 	
 	var timer = Timer.new()
 	timer.wait_time = 2.0  # 每 2 秒生成一个敌人
@@ -26,7 +28,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	$Health/Label.text = str(Global.health) + "/" + str(Global.max_health)
-	$EnemiesRemaining/Label.text = str(enemies_remaining)
+	#$EnemiesRemaining/Label.text = str(enemies_remaining)
+	$Score/Label.text = str(score)
 	$Health.value = Global.health
 	
 func _on_player_damaged():
@@ -72,26 +75,26 @@ func clear_tutorial_level():
 func _on_left_pressed() -> void:
 	if enemy_in_range_left:
 		for enemy in enemy_in_range_left:
-			if enemy.is_in_group("boss"):
-				var boss = get_tree().get_first_node_in_group("boss")
-				if boss.health == 1:
-					player.attack(enemy)
-					enemy_in_range_left.erase(enemy)
-					enemies_remaining -= 1
-					animation.play("Attack_Left_Punch_default")
-					continue
-				player.attack(enemy)
-				enemy_in_range_left.erase(enemy)
-				animation.play("Attack_Left_Punch_default")
-				continue
+			#if enemy.is_in_group("boss"):
+				#var boss = get_tree().get_first_node_in_group("boss")
+				#if boss.health == 1:
+					#player.attack(enemy)
+					#enemy_in_range_left.erase(enemy)
+					#enemies_remaining -= 1
+					#animation.play("Attack_Left_Punch_default")
+					#continue
+				#player.attack(enemy)
+				#enemy_in_range_left.erase(enemy)
+				#animation.play("Attack_Left_Punch_default")
+				#continue
 			player.attack(enemy)
 			enemy_in_range_left.erase(enemy)
-			enemies_remaining -= 1
+			#enemies_remaining -= 1
 			animation.play("Attack_Left_Punch_default")
-			if not Global.tutorial_cleared:
-				clear_tutorial_level()
-			elif enemies_remaining == 0:
-				clear_level()
+			#if not Global.tutorial_cleared:
+				#clear_tutorial_level()
+			#elif enemies_remaining == 0:
+				#clear_level()
 	else:
 		animation.play("Attack_Left_Punch_default")
 
@@ -99,26 +102,26 @@ func _on_left_pressed() -> void:
 func _on_right_pressed() -> void:
 	if enemy_in_range_right:
 		for enemy in enemy_in_range_right:
-			if enemy.is_in_group("boss"):
-				var boss = get_tree().get_first_node_in_group("boss")
-				if boss.health == 1:
-					player.attack(enemy)
-					enemy_in_range_right.erase(enemy)
-					enemies_remaining -= 1
-					animation.play("Attack_Right_Punch_default")
-					continue
-				player.attack(enemy)
-				enemy_in_range_right.erase(enemy)
-				animation.play("Attack_Right_Punch_default")
-				continue
+			#if enemy.is_in_group("boss"):
+				#var boss = get_tree().get_first_node_in_group("boss")
+				#if boss.health == 1:
+					#player.attack(enemy)
+					#enemy_in_range_right.erase(enemy)
+					#enemies_remaining -= 1
+					#animation.play("Attack_Right_Punch_default")
+					#continue
+				#player.attack(enemy)
+				#enemy_in_range_right.erase(enemy)
+				#animation.play("Attack_Right_Punch_default")
+				#continue
 			player.attack(enemy)
 			enemy_in_range_right.erase(enemy)
-			enemies_remaining -= 1
+			#enemies_remaining -= 1
 			animation.play("Attack_Right_Punch_default")
-			if not Global.tutorial_cleared:
-				clear_tutorial_level()
-			elif enemies_remaining == 0:
-				clear_level()
+			#if not Global.tutorial_cleared:
+				#clear_tutorial_level()
+			#elif enemies_remaining == 0:
+				#clear_level()
 	else:
 		animation.play("Attack_Right_Punch_default")
 
@@ -152,3 +155,6 @@ func _on_sword_pressed() -> void:
 func _on_lance_pressed() -> void:
 	player.change_weapon()
 	print("Weapon 3 selected")
+
+func add_point():
+	score += 1

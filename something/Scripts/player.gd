@@ -87,10 +87,10 @@ func change_weapon():
 func _on_animation_player_animation_started(anim_name: StringName) -> void:
 	left_button.disabled = true
 	right_button.disabled = true
-	print("buttons disabled")
+	#print("buttons disabled")
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	left_button.disabled = false
 	right_button.disabled = false
-	print("buttons enabled")
+	#print("buttons enabled")
 	

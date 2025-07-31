@@ -16,6 +16,7 @@ var vip_status = false
 var intro_text = "Introduce yourself"
 var coins = int(0)
 var diamonds = int(0)
+var max_score = 0
 var last_login_date = ""
 
 var new_attribute = true
