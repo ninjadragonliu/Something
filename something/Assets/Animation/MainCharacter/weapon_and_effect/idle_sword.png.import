@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bosp834rly0or"
-path="res://.godot/imported/idle.png-ca64e1061381f03b05e9c9c904831302.ctex"
+uid="uid://c87u4447154xy"
+path="res://.godot/imported/idle_sword.png-94f9ba140241866c8cf79a05e0595415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Animation/MainCharacter/idle.png"
-dest_files=["res://.godot/imported/idle.png-ca64e1061381f03b05e9c9c904831302.ctex"]
+source_file="res://Assets/Animation/MainCharacter/weapon_and_effect/idle_sword.png"
+dest_files=["res://.godot/imported/idle_sword.png-94f9ba140241866c8cf79a05e0595415.ctex"]
 
 [params]
 

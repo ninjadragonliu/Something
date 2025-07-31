@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://181gfrt10e1d" path="res://Assets/JPEG/daggers (5).jpg" id="13_hgpy0"]
 [ext_resource type="Texture2D" uid="uid://gx4y0ch4pb8i" path="res://Assets/JPEG/daggers (7).jpg" id="14_t2t4p"]
 [ext_resource type="Texture2D" uid="uid://dhjw3xgeixb4x" path="res://Assets/JPEG/daggers (9).jpg" id="15_0pcbe"]
-[ext_resource type="Script" path="res://Scripts/skill_effect.gd" id="16_hgpy0"]
+[ext_resource type="Script" uid="uid://b17q51ds0whtu" path="res://Scripts/skill_effect.gd" id="16_hgpy0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8j60k"]
 bg_color = Color(0.868978, 0, 0.222608, 1)
